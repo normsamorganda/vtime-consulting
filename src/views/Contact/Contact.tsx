@@ -1,5 +1,7 @@
+import { SectionContainer } from "@/components/SectionContainer"
+
 const Contact = () => {
-    return ( <div>Contact</div> );
+  return <SectionContainer>CONTACT</SectionContainer>
 }
- 
-export default Contact;
+
+export default Contact

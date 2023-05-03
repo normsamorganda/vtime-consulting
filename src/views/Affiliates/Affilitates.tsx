@@ -1,5 +1,7 @@
+import { SectionContainer } from "@/components/SectionContainer"
+
 const Affiliates = () => {
-    return ( <div>Affiliates</div> );
+  return <SectionContainer>AFFILIATES</SectionContainer>
 }
- 
-export default Affiliates;
+
+export default Affiliates

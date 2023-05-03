@@ -1,5 +1,7 @@
+import { SectionContainer } from "@/components/SectionContainer"
+
 const Feature = () => {
-    return ( <div> Feature</div> );
+  return <SectionContainer>FEATURES</SectionContainer>
 }
- 
-export default Feature;
+
+export default Feature

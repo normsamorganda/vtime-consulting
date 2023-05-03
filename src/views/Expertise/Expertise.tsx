@@ -1,5 +1,7 @@
+import { SectionContainer } from "@/components/SectionContainer"
+
 const Expertise = () => {
-    return ( <div>Expertise</div> );
+  return <SectionContainer>EXPERTISE</SectionContainer>
 }
- 
-export default Expertise;
+
+export default Expertise

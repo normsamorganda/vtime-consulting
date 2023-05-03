@@ -1,12 +1,7 @@
-import { Button } from "@/components/Button"
+import { SectionContainer } from "@/components/SectionContainer"
 
 const Footer = () => {
-  return (
-    <div>
-      Footer
-      <Button content='hello world' />
-    </div>
-  )
+  return <SectionContainer>FOOTER</SectionContainer>
 }
 
 export default Footer
