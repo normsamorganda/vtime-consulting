@@ -12,27 +12,12 @@ import { Text } from "@/components/Text"
 import { Button } from "@/components/Button"
 import cx from "clsx"
 import { ServiceImageContainer } from "@/components/ServiceImageContainer"
+import { SectionContainer } from "@/components/SectionContainer"
 
 const Service = () => {
   return (
-    <section className='h-[20rem] border border-red-500 flex items-center justify-center '>
-      {/* <div className='border-2 border-black relative'>
-        <Image
-          className='border border-black'
-          src={recDarkBig}
-          width={300}
-          height={20}
-          alt='rectangle'
-        />
-        <Image
-          className='border border-black absolute top-5 left-10'
-          src={recLightBig}
-          width={300}
-          height={30}
-          alt='rectangle'
-        />
-      </div> */}
-      <section className='border border-black flex max-w-2xl p-5'>
+    <SectionContainer>
+      <section className='border flex max-w-2xl p-5 justify-center items-center'>
         {/* LEFT TEXTS */}
         <article className='flex-1'>
           <TitleText
@@ -56,7 +41,7 @@ const Service = () => {
           />
         </article>
         {/* RIGHT PICTURES */}
-        <article className='flex-1 border grid grid-cols-3 grid-rows-2'>
+        <article className='flex-1 border grid grid-cols-2 place-items-center'>
           <ServiceImageContainer
             image={outsourcing}
             tag='Outsourcing'
@@ -71,23 +56,7 @@ const Service = () => {
           />
         </article>
       </section>
-      {/* <div className='border-2 border-black relative'>
-        <Image
-          className='border border-black absolute right-0 bottom-0'
-          src={rectDarkSmall}
-          width={70}
-          height={30}
-          alt='rectangle'
-        />
-        <Image
-          className='border border-black absolute right-0 bottom-0'
-          src={recLightSmall}
-          width={120}
-          height={30}
-          alt='rectangle'
-        />
-      </div> */}
-    </section>
+    </SectionContainer>
   )
 }
 

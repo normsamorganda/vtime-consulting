@@ -13,9 +13,9 @@ const TitleText = ({
       <Text
         size={size}
         className={cx(
-          `tracking-wide font-bold after:content-[' '] after:bg-[#2a9df4] after:absolute after:h-[2px] after:w-6 after:top-[-3px] mb-5 after:left-[${
-            direction === "left" ? "10%" : "50%"
-          }] after:-translate-x-1/2`
+          `tracking-wide font-medium after:content-[' '] after:bg-[#2a9df4] after:absolute after:h-[2px] after:w-6 after:top-[-3px] mb-5 after:!left-[${
+            direction === "left" ? `${15}%` : `${50}%`
+          }]`
         )}>
         {children}
       </Text>
