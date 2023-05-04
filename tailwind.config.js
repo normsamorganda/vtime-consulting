@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'overlay': "url('/src/assets/Service/service-bg-overlay.png')"
+      }
+    },
   },
   plugins: [],
 }

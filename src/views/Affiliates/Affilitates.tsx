@@ -16,10 +16,10 @@ import Image from "next/image"
 
 const Affiliates = () => {
   return (
-    <SectionContainer className='flex flex-col justify-center items-center relative border-2'>
-      <section className='border-2 border-red-500'>
+    <SectionContainer className='flex flex-col justify-center items-center relative'>
+      
         {/* ARROW LEFT */}
-        <div className='max-w-[1.5rem] absolute left-0 top-1/2 translate-y-1/2'>
+        <div className='max-w-[1.5rem] absolute left-0 top-1/2 -translate-y-1/2'>
           <Image
             src={arrowLeft}
             height={100}
@@ -28,7 +28,7 @@ const Affiliates = () => {
           />
         </div>
         {/* ARROW RIGHT */}
-        <div className='max-w-[1.5rem] absolute right-0 top-1/2 translate-y-1/2'>
+        <div className='max-w-[1.5rem] absolute right-0 top-1/2 -translate-y-1/2'>
           <Image
             src={arrowRight}
             height={100}
@@ -38,12 +38,13 @@ const Affiliates = () => {
         </div>
         <TitleText
           direction='center'
-          size='xs'>
+          size='head'
+          className="">
           Our Affiliates
         </TitleText>
 
-        <section className='border flex justify-center gap-10 relative'>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+        <section className='border flex justify-center gap-10 relative mt-5'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={fhiLogo}
               width={150}
@@ -51,7 +52,7 @@ const Affiliates = () => {
               alt=''
             />
           </div>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={lucky365}
               width={150}
@@ -59,7 +60,7 @@ const Affiliates = () => {
               alt=''
             />
           </div>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={lawLogo}
               width={150}
@@ -67,7 +68,7 @@ const Affiliates = () => {
               alt=''
             />
           </div>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={fhiAcademyLogo}
               width={150}
@@ -77,7 +78,7 @@ const Affiliates = () => {
           </div>
         </section>
         <section className='border flex justify-center gap-10'>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={amchamLogo}
               width={150}
@@ -85,7 +86,7 @@ const Affiliates = () => {
               alt=''
             />
           </div>
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={eccpLogo}
               width={150}
@@ -94,7 +95,7 @@ const Affiliates = () => {
             />
           </div>
 
-          <div className='max-w-[8rem] p-4 flex items-center justify-center'>
+          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
             <Image
               src={fhiStudioLogo}
               width={150}
@@ -103,7 +104,6 @@ const Affiliates = () => {
             />
           </div>
         </section>
-      </section>
     </SectionContainer>
   )
 }

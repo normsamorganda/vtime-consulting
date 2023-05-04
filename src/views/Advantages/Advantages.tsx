@@ -4,18 +4,19 @@ import innovative from "../../assets/Advantage/innovative.png"
 import worldwide from "../../assets/Advantage/worldwide.png"
 import crossIndustry from "../../assets/Advantage/cross industry exp.png"
 import { TitleText } from "@/components/TitleText"
+import { SectionContainer } from "@/components/SectionContainer"
 
 const Advantages = () => {
   return (
-    <div className='border border-red-800 flex justify-center flex-col items-center py-10'>
-      <div>
+    <SectionContainer className='flex justify-center flex-col flex-wrap'>
+      <div className='grid place-items-center'>
         <TitleText
-          size='sm'
+          size='head'
           direction='center'>
           Advantages
         </TitleText>
       </div>
-      <div className='flex gap-10'>
+      <div className='flex justify-between flex-wrap items-center max-md:justify-center'>
         <AdvantageBox
           description='Innovative'
           image={innovative}
@@ -29,7 +30,7 @@ const Advantages = () => {
           description='Wide Global Connection'
         />
       </div>
-    </div>
+    </SectionContainer>
   )
 }
 

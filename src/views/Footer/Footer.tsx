@@ -11,62 +11,58 @@ import {
 
 const Footer = () => {
   return (
-    <SectionContainer>
-      <section className='border flex'>
+    <SectionContainer height="extras" className="flex justify-evenly">
         {/* left section */}
-        <div className='border flex flex-col gap-5'>
+        <div className='flex flex-col gap-5'>
           <article>
             <Image
               src={blackLogo}
               height={100}
-              width={150}
+              width={200}
               alt='logo'
             />
           </article>
           <Text
-            size='xs'
-            className='font-light !text-[10px] max-w-[15rem]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aut
-            possimus in amet soluta sint laboriosam maiores quam deserunt nisi!
-            Voluptatum optio sequi facere.
+            size='description'
+            className='font-light max-w-[25rem]'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fuga dolores voluptatem temporibus id voluptate sunt reprehenderit aliquid dolore necessitatibus aspernatur eligendi eaque, repudiandae aliquam?
           </Text>
-          <article className='flex'>
+          <article className='flex mt-9'>
             <Text
-              size='xs'
-              className='!text-[12px] font-semibold'>
+              size='subtitle'
+              className='!font-semibold'>
               Terms & Conditions {span()}
             </Text>
             <Text
-              size='xs'
-              className='!text-[12px] font-semibold'>
+              size='subtitle'
+              className='!font-semibold'>
               Private Policy {span()}
             </Text>
             <Text
-              size='xs'
-              className='!text-[12px] font-semibold'>
+              size='subtitle'
+              className='!font-semibold'>
               Faq {span()}
             </Text>
             <Text
-              size='xs'
-              className='!text-[12px] font-semibold'>
+              size='subtitle'
+              className='!font-semibold'>
               Contact Us {span()}
             </Text>
             <Text
-              size='xs'
-              className='!text-[12px] font-semibold'>
+              size='subtitle'
+              className='!font-semibold'>
               Address
             </Text>
           </article>
         </div>
 
         {/* right section */}
-        <div className='flex gap-5 ml-auto'>
-          <FaFacebookF className='grayscale-1 text-gray-300' />
-          <FaTwitter className='grayscale-1 text-gray-300' />
-          <FaInstagram className='grayscale-1 text-gray-300' />
-          <FaLinkedinIn className='grayscale-1 text-gray-300' />
+        <div className='flex gap-10 ml-auto '>
+          <FaFacebookF className='grayscale-1 text-gray-300 h-6 w-6' />
+          <FaTwitter className='grayscale-1 text-gray-300 h-6 w-6' />
+          <FaInstagram className='grayscale-1 text-gray-300 h-6 w-6' />
+          <FaLinkedinIn className='grayscale-1 text-gray-300 h-6 w-6' />
         </div>
-      </section>
     </SectionContainer>
   )
 }

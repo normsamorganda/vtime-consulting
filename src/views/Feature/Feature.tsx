@@ -7,11 +7,11 @@ const Feature = () => {
   return (
     <SectionContainer>
       <TitleText
-        size='md'
+        size='head'
         direction='left'>
         Feature
       </TitleText>
-      <section className='flex'>
+      <section className='flex justify-between'>
         <FeatureCard
           date='19 Apr 2023'
           description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
@@ -22,13 +22,13 @@ const Feature = () => {
           date='19 Apr 2023'
           description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
           image={feature2}
-          tag='News'
+          tag='Articles'
         />
         <FeatureCard
           date='19 Apr 2023'
           description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
           image={feature3}
-          tag='News'
+          tag='Events'
         />
       </section>
     </SectionContainer>

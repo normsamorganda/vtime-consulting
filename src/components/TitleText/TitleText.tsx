@@ -9,13 +9,13 @@ const TitleText = ({
   className,
 }: TitleTextProps) => {
   return (
-    <div className='relative max-w-fit'>
+    <div className='relative w-fit max-h-fit'>
+      <div className={cx(`bg-[#2a9df4] h-1 w-12 -top-2 absolute ${direction === 'left'? "left-6" : 'left-1/2'} -translate-x-1/2`)}/>
       <Text
         size={size}
         className={cx(
-          `tracking-wide font-medium after:content-[' '] after:bg-[#2a9df4] after:absolute after:h-[2px] after:w-6 after:top-[-3px] mb-5 after:!left-[${
-            direction === "left" ? `${15}%` : `${50}%`
-          }]`
+          `tracking-wide font-medium mt-1 mb-14`,
+          className
         )}>
         {children}
       </Text>
