@@ -7,10 +7,10 @@ import lawLogo from "./law-logo.png"
 import arrowLeft from "./arrow-left.png"
 import arrowRight from "./arrow-right.png"
 import fhiStudioLogo from "./fhi-studio-logo.png"
-import affliatesBg from './affiliatesBg.png'
+import nAffiliatesBg from './nAffiliatesBg.png'
 
 export {
-  affliatesBg,
+  nAffiliatesBg,
   amchamLogo,
   arrowLeft,
   arrowRight,

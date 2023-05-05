@@ -17,7 +17,7 @@ const Contact = () => {
       </Text>
 
       {/* SUBSCRIPTION BUTTON */}
-      <form className='border border-[#2a9df4] w-[80%] rounded-md flex justify-between h-fit items-center mt-5'>
+      <form className='border border-primary w-[80%] rounded-md flex justify-between h-fit items-center mt-5'>
         <input
           type='text'
           className='w-full placeholder:text-[15px] placeholder:flex pl-5 border-none outline-none'
@@ -26,7 +26,7 @@ const Contact = () => {
         <Button
           content='Submit'
           reverse
-          className='my-0 px-10 !bg-[#2a9df4] mr-2 !m-1'
+          className='my-0 px-10 !bg-primary mr-2 !m-1'
         />
       </form>
     </SectionContainer>

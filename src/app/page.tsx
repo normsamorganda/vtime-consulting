@@ -9,7 +9,7 @@ import Affiliates from "@/views/Affiliates/Affilitates"
 import Contact from "@/views/Contact/Contact"
 import Footer from "@/views/Footer/Footer"
 import FooterExtras from "@/views/FooterExtras/FooterExtras"
-import { affliatesBg } from "@/assets/Affiliates"
+import { nAffiliatesBg } from "@/assets/Affiliates"
 
 const opensans = Open_Sans({
   subsets: ["latin"],
@@ -18,27 +18,20 @@ const opensans = Open_Sans({
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between  '>
-      <div className='text-black w-full h-full p-1'>
+    <main className='flex flex-col items-center justify-between'>
+      <div className='text-black w-full px-[5px]'>
         <Header />
         <Hero />
-        <Advantages />
+        {/* <Advantages />
         <Service />
         <Expertise />
-        <div className="h-[1600px] flex items-center flex-col gap-20" style={{
-          backgroundImage: `url(${affliatesBg.src})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize:"cover",
-          }}>
-              <Feature />
-              <Affiliates />
-        </div>
+        <Feature />
+        <Affiliates />
         <Contact />
-        <Footer />
-        
+        <Footer /> */}
+
       </div>
-      <FooterExtras />
+      {/* <FooterExtras /> */}
     </main>
   )
 }

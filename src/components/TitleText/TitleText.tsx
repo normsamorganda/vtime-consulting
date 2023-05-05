@@ -10,7 +10,7 @@ const TitleText = ({
 }: TitleTextProps) => {
   return (
     <div className='relative w-fit max-h-fit'>
-      <div className={cx(`bg-[#2a9df4] h-1 w-12 -top-2 absolute ${direction === 'left'? "left-6" : 'left-1/2'} -translate-x-1/2`)}/>
+      <div className={cx(`bg-primary h-1 w-12 -top-2 absolute ${direction === 'left'? "left-6" : 'left-1/2'} -translate-x-1/2`)}/>
       <Text
         size={size}
         className={cx(

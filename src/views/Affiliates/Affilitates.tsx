@@ -8,16 +8,63 @@ import {
   fhiStudioLogo,
   lawLogo,
   lucky365,
+  nAffiliatesBg,
 } from "@/assets/Affiliates"
 import { SectionContainer } from "@/components/SectionContainer"
 import { TitleText } from "@/components/TitleText"
 
 import Image from "next/image"
 
+
+
+const logos = [
+  {
+    src: fhiLogo,
+    alt: 'FHI LOGO'
+
+  },
+  {
+    src: lucky365,
+    alt: 'LUCKY 365'
+  },
+  {
+    src: lawLogo,
+    alt: 'VIM ASSOCIATES LAW OFFICE'
+
+  },
+  {
+    src: fhiAcademyLogo,
+    alt: 'FHI INTERNATIONAL ACADEMY'
+  },
+  {
+    src: amchamLogo,
+    alt: 'AMCHAM'
+
+  },
+  {
+    src: eccpLogo,
+    alt: 'ECCP'
+  },
+  {
+    src: fhiStudioLogo,
+    alt: 'FHI STUDIO'
+
+  },
+
+
+]
+
+
 const Affiliates = () => {
   return (
-    <SectionContainer className='flex flex-col justify-center items-center relative'>
-      
+    <section className="relative flex items-center h-[2000px] border-4 border-green-950" style={{
+      backgroundImage: `url(${nAffiliatesBg.src})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+    }}>
+      <SectionContainer className='flex flex-col justify-center items-center'>
+
         {/* ARROW LEFT */}
         <div className='max-w-[1.5rem] absolute left-0 top-1/2 -translate-y-1/2'>
           <Image
@@ -36,75 +83,28 @@ const Affiliates = () => {
             alt='arrow-left'
           />
         </div>
-        <TitleText
-          direction='center'
-          size='head'
-          className="">
-          Our Affiliates
-        </TitleText>
 
-        <section className='border flex justify-center gap-10 relative mt-5'>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={fhiLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={lucky365}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={lawLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={fhiAcademyLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
-        </section>
-        <section className='border flex justify-center gap-10'>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={amchamLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={eccpLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
+        <section className='flex flex-col justify-center items-center gap-10 w-full'>
+          <TitleText
+            direction='center'
+            size='head'
+          >
+            Our Affiliates
+          </TitleText>
+
+
+          <div className="flex flex-wrap gap-10 items-center justify-center border border-green-900">
+            {logos.map((value, index) => {
+              return <div key={index} className="border p-2 w-60">
+                <Image src={value.src} alt={value.alt} width={200} height={100} />
+              </div>
+            })}
           </div>
 
-          <div className='max-w-[17rem] p-4 flex items-center justify-center'>
-            <Image
-              src={fhiStudioLogo}
-              width={150}
-              height={100}
-              alt=''
-            />
-          </div>
+
         </section>
-    </SectionContainer>
+      </SectionContainer>
+    </section>
   )
 }
 

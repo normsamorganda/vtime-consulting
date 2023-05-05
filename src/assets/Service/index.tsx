@@ -14,6 +14,8 @@ import layerBg2 from './layerBg2.png'
 import layerBg3 from './layerBg3.png'
 import servicesBg from './servicesBg.png'
 
+import nServiceBg from './nServiceBg.png'
+
 export {
   corporate,
   outsourcing,
@@ -29,5 +31,6 @@ export {
   layerBg,
   layerBg2,
   layerBg3,
-  servicesBg
+  servicesBg,
+  nServiceBg
 }

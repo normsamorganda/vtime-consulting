@@ -9,25 +9,25 @@ const Hero = () => {
       style={{
         backgroundImage: `url(${nHeroBg.src})`,
       }}
-      className='relative bg-no-repeat  bg-center bg-cover h-[105vh] -mt-12 z-0'>
-      <div className='max-w-3xl p-8 rounded-lg bg-slate-800/30 absolute top-[7%] left-[18%]'>
+      className='relative bg-no-repeat  bg-center bg-cover h-[95vh] z-0'>
+      <div className='max-w-xl p-8 rounded-lg bg-slate-800/30 relative top-[7%] left-[18%]'>
         <Text
           size='hero'
-          className='text-white mt-5 !font-thin'>
+          className='text-white mt-2 !font-thin !text-4xl'>
           Why Choose
         </Text>
         <Text
-          size='hero'
-          className='text-white font-bold mt-5 !text-8xl'>
+          size='title'
+          className='text-white font-bold mt-3 !text-6xl'>
           Business Asia
         </Text>
         <Text
-          size='hero'
-          className='text-white font-bold !text-8xl'>
+          size='title'
+          className='text-white font-bold !text-6xl'>
           Consulting
         </Text>
         <Text
-          size='subtitle'
+          size='description'
           className='text-white mt-5 font-thin leading-6'>
           At BAC, We understand the importance of making well-informed decisions
           in business, That’s why we advocate for the “Stop, Look, and Listen”

@@ -11,7 +11,7 @@ const ExpertiseCard = ({ description, image, title }: ExpertiseCardProps) => {
           height={100}
           width={200}
           alt={title}
-          className='border border-[#2a9df4] p-6 rounded-lg flex-[0.1] '
+          className='border border-primary p-6 rounded-lg flex-[0.1] '
         />
       </div>
       <div className='flex flex-col flex-1 gap-3'>
@@ -27,7 +27,7 @@ const ExpertiseCard = ({ description, image, title }: ExpertiseCardProps) => {
         </Text>
         <Text
           size='tiny'
-          className='text-[#348acd] cursor-pointer'>
+          className='text-secondary cursor-pointer'>
           More
         </Text>
       </div>
