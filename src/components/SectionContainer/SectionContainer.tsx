@@ -11,7 +11,7 @@ const SectionContainer = ({
   overlay,
 }: SectionContainerProps) => {
   return (
-    <div className={cx(`p-10 relative max-w-[75rem] mx-auto`, className, 'flex flex-col border-2 border-red-900')}>
+    <div className={cx(`p-10 relative max-w-[75rem] mx-auto mt-10 border`, className, 'flex flex-col')}>
       {children}
     </div>
   )

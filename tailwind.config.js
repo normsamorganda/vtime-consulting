@@ -4,19 +4,22 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'overlay': "url('/src/assets/Service/service-bg-overlay.png')",
+        overlay: "url('/src/assets/Service/service-bg-overlay.png')",
       },
-      colors:{
-        'primary' : '#2a9df4',
-        'secondary' : '#1167b1'
-      }
+      colors: {
+        primary: "#2a9df4",
+        secondary: "#1167b1",
+      },
+      boxShadow: {
+        custom: "0 0 10px 5px rgba(0, 0, 0, 0.05)",
+      },
     },
   },
   plugins: [],

@@ -4,19 +4,19 @@ import { Text } from "../Text"
 
 const ExpertiseCard = ({ description, image, title }: ExpertiseCardProps) => {
   return (
-    <div className='flex max-w-[22rem] gap-5 justify-center'>
-      <div className='w-[6rem] h-[6rem]'>
+    <div className='flex w-[22rem] gap-5 justify-center'>
+      <div className='w-[5rem] h-[5rem] flex'>
         <Image
           src={image}
           height={100}
           width={200}
           alt={title}
-          className='border border-primary p-6 rounded-lg flex-[0.1] '
+          className='border-2 border-primary p-4 rounded-lg flex-[0.1] '
         />
       </div>
       <div className='flex flex-col flex-1 gap-3'>
         <Text
-          size='subtitle'
+          size='description'
           className='!font-bold'>
           {title}
         </Text>

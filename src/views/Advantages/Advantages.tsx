@@ -1,3 +1,4 @@
+'use client'
 import { AdvantageBox } from "@/components/AdvantageBox"
 import { Text } from "@/components/Text"
 import innovative from "../../assets/Advantage/innovative.png"
@@ -5,8 +6,11 @@ import worldwide from "../../assets/Advantage/worldwide.png"
 import crossIndustry from "../../assets/Advantage/cross industry exp.png"
 import { TitleText } from "@/components/TitleText"
 import { SectionContainer } from "@/components/SectionContainer"
+import useSize from "@/hooks/useSize"
+import cx from "clsx"
 
 const Advantages = () => {
+  const { tablet, phone } = useSize()
   return (
     <SectionContainer className='flex justify-center flex-col flex-wrap'>
       <div className='grid place-items-center'>
@@ -16,7 +20,7 @@ const Advantages = () => {
           Advantages
         </TitleText>
       </div>
-      <div className='flex justify-between flex-wrap items-center max-md:justify-center'>
+      <div className={cx('flex justify-between items-center max-md:justify-center', tablet && 'flex-col gap-24')}>
         <AdvantageBox
           description='Innovative'
           image={innovative}

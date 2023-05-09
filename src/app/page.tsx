@@ -22,16 +22,16 @@ export default function Home() {
       <div className='text-black w-full px-[5px]'>
         <Header />
         <Hero />
-        {/* <Advantages />
-        <Service />
+        <Advantages />
+        {/* <Service /> */}
         <Expertise />
-        <Feature />
-        <Affiliates />
+        {/* <Feature /> */}
+        {/* <Affiliates /> */}
         <Contact />
-        <Footer /> */}
+        <Footer />
 
       </div>
-      {/* <FooterExtras /> */}
+      <FooterExtras />
     </main>
   )
 }

@@ -1,0 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
+'use client'
+import { useEffect, useState } from "react"
+
+
+
+const useSize = () => {
+    const [isPhone, setIsPhone] = useState<{ phone: boolean, tablet: boolean }>({ phone: false, tablet: false })
+    const [set, setSize] = useState<any>(window.innerWidth)
+    console.log(set);
+    const checkWindow = () => {
+        setSize(window.innerWidth)
+        console.log(isPhone);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', checkWindow)
+        if (set > 900) {
+            setIsPhone({ phone: false, tablet: false })
+            console.log('desktop')
+        }
+        if (set <= 900) {
+            setIsPhone({ phone: false, tablet: true })
+            console.log('tablet');
+        }
+        // if (set <= 485) {
+        //     setIsPhone({ phone: true, tablet: false })
+        //     console.log('phone')
+        // }
+        return () => window.removeEventListener('resize', checkWindow)
+    }, [set])
+
+
+    return isPhone;
+}
+
+export default useSize;

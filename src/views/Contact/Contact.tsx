@@ -1,23 +1,24 @@
+'use client'
 import { Button } from "@/components/Button"
 import { SectionContainer } from "@/components/SectionContainer"
 import { Text } from "@/components/Text"
+import useSize from "@/hooks/useSize"
+import cx from "clsx"
 
 const Contact = () => {
-  return (
-    <SectionContainer className='flex flex-col items-center justify-center' height="extras">
-      <Text
-        size='title'
-        className='text-gray-400 font-light'>
-        Stay up-to-date with our latest news, updates, and exclusive offers
-      </Text>
-      <Text
-        size='title'
-        className='text-gray-400 font-light'>
-        by subscribing to our website today
-      </Text>
+  const { tablet, phone } = useSize()
 
+
+  return (
+    <SectionContainer className='flex items-center justify-center'>
+      <Text
+        size={tablet ? 'subtitle' : 'title'}
+        className='text-gray-400 font-light text-center'>
+        Stay up-to-date with our latest news, updates, and exclusive offers <br />by subscribing to our website today
+
+      </Text>
       {/* SUBSCRIPTION BUTTON */}
-      <form className='border border-primary w-[80%] rounded-md flex justify-between h-fit items-center mt-5'>
+      <form className={cx('border border-primary rounded-md flex justify-between h-fit items-center w-3/4 mt-5', tablet && '!w-full')}>
         <input
           type='text'
           className='w-full placeholder:text-[15px] placeholder:flex pl-5 border-none outline-none'
