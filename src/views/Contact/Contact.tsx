@@ -27,7 +27,7 @@ const Contact = () => {
         <Button
           content='Submit'
           reverse
-          className='my-0 px-10 !bg-primary mr-2 !m-1'
+          className='my-0 px-10 mr-2 !m-1 !border-primary'
         />
       </form>
     </SectionContainer>

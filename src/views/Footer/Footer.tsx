@@ -1,6 +1,10 @@
+'use client'
+
 import { blackLogo } from "@/assets/Footer"
 import { SectionContainer } from "@/components/SectionContainer"
 import { Text } from "@/components/Text"
+import useSize from "@/hooks/useSize"
+import cx from "clsx"
 import Image from "next/image"
 import {
   FaFacebookF,
@@ -10,60 +14,66 @@ import {
 } from "react-icons/fa"
 
 const Footer = () => {
+  const { tablet, phone } = useSize()
   return (
-    <SectionContainer height="extras" className="flex justify-evenly">
-        {/* left section */}
-        <div className='flex flex-col gap-5'>
-          <article>
-            <Image
-              src={blackLogo}
-              height={100}
-              width={200}
-              alt='logo'
-            />
-          </article>
+    <SectionContainer >
+      {/* left section */}
+      <div className={cx('border grid grid-cols-2 grid-rows-3', tablet && '!grid-rows-4 grid-cols-1 !justify-start')}>
+        <article className={cx("row-start-1 items-center justify-start flex border", tablet && '!items-center col-span-2 ')}>
+          <Image
+            src={blackLogo}
+            height={150}
+            width={150}
+            alt='logo'
+          />
+        </article>
+        <Text
+          size='description'
+          className={cx('font-light  row-start-2 border', tablet && 'border col-span-2 !max-w-[90%]')}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe porro magnam aspernatur tempora culpa eum, earum molestiae cumque quisquam ipsam!
+        </Text>
+        <article className={cx('flex items-center row-start-3 col-span-2 border', tablet && '!row-start-4 flex-wrap')}>
           <Text
-            size='description'
-            className='font-light max-w-[25rem]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fuga dolores voluptatem temporibus id voluptate sunt reprehenderit aliquid dolore necessitatibus aspernatur eligendi eaque, repudiandae aliquam?
+            size='tiny'
+            className='!font-semibold'>
+            Terms & Conditions
           </Text>
-          <article className='flex mt-9'>
-            <Text
-              size='subtitle'
-              className='!font-semibold'>
-              Terms & Conditions {span()}
-            </Text>
-            <Text
-              size='subtitle'
-              className='!font-semibold'>
-              Private Policy {span()}
-            </Text>
-            <Text
-              size='subtitle'
-              className='!font-semibold'>
-              Faq {span()}
-            </Text>
-            <Text
-              size='subtitle'
-              className='!font-semibold'>
-              Contact Us {span()}
-            </Text>
-            <Text
-              size='subtitle'
-              className='!font-semibold'>
-              Address
-            </Text>
-          </article>
-        </div>
+          <span className="mx-2">/</span>
+          <Text
+            size='tiny'
+            className='!font-semibold'>
+            Private Policy
+          </Text>
+          <span className="mx-2">/</span>
+          <Text
+            size='tiny'
+            className='!font-semibold'>
+            Faq
+          </Text>
+          <span className="mx-2">/</span>
+          <Text
+            size='tiny'
+            className='!font-semibold'>
+            Contact Us
+          </Text>
+          <span className="mx-2">/</span>
+          <Text
+            size='tiny'
+            className='!font-semibold'>
+            Address
+          </Text>
+        </article>
+        <div className={cx('row-start-1 col-start-2 flex justify-end gap-10 items-center border', tablet && '!row-start-3 !col-start-1 !justify-start col-span-2')} >
+          <FaFacebookF className='grayscale-1 text-gray-300 h-5 w-5' />
+          <FaTwitter className='grayscale-1 text-gray-300 h-5 w-5' />
+          <FaInstagram className='grayscale-1 text-gray-300 h-5 w-5' />
+          <FaLinkedinIn className='grayscale-1 text-gray-300 h-5 w-5' />
+        </div >
+      </div >
 
-        {/* right section */}
-        <div className='flex gap-10 ml-auto '>
-          <FaFacebookF className='grayscale-1 text-gray-300 h-6 w-6' />
-          <FaTwitter className='grayscale-1 text-gray-300 h-6 w-6' />
-          <FaInstagram className='grayscale-1 text-gray-300 h-6 w-6' />
-          <FaLinkedinIn className='grayscale-1 text-gray-300 h-6 w-6' />
-        </div>
-    </SectionContainer>
+      {/* right section */}
+
+    </SectionContainer >
   )
 }
 function span() {
