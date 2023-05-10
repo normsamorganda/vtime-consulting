@@ -1,21 +1,22 @@
 'use client'
 import {
-  serviceBgOverlay,
-  rectDarkBg,
-  rectDarkSm,
-  rectLightBg,
-  rectLightSm,
-  visaImmigration,
-  corporate,
-  outsourcing,
-  busyBusinessPeopleWalking,
-  servicesImage,
-  servicesBg2,
-  layerBg,
-  layerBg2,
-  layerBg3,
-  servicesBg,
-  nServiceBg
+serviceBgOverlay,
+rectDarkBg,
+rectDarkSm,
+rectLightBg,
+rectLightSm,
+visaImmigration,
+corporate,
+outsourcing,
+busyBusinessPeopleWalking,
+servicesImage,
+servicesBg2,
+layerBg,
+layerBg2,
+layerBg3,
+servicesBg,
+nServiceBg,
+warrenBg
 } from "@/assets/Service"
 
 import Image from "next/image"
@@ -28,34 +29,20 @@ import { SectionContainer } from "@/components/SectionContainer"
 import useSize from "@/hooks/useSize"
 
 const Service = () => {
-  const { tablet, phone } = useSize()
+const { tablet, phone } = useSize()
 
-  return (
-    <section className="relative overflow-hidden">
-      {/* {/_ top _/} */}
-      {/* <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-secondary absolute -top-40 ", tablet && 'rotate-[-7deg] !-top-52', phone && '!rotate-[-15deg] !-top-32 w-56 h-64')} />
-      <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-primary absolute -top-32 left-10", tablet && 'rotate-[-7deg] !-top-48', phone && '!rotate-[-15deg] !-top-28 w-56 h-64')} /> */}
-
-      {/* bottom */}
-      {/* <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-primary absolute bottom-28 -right-48", tablet && 'rotate-[-7deg]')} />
-      <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-secondary absolute bottom-40 -right-60", tablet && 'rotate-[-7deg]')} /> */}
+return (
+<section className="relative overflow-hidden">
+{/_ {/* top */} _/}
 
       <section style={{
-        backgroundImage: `url(${busyBusinessPeopleWalking.src})`,
+        backgroundImage: `url(${warrenBg.src})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'auto',
-        backgroundPosition: 'right',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         // opacity: 0.1,
-        clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
-      }} className="relative flex items-center h-[100vh] bg-slate-400/10 ">
+        // clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
+      }} className={cx("relative flex items-center h-[1294px] bg-slate-400/10", tablet && '!h-[100vh]')}>
 
 
 
@@ -108,6 +95,6 @@ const Service = () => {
 
     </section>
 
-  )
+)
 }
 export default Service

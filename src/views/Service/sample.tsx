@@ -33,20 +33,14 @@ const Service = () => {
   return (
     <section className="relative overflow-hidden">
       {/* {/_ top _/} */}
-      {/* <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-secondary absolute -top-40 ", tablet && 'rotate-[-7deg] !-top-52', phone && '!rotate-[-15deg] !-top-32 w-56 h-64')} />
-      <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-primary absolute -top-32 left-10", tablet && 'rotate-[-7deg] !-top-48', phone && '!rotate-[-15deg] !-top-28 w-56 h-64')} /> */}
 
       {/* bottom */}
-      {/* <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-primary absolute bottom-28 -right-48", tablet && 'rotate-[-7deg]')} />
       <div style={{
         clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx("w-96 h-96 bg-secondary absolute bottom-40 -right-60", tablet && 'rotate-[-7deg]')} /> */}
+      }} className=" w-96 h-96 bg-primary absolute bottom-28 -right-48" />
+      <div style={{
+        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
+      }} className=" w-96 h-96 bg-secondary absolute bottom-40 -right-60" />
 
       <section style={{
         backgroundImage: `url(${busyBusinessPeopleWalking.src})`,
@@ -55,8 +49,14 @@ const Service = () => {
         backgroundPosition: 'right',
         // opacity: 0.1,
         clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
-      }} className="relative flex items-center h-[100vh] bg-slate-400/10 ">
+      }} className="relative flex items-center h-[100vh] bg-slate-400/10 after:content-[' '] after:bg-[#1b609c] after:absolute  after:w-96 after:h-28 after:top-[200px] after:-translate-y-1/2 after:-left-5 ml-5">
 
+        <div style={{
+          clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
+        }} className=" w-96 h-96 bg-secondary absolute -top-36 z-40" />
+        <div style={{
+          clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
+        }} className=" w-96 h-96 bg-primary absolute -top-0 left-20 z-40" />
 
 
         {/* MAIN */}

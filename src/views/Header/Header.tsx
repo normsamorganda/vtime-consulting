@@ -5,11 +5,41 @@ import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
 import cx from "clsx"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
 
 const navLinks = [
-  'About us', 'Corporate', 'Visa & Immigration', 'Outsourcing', 'Updates', 'Contact Us'
+  {
+    text: 'About us',
+    link: '/About'
+  },
+
+  {
+    text: 'Corporate',
+    link: '/Corporate'
+  },
+
+  {
+    text: 'Visa & Immigration',
+    link: '/Visa&Immigration'
+  },
+
+  {
+    text: 'Outsourcing',
+    link: '/Outsourcing'
+  },
+
+  {
+    text: 'Updates',
+    link: '/Updates'
+  },
+
+  {
+    text: 'Contact Us',
+    link: '/Contact'
+  },
+
 ]
 
 const Header = () => {
@@ -17,9 +47,8 @@ const Header = () => {
 
   return (
     <section className="relative">
-      <div className="absolute top-1/2 -translate-y-1/2 w-[15vw] left-[4%] z-10">
-        {tablet ? <FaBars className="text-white w-10 h-10" /> : <Image src={whiteLogo.src} width={500} height={300} alt="logo" />
-        }
+      <div className="absolute top-1/2 -translate-y-1/2 w-[200px] max-[1100px]:w-[150px] left-[4%] z-10">
+        {tablet ? <FaBars className="text-white w-10 h-10" /> : <Image src={whiteLogo.src} width={500} height={300} alt="logo" />}
       </div>
 
       <section className="flex justify-between pt-2 relative">
@@ -30,11 +59,13 @@ const Header = () => {
         {/* links */}
         {tablet ? "" : <div className={cx("flex gap-8 items-center", "max-[1100px]:gap-4")}>
           {navLinks.map((links, i) => {
-            return <Text key={i} size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", "max-[1300px]:!text-[12px] max-[1100px]:text-[10px]")}>{links}</Text>
+            return <Link href={links.link} key={i} >
+              <Text size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", "max-[1300px]:!text-[12px] max-[1100px]:text-[10px] text-black")}>{links.text}</Text>
+            </Link>
           })}
         </div>}
         {/* CENTER */}
-        {tablet && <div className="absolute top-1/2 translate-y-1/5 w-60 z-10 left-1/2 -translate-x-1/2">
+        {tablet && <div className="absolute top-1/2 translate-y-1/4 w-52 z-10 left-1/2 -translate-x-1/2">
           <Image src={whiteLogo.src} width={500} height={300} alt="logo" />
         </div>}
 

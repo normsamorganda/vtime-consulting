@@ -14,11 +14,15 @@ module.exports = {
         overlay: "url('/src/assets/Service/service-bg-overlay.png')",
       },
       colors: {
-        primary: "#2a9df4",
-        secondary: "#1167b1",
+        primary: "#2a9df9",
+        secondary: "#1167b9",
       },
       boxShadow: {
         custom: "0 0 10px 5px rgba(0, 0, 0, 0.05)",
+      },
+      screens: {
+        tablet: "max-[900px]",
+        phone: "max-[450px]",
       },
     },
   },

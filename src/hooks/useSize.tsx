@@ -22,10 +22,15 @@ const useSize = () => {
                 setIsPhone({ phone: false, tablet: false })
                 console.log('desktop')
             }
-            if (set <= 900) {
+            if (set <= 900 && set > 450) {
                 setIsPhone({ phone: false, tablet: true })
                 console.log('tablet');
             }
+            if (set <= 450) {
+                setIsPhone({ phone: true, tablet: true })
+                console.log('phone');
+            }
+
         }
 
 

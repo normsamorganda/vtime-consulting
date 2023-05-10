@@ -1,15 +1,15 @@
 'use client'
 import {
-  amchamLogo,
-  arrowLeft,
-  arrowRight,
-  eccpLogo,
-  fhiAcademyLogo,
-  fhiLogo,
-  fhiStudioLogo,
-  lawLogo,
-  lucky365,
-  nAffiliatesBg,
+amchamLogo,
+arrowLeft,
+arrowRight,
+eccpLogo,
+fhiAcademyLogo,
+fhiLogo,
+fhiStudioLogo,
+lawLogo,
+lucky365,
+nAffiliatesBg,
 } from "@/assets/Affiliates"
 import { SectionContainer } from "@/components/SectionContainer"
 import { TitleText } from "@/components/TitleText"
@@ -18,59 +18,55 @@ import cx from "clsx"
 
 import Image from "next/image"
 
-
-
 const logos = [
-  {
-    src: fhiLogo,
-    alt: 'FHI LOGO'
+{
+src: fhiLogo,
+alt: 'FHI LOGO'
 
-  },
-  {
-    src: lucky365,
-    alt: 'LUCKY 365'
-  },
-  {
-    src: lawLogo,
-    alt: 'VIM ASSOCIATES LAW OFFICE'
+},
+{
+src: lucky365,
+alt: 'LUCKY 365'
+},
+{
+src: lawLogo,
+alt: 'VIM ASSOCIATES LAW OFFICE'
 
-  },
-  {
-    src: fhiAcademyLogo,
-    alt: 'FHI INTERNATIONAL ACADEMY'
-  },
-  {
-    src: amchamLogo,
-    alt: 'AMCHAM'
+},
+{
+src: fhiAcademyLogo,
+alt: 'FHI INTERNATIONAL ACADEMY'
+},
+{
+src: amchamLogo,
+alt: 'AMCHAM'
 
-  },
-  {
-    src: eccpLogo,
-    alt: 'ECCP'
-  },
-  {
-    src: fhiStudioLogo,
-    alt: 'FHI STUDIO'
+},
+{
+src: eccpLogo,
+alt: 'ECCP'
+},
+{
+src: fhiStudioLogo,
+alt: 'FHI STUDIO'
 
-  },
-
+},
 
 ]
 
-
 const Affiliates = () => {
-  const { tablet, phone } = useSize()
+const { tablet, phone } = useSize()
 
-  return (
+return (
 
     <section className="relative">
       {/* top */}
-      {/* <div style={{
-        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx(" w-96 h-96 bg-secondary absolute -top-48 left-3", phone && '!-top-64 !left-0 -rotate-[17deg]')} />
       <div style={{
         clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
-      }} className={cx(" w-96 h-96 bg-primary absolute -top-40", phone && '-rotate-[16deg]')} /> */}
+      }} className=" w-96 h-96 bg-secondary absolute -top-48 left-3" />
+      <div style={{
+        clipPath: 'polygon(100% 69%, 100% 89%, 0 100%, 0 80%)',
+      }} className=" w-96 h-96 bg-primary absolute -top-40" />
 
       <section style={{
         clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
@@ -118,17 +114,17 @@ const Affiliates = () => {
 
               {/* 1st row */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={fhiLogo} alt="fhilogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={lucky365} alt="lawlogo" width={120} height={100} />
                 </div>
               </section>
 
               {/* 2nd row */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={lawLogo} alt="lawLogo" width={120} height={100} />
                 </div>
               </section>
@@ -136,13 +132,13 @@ const Affiliates = () => {
 
               {/* 3rd row */}
               <section className="flex gap-1">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={fhiAcademyLogo} alt="fhiAcademyLogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={amchamLogo} alt="achamLogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={fhiStudioLogo} alt="fhiStudioLogo" width={120} height={100} />
                 </div>
               </section>
@@ -150,7 +146,7 @@ const Affiliates = () => {
 
               {/* BOTTOM */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center border", phone && '!w-24 h-16')}>
                   <Image src={eccpLogo} alt="eccLogo" width={120} height={100} />
                 </div>
               </section>
@@ -161,7 +157,8 @@ const Affiliates = () => {
         </SectionContainer>
       </section>
     </section>
-  )
+
+)
 }
 
 export default Affiliates

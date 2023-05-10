@@ -20,7 +20,7 @@ const Advantages = () => {
           Advantages
         </TitleText>
       </div>
-      <div className={cx('flex justify-between items-center max-md:justify-center', tablet && 'flex-col gap-24')}>
+      <div className={cx('flex justify-between items-center max-md:justify-center', tablet && 'flex-col gap-16', phone && '!gap-5')}>
         <AdvantageBox
           description='Innovative'
           image={innovative}

@@ -13,7 +13,7 @@ import layerBg from './layerBg.png'
 import layerBg2 from './layerBg2.png'
 import layerBg3 from './layerBg3.png'
 import servicesBg from './servicesBg.png'
-
+import warrenBg from './warrenBg.png'
 import nServiceBg from './nServiceBg.png'
 
 export {
@@ -26,11 +26,13 @@ export {
   serviceBgOverlay,
   visaImmigration,
   busyBusinessPeopleWalking,
-  servicesImage, 
+  servicesImage,
   servicesBg2,
   layerBg,
   layerBg2,
   layerBg3,
   servicesBg,
-  nServiceBg
+  nServiceBg,
+  warrenBg
+
 }

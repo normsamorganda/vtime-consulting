@@ -3,4 +3,5 @@ export interface FeatureCardProps {
   description: string
   date: string
   tag: string
+  className?: string
 }
