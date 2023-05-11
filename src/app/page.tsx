@@ -18,7 +18,7 @@ const opensans = Open_Sans({
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center justify-between'>
+    <main className='flex flex-col items-center justify-between overflow-hidden'>
       <div className='text-black w-full px-[5px]'>
         <Header />
         <Hero />

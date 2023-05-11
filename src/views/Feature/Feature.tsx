@@ -17,10 +17,10 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import useSize from "@/hooks/useSize"
+import { useEffect, useState } from "react"
 
 const Feature = () => {
-  const { tablet, phone } = useSize()
-
+  const { tablet } = useSize()
   const FeaturedCards = [
     {
       id: 1,
@@ -29,11 +29,13 @@ const Feature = () => {
       image: feature1,
       tag: 'News'
     }, {
+      id: 2,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature2,
       tag: 'Articles'
     }, {
+      id: 3,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature3,
@@ -41,8 +43,32 @@ const Feature = () => {
     }
   ]
 
+  const [items, setItems] = useState(FeaturedCards)
+  const [index, setIndex] = useState(0)
+
+  const nextSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex + 1
+      if (index > items.length - 1) {
+        index = 0
+      }
+      return index
+    })
+  }
+  const prevSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex - 1
+      if (index < 0) {
+        index = items.length - 1
+      }
+      return index
+    })
+  }
+
+
+
   return (
-    <SectionContainer className="border h-[50vh]">
+    <SectionContainer className="h-[50vh]">
       <section className="flex items-center justify-between">
         <TitleText
           size='head'
@@ -50,13 +76,26 @@ const Feature = () => {
           Feature
         </TitleText>
         <div className="mb-auto flex gap-2 mt-2">
-          <BsArrowLeft className={cx("text-3xl text-gray-500/30", 'text-primary')} />
-          <BsArrowRight className={cx("text-3xl text-gray-500/30")} />
+          <BsArrowLeft className={cx("text-3xl text-gray-500/30", "hover:text-primary")} onClick={prevSlide} />
+          <BsArrowRight className={cx("text-3xl text-gray-500/30", "hover:text-primary")} onClick={nextSlide} />
         </div>
       </section>
-      <section className={cx('flex justify-between', tablet && 'justify-center')}>
-        {FeaturedCards.map((card) => {
-          return <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} className={cx(tablet && 'absolute left-1/2 -translate-x-1/2')} />
+      <section className={cx('flex justify-between', 'tablet:justify-center')}>
+        {FeaturedCards.map((card, cardIndex) => {
+
+          let position = "nextSlide"
+          if (cardIndex === index) {
+            position = "activeSlide"
+          }
+          if (
+            cardIndex === index - 1 ||
+            (index === 0 && cardIndex === items.length - 1)
+          ) {
+            position = "lastSlide"
+          }
+
+
+          return <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} className={cx('tablet:absolute', tablet && position)} />
         })}
 
       </section>
@@ -65,3 +104,5 @@ const Feature = () => {
 }
 
 export default Feature
+
+

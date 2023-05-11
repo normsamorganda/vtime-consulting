@@ -13,11 +13,11 @@ const Button = ({ content, reverse, className }: ButtonProps) => {
         `border border-primary/10 hover:cursor-pointer transition-all ${reverse ? "bg-primary text-white hover:text-secondary hover:bg-white" : "bg-white text-primary hover:!text-white hover:!bg-primary"
         }`,
         className,
-        "p-3 rounded-md my-3 px-7 !hover:cursor-pointer", phone && '!p-[5px]'
+        "p-3 rounded-md my-3 px-7 !hover:cursor-pointer", 'phone:!p-[7px]'
       )}>
       <Text
-        size={!phone ? 'description' : 'tiny'}
-        className={cx('tracking-wide !font-semibold')}>
+        size="description"
+        className={cx('tracking-wide !font-semibold', 'phone:text-xs')}>
         {content}
       </Text>
     </button>

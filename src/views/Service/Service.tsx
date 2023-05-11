@@ -53,17 +53,16 @@ const Service = () => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'auto',
         backgroundPosition: 'right',
-        // opacity: 0.1,
-        clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
-      }} className="relative flex items-center h-[100vh] bg-slate-400/10 ">
+        clipPath: tablet ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0, 100% 76%, 0 100%, 0 24%)',
+      }} className="relative flex items-center h-[100vh] bg-slate-400/10">
 
 
 
         {/* MAIN */}
         <SectionContainer>
-          <section className={cx('flex justify-center items-center gap-2', tablet && 'flex-col')}>
+          <section className={cx('flex justify-center items-center gap-2', 'tablet:flex-col')}>
             {/* LEFT TEXTS */}
-            <article className='flex-1'>
+            <article className={cx('flex-1', '')}>
               <TitleText
                 direction='left'
                 size='head'>
@@ -71,19 +70,17 @@ const Service = () => {
               </TitleText>
               <Text
                 size='description'
-                className={cx('font-thin flex-col flex gap-3 mb-7', tablet && 'gap-2 !text-xs')}>
+                className={cx('font-thin flex-col flex gap-3 mb-3', 'tablet:gap-2 tablet:!text-xs', 'phone:gap-1 phone:!text-[9px]')}>
                 <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                  ad minim veniam, quis nesciunt. Neque porro quisquam est, qui
-                  dolorem ipsum quia dolor sit amet,
+                  Our corporate services are designed to help businesses of all sizes streamline their operations, reduce costs, and stay compliant with local regulations.
+                </span>
+                <span>
+                  Our visa and immigration services are tailored to meet the unique needs of individuals and businesses seeking to relocate or expand their operations overseas
+                </span>
+                <span>
+                  Our outsourcing services enable businesses to focus on their core competencies while we take care of the rest.
                 </span>
 
-                <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                  ad minim veniam, quis nesciunt.
-                </span>
 
 
               </Text>
@@ -94,8 +91,8 @@ const Service = () => {
               />}
             </article>
             {/* RIGHT PICTURES */}
-            <article className='flex-1 flex items-center justify-center'>
-              <div className={cx("max-w-md", tablet && '!max-w-xs')}>
+            <article className={cx('flex-1 flex items-center justify-center', 'tablet:!max-w-[22rem]')}>
+              <div className={cx("max-w-md", 'tablet:!max-w-sm')}>
                 <Image src={servicesImage} alt="services images" height={100} width={500} />
               </div>
             </article>

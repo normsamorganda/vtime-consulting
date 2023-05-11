@@ -17,10 +17,10 @@ const TitleText = ({
     <div className='relative w-fit max-h-fit'>
       <div className={cx(`bg-primary h-1 w-12 -top-2 absolute ${direction === 'left' ? "left-6" : 'left-1/2'} -translate-x-1/2`)} />
       <Text
-        size={tablet ? 'title' : phone ? 'description' : 'head'}
+        size={'head'}
         className={cx(
           `tracking-wide font-medium mt-1 mb-6`,
-          className
+          className, 'tablet:!text-2xl', 'phone:!text-xl'
         )}>
         {children}
       </Text>

@@ -21,8 +21,11 @@ module.exports = {
         custom: "0 0 10px 5px rgba(0, 0, 0, 0.05)",
       },
       screens: {
-        tablet: "max-[900px]",
-        phone: "max-[450px]",
+        tablet: { max: "900px" },
+        phone: { max: "450px" },
+
+        laptopL: { max: "1200px" },
+        laptop: { max: "1024px" },
       },
     },
   },

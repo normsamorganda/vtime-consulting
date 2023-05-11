@@ -13,12 +13,12 @@ const Contact = () => {
     <SectionContainer className='flex items-center justify-center'>
       <Text
         size={tablet ? 'subtitle' : 'title'}
-        className='text-gray-400 font-light text-center'>
+        className={cx('text-gray-400 font-light text-center', 'phone:text-base')}>
         Stay up-to-date with our latest news, updates, and exclusive offers <br />by subscribing to our website today
 
       </Text>
       {/* SUBSCRIPTION BUTTON */}
-      <form className={cx('border border-primary rounded-md flex justify-between h-fit items-center w-3/4 mt-5', tablet && '!w-full')}>
+      <form className={cx('border border-primary rounded-md flex justify-between h-fit items-center w-3/4 mt-5', 'tablet:!w-full')}>
         <input
           type='text'
           className='w-full placeholder:text-[15px] placeholder:flex pl-5 border-none outline-none'

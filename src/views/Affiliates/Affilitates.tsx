@@ -73,8 +73,8 @@ const Affiliates = () => {
       }} className={cx(" w-96 h-96 bg-primary absolute -top-40", phone && '-rotate-[16deg]')} /> */}
 
       <section style={{
-        clipPath: 'polygon(100% 0, 100% 80%, 0 100%, 0 20%)',
-      }} className="relative flex items-center h-[100vh] bg-slate-400/10">
+        clipPath: tablet ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0, 100% 76%, 0 100%, 0 24%)',
+      }} className="relative flex items-center h-[100vh] bg-slate-400/10 phone:clip">
 
         <SectionContainer className='flex flex-col justify-center items-center'>
           <section className='flex flex-col justify-center items-center'>
@@ -118,17 +118,17 @@ const Affiliates = () => {
 
               {/* 1st row */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={fhiLogo} alt="fhilogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={lucky365} alt="lawlogo" width={120} height={100} />
                 </div>
               </section>
 
               {/* 2nd row */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={lawLogo} alt="lawLogo" width={120} height={100} />
                 </div>
               </section>
@@ -136,13 +136,13 @@ const Affiliates = () => {
 
               {/* 3rd row */}
               <section className="flex gap-1">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={fhiAcademyLogo} alt="fhiAcademyLogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={amchamLogo} alt="achamLogo" width={120} height={100} />
                 </div>
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
                   <Image src={fhiStudioLogo} alt="fhiStudioLogo" width={120} height={100} />
                 </div>
               </section>
@@ -150,8 +150,8 @@ const Affiliates = () => {
 
               {/* BOTTOM */}
               <section className="flex">
-                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", phone && '!w-24 h-16')}>
-                  <Image src={eccpLogo} alt="eccLogo" width={120} height={100} />
+                <div className={cx("p-1 flex items-center w-28 h-20 flex-1 justify-center", 'phone:!w-20 h-16')}>
+                  <Image src={eccpLogo} alt="eccLogo" width={80} height={100} />
                 </div>
               </section>
             </div>}

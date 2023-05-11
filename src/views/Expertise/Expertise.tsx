@@ -61,40 +61,135 @@ const Expertise = () => {
 
   ]
 
-  function slideLeftHandler() {
-    setSlider('left')
-    console.log('click left');
+  const newItems = [
+    {
+      id: 1,
+      description: 'A multifaceted field that requires diverse skills and expertise and a deep understanding of building materials, techniques, and regulations.',
+      title: 'Construction',
+      image: construction
+    },
+    {
+      id: 2,
+      description: 'A rapidly growing field is revolutionizing how we think about financial services. ',
+      title: 'Fintech',
+      image: fintech
+    },
+    {
+      id: 3,
+      description: 'A dynamic and constantly evolving field that offers exciting opportunities for professionals who are passionate about technology and innovation.',
+      title: 'Information & Techonology',
+      image: information
+    },
+
+    {
+      id: 4,
+      description: 'An essential and dynamic industry that plays a vital role in our daily lives.',
+      title: 'Food & Beverages',
+      image: foodAndBeverages
+    },
+    {
+      id: 5,
+      description: 'An industry that offers exciting opportunities for professionals who are passionate about finance and economics. ',
+      title: 'Lending',
+      image: lending
+    },
+    {
+      id: 6,
+      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      title: 'Financing',
+      image: financing
+    },
+
+
+  ]
+
+  const divItem = [
+
+  ]
+
+  const [item, setItem] = useState(items)
+  const [index, setIndex] = useState(0)
+
+  console.log(index);
+
+  const nextSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex + 1
+      if (index > item.length - 1) {
+        index = 0
+      }
+      return index
+    })
+  }
+  const prevSlide = () => {
+    setIndex((oldIndex) => {
+      let index = oldIndex - 1
+      if (index < 0) {
+        index = item.length - 1
+      }
+      return index
+    })
   }
 
-  function slideRightHandler() {
-    setSlider('right')
-    console.log('click right');
-  }
+
+
   return (
-    <SectionContainer>
+    <SectionContainer className={cx()}>
+      {/* top section */}
       <section className="flex items-center justify-between mb-6">
         <TitleText
           direction='left'>
           Areas of Expertise
         </TitleText>
         <div className="mb-auto flex gap-2 mt-2">
-          <BsArrowLeft className={cx("text-3xl text-gray-500/30", slider === 'right' && 'text-primary')} onClick={slideLeftHandler} />
-          <BsArrowRight className={cx("text-3xl text-gray-500/30", slider === 'left' && 'text-primary')} onClick={slideRightHandler} />
+          <BsArrowLeft className={cx("text-3xl text-gray-500/30 hover:text-primary")} onClick={prevSlide} />
+          <BsArrowRight className={cx("text-3xl text-gray-500/30 hover:text-primary")} onClick={nextSlide} />
         </div>
       </section>
-      <section className={cx('flex flex-col gap-10', tablet && 'flex !flex-row relative overflow-hidden h-[40vh]', phone && '!h-[40vh]')}>
-        <div className={cx("flex justify-between gap-3 transition-all duration-1000", tablet && `flex-col items-center absolute !gap-10 ${slider === 'left' ? 'left-1/2 top-0 -translate-x-1/2' : 'left-[-100%] top-0 -translate-x-1/2'}`)}>
-          {items[0].map((items) => {
-            return <ExpertiseCard key={items.id} description={items.description} title={items.title} image={items.image} />
-          })}
-        </div>
 
-        <div className={cx("flex justify-between gap-3 transition-all duration-1000", tablet && `flex-col items-center absolute !gap-10 ${slider === 'right' ? 'left-1/2 top-0 -translate-x-1/2' : 'left-[-100%] top-0 -translate-x-1/2'}`)}>
-          {items[1].map((items) => {
-            return <ExpertiseCard key={items.id} description={items.description} title={items.title} image={items.image} />
-          })}
-        </div>
+
+      {/* bottom section */}
+      <section className="flex justify-center tablet:h-[50vh] phone:h-[45vh]">
+        {/* top */}
+        {tablet ?
+          // tablet
+          <div className="flex justify-center items-center w-full relative overflow-hidden">
+            {/* 1st */}
+            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute w-full ', index === 1 ? 'translate-x-0' : 'translate-x-full')}>
+              {item[0].map((item, index) => {
+                return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
+              })}
+            </div>
+            {/* 2nd */}
+            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute  w-full', index === 1 ? 'translate-x-full' : 'translate-x-0')}>
+              {item[1].map((item, index) => {
+                return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
+              })}
+            </div>
+
+          </div>
+          :
+          // desktop
+          <div className={cx("flex flex-wrap gap-5 justify-evenly", "tablet:justify-center")}>
+            {newItems.map((item, itemIndex) => {
+
+              let position = "nextSlide"
+              if (itemIndex === index) {
+                position = "activeSlide"
+              }
+              if (
+                itemIndex === index - 1 ||
+                (index === 0 && itemIndex === items.length - 1)
+              ) {
+                position = "lastSlide"
+              }
+              return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
+            })}
+          </div>}
+
+        {/* bottom */}
       </section>
+
     </SectionContainer>
   )
 }
