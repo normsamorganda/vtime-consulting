@@ -1,5 +1,5 @@
 const MobileMenu = () => {
-    return (<div>Mobile Menu</div>);
+    return (<div className="fixed">Mobile Menu</div>);
 }
 
 export default MobileMenu;

@@ -76,8 +76,8 @@ const Feature = () => {
           Feature
         </TitleText>
         <div className="mb-auto flex gap-2 mt-2">
-          <BsArrowLeft className={cx("text-3xl text-gray-500/30", "hover:text-primary")} onClick={prevSlide} />
-          <BsArrowRight className={cx("text-3xl text-gray-500/30", "hover:text-primary")} onClick={nextSlide} />
+          <BsArrowLeft className={cx("text-3xl text-gray-500/30", "hover:text-primary", "phone:!text-lg")} onClick={prevSlide} />
+          <BsArrowRight className={cx("text-3xl text-gray-500/30", "hover:text-primary", "phone:!text-lg")} onClick={nextSlide} />
         </div>
       </section>
       <section className={cx('flex justify-between', 'tablet:justify-center')}>
