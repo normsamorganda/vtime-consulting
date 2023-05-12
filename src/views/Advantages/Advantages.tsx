@@ -10,31 +10,35 @@ import useSize from "@/hooks/useSize"
 import cx from "clsx"
 
 const Advantages = () => {
-  const { tablet, phone } = useSize()
   return (
-    <SectionContainer className='flex justify-center flex-col flex-wrap'>
-      <div className='grid place-items-center'>
-        <TitleText
-          size='head'
-          direction='center'>
-          Advantages
-        </TitleText>
-      </div>
-      <div className={cx('flex justify-between items-center max-md:justify-center', 'tablet:flex-col gap-16', 'phone:!gap-5')}>
-        <AdvantageBox
-          description='Innovative'
-          image={innovative}
-        />
-        <AdvantageBox
-          image={crossIndustry}
-          description='Cross Industry Experience'
-        />
-        <AdvantageBox
-          image={worldwide}
-          description='Wide Global Connection'
-        />
-      </div>
-    </SectionContainer>
+    <section >
+      <SectionContainer className='flex justify-center flex-col flex-wrap '>
+        <div className='grid place-items-center mb-6'>
+          <TitleText
+            size='head'
+            direction='center'>
+            Advantages
+          </TitleText>
+        </div>
+        <div className={cx('flex justify-between gap-0 items-center', 'tablet:flex-col gap-16', 'phone:gap-5')}>
+          <AdvantageBox
+            title="Innovative"
+            description='We exceed expectations and provide business excellence.'
+            image={innovative}
+          />
+          <AdvantageBox
+            title="Cross Industry Experience"
+            image={crossIndustry}
+            description='We bring perspectives and promote out-of-the-box ideas.'
+          />
+          <AdvantageBox
+            title="Wide Global Connection"
+            image={worldwide}
+            description='We have trusted connections from different parts of the world.'
+          />
+        </div>
+      </SectionContainer>
+    </section>
   )
 }
 

@@ -11,13 +11,13 @@ const ExpertiseCard = ({ description, image, title, className }: ExpertiseCardPr
 
   return (
     <div className={cx(className, 'flex w-[22rem] gap-5 justify-center', 'phone:w-[17rem]', 'py-2')}>
-      <div className={cx('w-[5rem] h-[5rem] flex', 'phone:w-[3.8rem] phone:h-[3.8rem]')}>
+      <div className={cx('w-[5rem] h-[5rem] flex border-2 border-primary rounded-lg', 'phone:w-[3.8rem] phone:h-[3.8rem]')}>
         <Image
           src={image}
           height={100}
-          width={200}
+          width={100}
           alt={title}
-          className={cx('p-3 rounded-lg flex-[0.1]', 'phone:border')}
+          className={cx('rounded-lg flex-[0.1] p-3', 'phone:border')}
         />
       </div>
       <div className={cx('flex flex-col flex-1 gap-3', 'phone:gap-1')}>

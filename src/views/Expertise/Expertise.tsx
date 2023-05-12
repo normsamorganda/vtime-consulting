@@ -17,7 +17,6 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import { useState } from "react"
 
 const Expertise = () => {
-  const [slider, setSlider] = useState<string>('right')
   const { tablet, phone } = useSize()
   const items = [
     [{
@@ -58,6 +57,28 @@ const Expertise = () => {
       image: financing
     },
     ],
+    [
+      {
+        id: 7,
+        description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+        title: 'Importing',
+        image: financing
+      },
+
+      {
+        id: 8,
+        description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+        title: 'Exporting',
+        image: financing
+      },
+
+      {
+        id: 9,
+        description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+        title: 'Human Resources',
+        image: financing
+      },
+    ]
 
   ]
 
@@ -97,6 +118,27 @@ const Expertise = () => {
       id: 6,
       description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
       title: 'Financing',
+      image: financing
+    },
+
+    {
+      id: 7,
+      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      title: 'Importing',
+      image: financing
+    },
+
+    {
+      id: 8,
+      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      title: 'Exporting',
+      image: financing
+    },
+
+    {
+      id: 9,
+      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      title: 'Human Resources',
       image: financing
     },
 
@@ -155,14 +197,21 @@ const Expertise = () => {
           // tablet
           <div className="flex justify-center items-center w-full relative overflow-hidden">
             {/* 1st */}
-            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute w-full ', index === 1 ? 'translate-x-0' : 'translate-x-full')}>
+            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute w-full ', index === 0 ? 'translate-x-0' : 'translate-x-full')}>
               {item[0].map((item, index) => {
                 return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
               })}
             </div>
             {/* 2nd */}
-            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute  w-full', index === 1 ? 'translate-x-full' : 'translate-x-0')}>
+            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute  w-full', index === 1 ? 'translate-x-0' : 'translate-x-full')}>
               {item[1].map((item, index) => {
+                return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
+              })}
+            </div>
+
+            {/* 3rd */}
+            <div className={cx('flex flex-col justify-center items-center transition-all duration-700', 'absolute  w-full', index === 2 ? 'translate-x-0' : 'translate-x-full')}>
+              {item[2].map((item, index) => {
                 return <ExpertiseCard key={item.id} description={item.description} image={item.image} title={item.title} />
               })}
             </div>

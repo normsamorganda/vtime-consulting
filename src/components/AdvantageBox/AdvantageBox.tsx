@@ -6,24 +6,28 @@ import { Text } from "../Text"
 import cx from "clsx"
 import useSize from "@/hooks/useSize"
 
-const AdvantageBox = ({ description, image, className }: AdvantageBoxProps) => {
+const AdvantageBox = ({ description, image, className, title }: AdvantageBoxProps) => {
 
   const { tablet, phone } = useSize()
 
   return (
-    <div className={cx('shadow-custom rounded-xl flex flex-col items-center p-5 w-60 h-60 justify-evenly', tablet && 'w-full')}>
-      <div className='border border-gray-500/10 rounded-full w-[100px] h-[100px] flex items-center justify-evenly'>
-        <Image
-          src={image}
-          height={65}
-          width={65}
-          alt={description}
-          className='p-3'
-        />
-      </div>
-      <div className='text-center'>
-        <Text size='normal' className="!font-semibold">{description}</Text>
-      </div>
+    <div className="vertical  flex w-[280px] h-[280px]">
+      <section className={cx("front items-center gap-10", 'flex flex-col justify-between', 'shadow-custom ')}>
+        <div className='border border-gray-500/10 rounded-full  w-[150px] h-[150px] flex items-center justify-evenly'>
+          <Image
+            src={image}
+            height={80}
+            width={80}
+            alt={description}
+            className='p-3'
+          />
+        </div>
+        <Text size="subtitle" className="text-black font-normal">{title}</Text>
+      </section>
+
+      <section className={cx("back shadow-custom", "flex items-center justify-center")}>
+        <Text size="normal" className="text-slate-800 text-center font-extrabold">{description}</Text>
+      </section>
     </div>
   )
 }

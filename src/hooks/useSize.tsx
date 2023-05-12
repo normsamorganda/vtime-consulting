@@ -7,7 +7,9 @@ import { useEffect, useState } from "react"
 
 const useSize = () => {
     const [isPhone, setIsPhone] = useState<{ phone: boolean, tablet: boolean }>({ phone: false, tablet: false })
-    const [set, setSize] = useState<any>(0)
+    const [set, setSize] = useState<any>(() => {
+        return typeof window !== 'undefined' ? window.innerWidth : 0;
+    })
 
 
     const checkWindow = () => {
@@ -22,7 +24,7 @@ const useSize = () => {
                 setIsPhone({ phone: false, tablet: false })
                 console.log('desktop')
             }
-            if (set <= 900 && set > 450) {
+            if (set <= 900) {
                 setIsPhone({ phone: false, tablet: true })
                 console.log('tablet');
             }
@@ -31,12 +33,6 @@ const useSize = () => {
         }
 
 
-
-
-        // if (set <= 485) {
-        //     setIsPhone({ phone: true, tablet: false })
-        //     console.log('phone')
-        // }
         return () => window.removeEventListener('resize', checkWindow)
     }, [set])
 

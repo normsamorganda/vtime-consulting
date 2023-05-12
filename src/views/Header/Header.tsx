@@ -1,5 +1,6 @@
 'use client'
 import { headerBg3, whiteHeader, whiteLogo } from "@/assets/Header"
+import MobileMenu from "@/components/MobileMenu/MobileMenu"
 import { Search } from "@/components/Search"
 import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
@@ -60,7 +61,7 @@ const Header = () => {
         {tablet ? "" : <div className={cx("flex gap-10 items-center", "laptopL:!gap-5")}>
           {navLinks.map((links, i) => {
             return <Link href={links.link} key={i} >
-              <Text size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", " text-black", "laptop:!text-xs")}>{links.text}</Text>
+              <Text size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
             </Link>
           })}
         </div>}
@@ -78,9 +79,8 @@ const Header = () => {
       <div className="absolute right-[3%] top-1/2 -translate-y-1/2">
         <Search />
       </div>
-
-
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
+      {/* <MobileMenu /> */}
     </section>
 
   )

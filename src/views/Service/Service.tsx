@@ -70,7 +70,7 @@ const Service = () => {
               </TitleText>
               <Text
                 size='description'
-                className={cx('font-thin flex-col flex gap-3 mb-3', 'tablet:gap-2 tablet:!text-xs', 'phone:gap-1 phone:!text-[9px]')}>
+                className={cx('!font-normal text-slate-800/80 flex-col flex gap-3 mb-3', 'tablet:gap-2 tablet:!text-xs', 'phone:gap-1 phone:!text-[9px]')}>
                 <span>
                   Our corporate services are designed to help businesses of all sizes streamline their operations, reduce costs, and stay compliant with local regulations.
                 </span>
@@ -84,16 +84,22 @@ const Service = () => {
 
 
               </Text>
-              {!tablet && <Button
-                content='Read More'
-                reverse
-
-              />}
             </article>
             {/* RIGHT PICTURES */}
-            <article className={cx('flex-1 flex items-center justify-center', 'tablet:!max-w-[22rem]')}>
-              <div className={cx("max-w-md", 'tablet:!max-w-sm')}>
-                <Image src={servicesImage} alt="services images" height={100} width={500} />
+            <article className={cx('flex-1 flex items-center justify-center', 'tablet:!max-w-[400px]')}>
+              <div className={cx("relative bg-slate-400/10 h-96 w-[400px] p-20", "tablet:max-w-[350px] tablet:max-h-[300px]", "phone:max-w-[300px] phone:max-h-[240px]")}>
+                <article className={cx("absolute top-10 left-[18%]", "tablet:top-0 tablet:max-w-[8rem] tablet:left-[21%]", "phone:max-w-[6rem] phone:left-[23%]")} >
+                  <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Corporate</Text>
+                  <Image src={corporate} width={140} alt="corporate" className={cx("serviceBox")} />
+                </article>
+                <article className={cx("absolute bottom-5 left-[6%]", "tablet:bottom-2 tablet:border-2 tablet:left-[13%] tablet:max-w-[10rem]", "phone:max-w-[8rem]")}>
+                  <Image src={outsourcing} width={190} alt="Outsourcing" className={cx("serviceBox")} />
+                  <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Outsourcing</Text>
+                </article>
+                <article className={cx("absolute top-32 right-6", "tablet:top-20 tablet:max-w-[8rem] tablet:right-2", "phone:max-w-[6.5rem] phone:top-14 phone:right-5")}>
+                  <Image src={visaImmigration} width={150} alt="Visa & Immigration" className={cx("serviceBox")} />
+                  <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Visa & Immigration</Text>
+                </article>
               </div>
             </article>
           </section>

@@ -19,7 +19,7 @@ const TitleText = ({
       <Text
         size={'head'}
         className={cx(
-          `tracking-wide font-medium mt-1 mb-6`,
+          `tracking-wide font-medium mt-1 mb-6 !text-4xl`,
           className, 'tablet:!text-2xl', 'phone:!text-xl'
         )}>
         {children}

@@ -13,7 +13,7 @@ const SectionContainer = ({
 }: SectionContainerProps) => {
 
   return (
-    <div className={cx(`p-10 relative max-w-[75rem] mx-auto my-5`, className, 'flex flex-col', 'phone:px-3')}>
+    <div className={cx(`p-10 relative max-w-[75rem] mx-auto my-16`, className, 'flex flex-col', 'phone:px-3')}>
       {children}
     </div>
   )
