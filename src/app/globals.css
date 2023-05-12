@@ -53,9 +53,6 @@ body {
 
 /* ADVANTAGES BOX */
 
-.vertical {
-}
-
 .vertical:hover > .front {
   opacity: 0;
   transform: rotateX(180deg);

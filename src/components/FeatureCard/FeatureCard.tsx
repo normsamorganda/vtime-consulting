@@ -9,13 +9,13 @@ const FeatureCard = ({ date, description, image, tag, className }: FeatureCardPr
   return (
     <section className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center', 'transition-all duration-500 tablet:opacity-0.5')}>
       <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem] laptopL:w-[16rem]')}>
-        <div className='w-full'>
+        <div className='w-full overflow-hidden'>
           <Image
             src={image}
             height={469}
             width={415}
             alt={""}
-            className="rounded-tr-3xl rounded-tl-3xl"
+            className="rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-500"
           />
         </div>
         <div className='absolute top-[48%] -translate-y-1/2 left-[-1px] bg-white p-1 flex gap-2 rounded-tr-md px-3 laptopL:top-[37%]'>
