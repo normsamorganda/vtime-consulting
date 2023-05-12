@@ -17,7 +17,7 @@ const ExpertiseCard = ({ description, image, title, className }: ExpertiseCardPr
           height={100}
           width={100}
           alt={title}
-          className={cx('rounded-lg flex-[0.1] p-3', 'phone:border')}
+          className={cx('rounded-lg flex-[0.1] p-3',)}
         />
       </div>
       <div className={cx('flex flex-col flex-1 gap-3', 'phone:gap-1')}>
