@@ -11,7 +11,7 @@ const AdvantageBox = ({ description, image, className, title }: AdvantageBoxProp
   const { tablet, phone } = useSize()
 
   return (
-    <div className="vertical  flex w-[280px] h-[280px]">
+    <div className="vertical flex w-[280px] h-[280px]">
       <section className={cx("front items-center gap-10", 'flex flex-col justify-between', 'shadow-custom ')}>
         <div className='border border-gray-500/10 rounded-full  w-[150px] h-[150px] flex items-center justify-evenly'>
           <Image

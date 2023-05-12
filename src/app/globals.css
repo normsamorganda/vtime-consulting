@@ -81,33 +81,32 @@ body {
   display: block;
   margin: 20px auto;
   position: relative;
+}
+.vertical.front {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  /* border: solid 2px red; */
+}
 
-  & > .front {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    /* border: solid 2px red; */
-  }
+.vertical.back {
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 
-  & > .back {
-    background-color: white;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }
-
-  & > .front,
-  & > .back {
-    height: 100%;
-    width: 100%;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    transition-duration: 1s;
-    transition-property: transform, opacity;
-  }
+.vertical.front,
+.vertical.back {
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  transition-duration: 1s;
+  transition-property: transform, opacity;
 }
 
 /* SERVICE HIGHLIGHTS */
