@@ -53,24 +53,26 @@ body {
 
 /* ADVANTAGES BOX */
 
-.vertical.front {
-  opacity: 1;
-  transform: rotateX(0deg);
-}
-
-.vertical.back {
-  opacity: 0;
-  transform: rotateX(180deg);
+.vertical {
 }
 
 .vertical:hover > .front {
   opacity: 0;
   transform: rotateX(180deg);
 }
-
 .vertical:hover > .back {
   opacity: 1;
   transform: rotateX(0deg);
+}
+
+.vertical .front {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.vertical .back {
+  opacity: 0;
+  transform: rotateX(180deg);
 }
 
 .vertical {
@@ -78,22 +80,22 @@ body {
   margin: 20px auto;
   position: relative;
 }
-.vertical.front {
+.vertical .front {
   background-color: white;
   display: flex;
   justify-content: center;
   /* border: solid 2px red; */
 }
 
-.vertical.back {
+.vertical .back {
   background-color: white;
   position: absolute;
   top: 0px;
   left: 0px;
 }
 
-.vertical.front,
-.vertical.back {
+.vertical .front,
+.vertical .back {
   height: 100%;
   width: 100%;
   color: white;

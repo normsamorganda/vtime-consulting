@@ -7,7 +7,6 @@ import useSize from "@/hooks/useSize"
 import cx from "clsx"
 
 const ExpertiseCard = ({ description, image, title, className }: ExpertiseCardProps) => {
-  const { tablet, phone } = useSize()
 
   return (
     <div className={cx(className, 'flex w-[22rem] gap-5 justify-center', 'phone:w-[17rem]', 'py-2')}>
