@@ -29,7 +29,6 @@ export default function Home() {
         <Affiliates />
         <Contact />
         <Footer />
-
       </div>
       <FooterExtras />
     </main>

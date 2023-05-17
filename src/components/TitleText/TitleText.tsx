@@ -11,6 +11,7 @@ const TitleText = ({
   size = 'head',
   className,
 }: TitleTextProps) => {
+  
   const { tablet, phone } = useSize()
 
   return (

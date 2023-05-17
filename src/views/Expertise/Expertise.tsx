@@ -1,5 +1,4 @@
 'use client'
-
 import {
   construction,
   financing,
@@ -7,6 +6,9 @@ import {
   foodAndBeverages,
   information,
   lending,
+  hr,
+  exp,
+  imp
 } from "@/assets/Expertise"
 import { ExpertiseCard } from "@/components/ExpertiseCard"
 import { SectionContainer } from "@/components/SectionContainer"
@@ -18,8 +20,10 @@ import { useState } from "react"
 
 const Expertise = () => {
   const { tablet, phone } = useSize()
+
   const items = [
-    [{
+    [
+      {
       id: 1,
       description: 'A multifaceted field that requires diverse skills and expertise and a deep understanding of building materials, techniques, and regulations.',
       title: 'Construction',
@@ -38,7 +42,8 @@ const Expertise = () => {
       image: information
     },
     ],
-    [{
+    [
+      {
       id: 4,
       description: 'An essential and dynamic industry that plays a vital role in our daily lives.',
       title: 'Food & Beverages',
@@ -62,21 +67,21 @@ const Expertise = () => {
         id: 7,
         description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
         title: 'Importing',
-        image: financing
+        image: imp
       },
 
       {
         id: 8,
         description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
         title: 'Exporting',
-        image: financing
+        image: exp
       },
 
       {
         id: 9,
         description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
         title: 'Human Resources',
-        image: financing
+        image: hr
       },
     ]
 
@@ -125,21 +130,21 @@ const Expertise = () => {
       id: 7,
       description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
       title: 'Importing',
-      image: financing
+      image: imp
     },
 
     {
       id: 8,
       description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
       title: 'Exporting',
-      image: financing
+      image: exp
     },
 
     {
       id: 9,
       description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
       title: 'Human Resources',
-      image: financing
+      image: hr
     },
 
 
@@ -152,11 +157,12 @@ const Expertise = () => {
   const [item, setItem] = useState(items)
   const [index, setIndex] = useState(0)
 
-  console.log(index);
+  // console.log(index);
 
   const nextSlide = () => {
     setIndex((oldIndex) => {
       let index = oldIndex + 1
+      console.log(oldIndex)
       if (index > item.length - 1) {
         index = 0
       }
@@ -221,7 +227,6 @@ const Expertise = () => {
           // desktop
           <div className={cx("flex flex-wrap gap-5 justify-evenly", "tablet:justify-center")}>
             {newItems.map((item, itemIndex) => {
-
               let position = "nextSlide"
               if (itemIndex === index) {
                 position = "activeSlide"

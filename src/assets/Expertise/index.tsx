@@ -4,6 +4,9 @@ import foodAndBeverages from "./foodAndBeverages.png"
 import information from "./information-tech.png"
 import lending from "./lending.png"
 import fintech from "./fintech.png"
+import hr from "./hr.png"
+import exp from "./exp.png"
+import imp from "./imp.png"
 
 export {
   construction,
@@ -12,4 +15,7 @@ export {
   information,
   lending,
   fintech,
+  hr,
+  exp,
+  imp
 }
