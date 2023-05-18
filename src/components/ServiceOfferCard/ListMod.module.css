@@ -1,0 +1,22 @@
+.custom-list-disc {
+  list-style-type: none; 
+  padding-left: 1.5rem; 
+}
+
+.custom-list-disc li::before {
+  content: "•";
+  font-size: 30px; 
+  line-height: 0.1em; 
+  vertical-align: middle; 
+  margin-right: 0.5em; 
+  color: #2a9df4; 
+}
+
+.custom-list-disc-mobile li::before {
+  content: "•";
+  font-size: 15px; 
+  line-height: 0.1em; 
+  vertical-align: middle; 
+  margin-right: 0.5em; 
+  color: #2a9df4; 
+}

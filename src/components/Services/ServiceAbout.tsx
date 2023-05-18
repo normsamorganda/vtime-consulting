@@ -1,8 +1,15 @@
 'use-client'
+import { ServiceAbout } from "./types"
 
-const ServiceAbout = () => {
+const ServiceAbout = ({
+  title,
+  parag1,
+  parag2
+}: ServiceAbout) => {
   return (
-    <div>Services</div>
+    <div>
+      <h1 className=""></h1>
+    </div>
   )
 }
 

@@ -15,7 +15,13 @@ import layerBg3 from './layerBg3.png'
 import servicesBg from './servicesBg.png'
 import warrenBg from './warrenBg.png'
 import nServiceBg from './nServiceBg.png'
-
+import YP from './YoungPeople.png'
+import Visa from './Visa.png'
+import MF from './male-female-reading.png'
+import cased from './case.png'
+import outsource from './outsource.png'
+import passport from './passport.png'
+import message from './message.png'
 export {
   corporate,
   outsourcing,
@@ -33,6 +39,12 @@ export {
   layerBg3,
   servicesBg,
   nServiceBg,
-  warrenBg
-
+  warrenBg,
+  YP,
+  Visa,
+  MF,
+  cased,
+  outsource,
+  passport,
+  message
 }
