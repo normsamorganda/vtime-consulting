@@ -3,7 +3,7 @@ import { ServiceOfferCardProps } from "./types"
 import Image from "next/image"
 import cx from 'clsx'
 import styles from './ListMod.module.css';
-import BsChatLeftText from 'react-icons'
+
 const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, img1, img2} : any) => {
   return (
 <div className="w-full mt-12">
