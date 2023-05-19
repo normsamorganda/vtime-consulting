@@ -103,7 +103,7 @@ const ContainerVisa = () => {
             </div>
         </div>
 
-        <div className="md:grid grid-cols-2">
+        <div className="lg:grid grid-cols-2">
             {visaJobs.map((job) => {
                 return (
                     <JobVisa key={job.id} title={job.title} job1={job.job1} job2={job.job2} job3={job.job3} job4={job.job4} job5={job.job5} job6={job.job6} img={job.img} />
