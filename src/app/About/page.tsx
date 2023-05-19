@@ -5,7 +5,7 @@ import { workingTeamBg } from "@/assets/Hero";
 import ServiceContainer from "@/views/ServiceContainer/ServiceContainer";
 import Service from "@/views/Service/Service";
 import ServiceOffer from "@/views/ServiceOffer/ServiceOffer"
-import HeroService from "@/views/HeroService/HeroService"
+import HeroService from "@/views/Hero/HeroService"
 import Footer from "@/views/Footer/Footer"
 import FooterExtras from "@/views/FooterExtras/FooterExtras"
 import ContactManagement from "@/views/Contact/ContactManagement"

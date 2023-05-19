@@ -22,6 +22,12 @@ import cased from './case.png'
 import outsource from './outsource.png'
 import passport from './passport.png'
 import message from './message.png'
+import CorpBuilding from './CorpBuilding.png'
+import CorpConstruction from './CorpConstruction.png'
+import CorpManagement from './CorpManagement.png'
+import CorpDriverlicense from './CorpDriver-license.png'
+import CorpRegistration from './CorpRegistration.png'
+import CorpTeamWork from './CorpTeamWork.png'
 export {
   corporate,
   outsourcing,
@@ -46,5 +52,11 @@ export {
   cased,
   outsource,
   passport,
-  message
+  message,
+  CorpBuilding,
+  CorpConstruction,
+  CorpManagement,
+  CorpDriverlicense,
+  CorpRegistration,
+  CorpTeamWork
 }

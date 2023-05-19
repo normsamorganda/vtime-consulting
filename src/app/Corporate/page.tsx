@@ -1,18 +1,21 @@
 import { Text } from "@/components/Text";
 import Header from "@/views/Header/Header";
 import Link from "next/link";
-
+import Footer from "@/views/Footer/Footer"
+import FooterExtras from "@/views/FooterExtras/FooterExtras"
+import ContactManagement from "@/views/Contact/ContactManagement"
+import HeroCorporate from "@/views/Hero/HeroCoporate";
+import CorporateContainer from "@/views/ServiceContainer/CorporateContainer";
+import CorporateOffer from "@/views/ServiceOffer/CorporateOffer";
 const Corporate = () => {
     return (<div className="px-[5px] text-black">
         <Header />
-        <div className="flex-col flex w-full h-screen border-2 border-red-900 items-center">
-            <Link href={'/'} className="underline mr-auto">Go back Home</Link>
-            <div className="flex flex-col gap-3 justify-center items-center h-full">
-                <Text size="title">CORPORATE page</Text>
-                <Text size="title">STILL UNDER CONSTRUCTION</Text>
-            </div>
-
-        </div>
+        <HeroCorporate/>
+        <CorporateContainer/>
+        <CorporateOffer/>
+        <ContactManagement />
+        <Footer/>
+        <FooterExtras/>
     </div>);
 
 }

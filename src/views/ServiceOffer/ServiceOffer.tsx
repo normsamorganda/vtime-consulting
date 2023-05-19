@@ -10,7 +10,7 @@ import {
   import ServiceOfferCard from "@/components/ServiceOfferCard/ServiceOfferCard";
 const ServiceOffer = () => {
 
-    let ServiceOffer = [
+    let servOffer = [
         {
             id:1,
             title:'Corporate',
@@ -46,7 +46,7 @@ const ServiceOffer = () => {
     ]
   return (
     <>
-        {ServiceOffer.map((offer) => {
+        {servOffer.map((offer) => {
             return (
                 
                     <ServiceOfferCard key={offer.id} title={offer.title} offer1={offer.offer1} offer2={offer.offer2} offer3={offer.offer3} offer4={offer.offer4} offer5={offer.offer5} img1={offer.img1} img2={offer.img2}/>

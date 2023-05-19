@@ -26,7 +26,7 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
         <div>
             <Image src={img1}
                 alt={""}
-                className="rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer w-[auto] h-[250px] md:h-[auto] md:w-[500px]"></Image>
+                className="rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover h-[250px]  md:h-[auto] md:w-[500px]"></Image>
         </div>
     </div>
 

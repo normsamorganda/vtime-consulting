@@ -50,14 +50,12 @@ const Header = () => {
 
   const handleShow = () => {
     setopenDiv(!openDiv)
-   
   }
-
   return (
     <section className="relative">
-       <div className= {openDiv ? "absolute bg-primary w-screen h-screen z-40" : ""}>
-
-          </div>
+       <div className= {openDiv ? " absolute bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
+          <span className="text-xl text-black absolute right-12 top-5" onClick={() => {setopenDiv(!openDiv)}}>X</span>
+        </div>
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
         {tablet ? <FaBars className={cx("text-white w-10 h-10", 'phone:w-6')} onClick={handleShow}/> : <Image src={whiteLogo.src} width={500} height={300} alt="logo"/>}
       </div>
