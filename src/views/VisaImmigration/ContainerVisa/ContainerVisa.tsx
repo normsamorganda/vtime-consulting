@@ -4,6 +4,7 @@ import cx from 'clsx'
 import { one, two, three } from "@/assets/VisaImmigration";
 import ProcessVisa from '@/components/VisaImmigration/ProcessVisa'
 import JobVisa from "@/components/VisaImmigration/JobVisa";
+import { TitleText } from "@/components/TitleText"
 import {
     others,
     tourist,
@@ -68,17 +69,19 @@ const ContainerVisa = () => {
                 img:others
             },
         ]
-
-
-
   return (
-    <div className="flex flex-col justify-center text-left w-3/5 mx-auto">
-        <div className="text-center">
-            <Text
-            size='title'
-            className={cx('text-black mt-5 font-bold leading-6', 'tablet:!text-sm', 'phone:!text-[12px]')}>
+    <>
+    <div className="w-full text-center flex justify-center">
+            <TitleText
+            size='head'
+            direction='center'>
             Visa & Immigration
-            </Text>
+          </TitleText>
+    </div>
+     <div className="flex flex-col justify-center text-left w-3/5 mx-auto">
+        
+        <div className="text-center">
+         
         <Text
           size='normal'
           className={cx('text-black mt-5 leading-6', 'tablet:!text-sm', 'phone:!text-[12px]')}>
@@ -110,14 +113,9 @@ const ContainerVisa = () => {
                 )
             })}
         </div>
-
-      
-           
-
-  
-
-
     </div>
+    </>
+   
   )
 }
 
