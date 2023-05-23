@@ -109,8 +109,6 @@ body {
 .serviceBox:hover {
   transition: transform 330ms ease-in-out;
   transform: scale(1.2);
-
-
 }
 
 
