@@ -16,17 +16,17 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
                 {key}
                 <span className="font-bold mt-12 md:pl-8">{title}</span>
             <ul className="list-disc md:ml-12 pt-2">
-                <li className="text-[10px] font-semibold text-left md:text-[15px]">{offer1}</li>
-                <li className="text-[10px] font-semibold text-left md:text-[15px]">{offer2}</li>
-                <li className="text-[10px] font-semibold text-left md:text-[15px]">{offer3}</li>
-                <li className="text-[10px] font-semibold text-left md:text-[15px]">{offer4}</li>
-                <li className="text-[10px] font-semibold text-left md:text-[15px]">{offer5}</li>
+                <li className="text-[10px] text-left md:text-[15px]">{offer1}</li>
+                <li className="text-[10px] text-left md:text-[15px]">{offer2}</li>
+                <li className="text-[10px] text-left md:text-[15px]">{offer3}</li>
+                <li className="text-[10px] text-left md:text-[15px]">{offer4}</li>
+                <li className="text-[10px] text-left md:text-[15px]">{offer5}</li>
             </ul>
         </div>
         <div>
             <Image src={img1}
                 alt={""}
-                className="rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover h-[250px]  md:h-[auto] md:w-[500px]"></Image>
+                className="w-[280px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover md:h-[auto] md:w-[500px]"></Image>
         </div>
     </div>
 
