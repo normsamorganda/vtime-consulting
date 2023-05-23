@@ -1,14 +1,15 @@
 'use client';
 import { Text } from "@/components/Text"
+import { TitleText } from "@/components/TitleText";
 import cx from 'clsx'
 const ServiceContainer = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-        <Text
-          size='title'
-          className={cx('text-black mt-5 font-bold leading-6', 'tablet:!text-sm', 'phone:!text-[12px]')}>
-        Our Services
-        </Text>
+         <TitleText
+            size='head'
+            direction='center'>
+            Services
+          </TitleText>
         <Text
           size='normal'
           className={cx('text-black mt-5 leading-6 text-center', 'tablet:!text-sm', 'phone:!text-[12px]')}>

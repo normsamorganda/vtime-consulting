@@ -88,16 +88,16 @@ const Service = () => {
             {/* RIGHT PICTURES */}
             <article className={cx('flex-1 flex items-center justify-center', 'tablet:!max-w-[400px]')}>
               <div className={cx("relative bg-slate-400/10 h-96 w-[400px] p-20", "tablet:max-w-[350px] tablet:max-h-[300px]", "phone:max-w-[300px] phone:max-h-[240px]")}>
-                <article className={cx("absolute top-10 left-[18%]", "tablet:top-0 tablet:max-w-[8rem] tablet:left-[21%]", "phone:max-w-[6rem] phone:left-[23%]")} >
+                <article className={cx("absolute top-10 left-[18%] serviceBox", "tablet:top-0 tablet:max-w-[8rem] tablet:left-[21%]", "phone:max-w-[6rem] phone:left-[23%]")} >
                   <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Corporate</Text>
-                  <Image src={corporate} width={140} alt="corporate" className={cx("serviceBox")} />
+                  <Image src={corporate} width={140} alt="corporate" className={cx("")} />
                 </article>
-                <article className={cx("absolute bottom-5 left-[6%]", "tablet:bottom-2 tablet:border-2 tablet:left-[13%] tablet:max-w-[10rem]", "phone:max-w-[8rem]")}>
-                  <Image src={outsourcing} width={190} alt="Outsourcing" className={cx("serviceBox")} />
+                <article className={cx("absolute bottom-5 left-[6%] serviceBox", "tablet:bottom-2 tablet:border-2 tablet:left-[13%] tablet:max-w-[10rem]", "phone:max-w-[8rem]")}>
+                  <Image src={outsourcing} width={190} alt="Outsourcing" className={cx("")} />
                   <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Outsourcing</Text>
                 </article>
-                <article className={cx("absolute top-32 right-6", "tablet:top-20 tablet:max-w-[8rem] tablet:right-2", "phone:max-w-[6.5rem] phone:top-14 phone:right-5")}>
-                  <Image src={visaImmigration} width={150} alt="Visa & Immigration" className={cx("serviceBox")} />
+                <article className={cx("absolute top-32 right-6 serviceBox", "tablet:top-20 tablet:max-w-[8rem] tablet:right-2", "phone:max-w-[6.5rem] phone:top-14 phone:right-5")}>
+                  <Image src={visaImmigration} width={150} alt="Visa & Immigration" className={cx("")} />
                   <Text size="tiny" className={cx("font-medium !text-[10px]", "after:content-[' '] after:absolute after:h-[3px] after:w-4 after:bg-secondary after:-left-5 after:!top-1/2 after:-translate-y-1/2 relative", "left-6", 'phone:!text-[8px]')}>Visa & Immigration</Text>
                 </article>
               </div>

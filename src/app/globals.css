@@ -107,6 +107,16 @@ body {
 /* SERVICE HIGHLIGHTS */
 
 .serviceBox:hover {
+  transition: transform 330ms ease-in-out;
+  transform: scale(1.2);
+
+
+}
+
+
+
+
+/* .serviceBox:hover {
   position: relative;
   animation: giggler 500ms ease-in-out;
 }
@@ -127,4 +137,4 @@ body {
   100% {
     transform: rotate(10deg);
   }
-}
+} */

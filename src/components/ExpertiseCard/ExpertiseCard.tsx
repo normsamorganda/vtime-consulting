@@ -30,11 +30,6 @@ const ExpertiseCard = ({ description, image, title, className }: ExpertiseCardPr
           className={cx('text-gray-700/70', 'phone:text-[10px]')}>
           {description.slice(0, 150)}
         </Text>
-        <Text
-          size='tiny'
-          className={cx('text-secondary cursor-pointer')}>
-          More
-        </Text>
       </div>
     </div>
   )
