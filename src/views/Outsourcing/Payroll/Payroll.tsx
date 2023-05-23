@@ -38,12 +38,6 @@ const Payroll = () => {
 
                 </ul>
         </div>
-       
-          
-
-
-       
- 
     </section>  
    
 </div>
