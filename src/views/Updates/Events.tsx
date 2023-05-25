@@ -104,10 +104,8 @@ const Events = () => {
          </div>
         </div>
       </section>
-      <section className="flex justify-center bg-[#fefefe] w-[1000px] items-center mx-auto rounded-3xl">
+      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[1000px]">
       <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
       navigation={{
         nextEl:".button-next-slide",
         prevEl:".button-prev-slide",
@@ -115,6 +113,25 @@ const Events = () => {
        pagination={{
         type: "fraction",
         el:".swiper-pagination"
+      }}
+      breakpoints={{
+
+        // 640: {
+        //   slidesPerView: 2,
+        //   spaceBetween: 20,
+        // },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 1,
+        },
+        1024: {
+          slidesPerView:2,
+          spaceBetween:1
+        },
+        1280: {
+          slidesPerView:3,
+          spaceBetween:1
+        },
       }}
        modules={[Pagination, Navigation]}
        >
