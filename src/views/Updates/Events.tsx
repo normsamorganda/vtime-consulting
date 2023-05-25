@@ -120,8 +120,8 @@ const Events = () => {
        >
         {FeaturedCards.map((card) => {
           return (
-            <SwiperSlide>
-              <FeatureCard key={card.id} date={card.date} description={card.description} image={card.image} tag={card.tag} />
+            <SwiperSlide key={card.id}>
+              <FeatureCard  date={card.date} description={card.description} image={card.image} tag={card.tag} />
             </SwiperSlide>
           )
         })}
