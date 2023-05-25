@@ -104,7 +104,7 @@ const Events = () => {
          </div>
         </div>
       </section>
-      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[1000px]">
+      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[970px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide",
