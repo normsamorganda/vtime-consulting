@@ -16,7 +16,7 @@ const BlogsCard = ({key, date, description, image, tag}: any) => {
             className="scale-110 h-[8rem] md:h-[10rem]"
           />
         </div>
-        <div className='absolute top-[18%] translate-y-1/2 left-[-1px] bg-[#fefefe] p-3 flex gap-2 rounded-tr-md px- md:top-[34%] '>
+        <div className='absolute top-[23%] translate-y-1/2 left-[-1px] bg-[#fefefe] p-3 flex gap-2 rounded-tr-md px- md:top-[35%] '>
           <Text
             className='text-[#1167b1]'
             size='tiny'>
@@ -26,7 +26,7 @@ const BlogsCard = ({key, date, description, image, tag}: any) => {
          {date}
             </Text>
         </div>
-        <div className='flex flex-col justify-center gap-3 w-full p-5 mt-3'>
+        <div className='flex flex-col justify-center gap-3 w-full p-5 mt-3 md:h-[175px]'>
           <Text
             size='tiny'
             className='!font-light text-justify'>

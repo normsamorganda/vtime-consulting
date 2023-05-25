@@ -21,16 +21,6 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 
 const ArticleBlogs = () => {
 
-
-  interface BlogsAndArticles {
-    id: number;
-    date: string;
-    description: string;
-    image: any;
-    tag: string;
-}
-
-
 /// index even numbers (0,2,4,5) for Blogs
 /// index odd numbers (1,3,5,6) for Articles
 
@@ -46,7 +36,7 @@ const ArticleBlogs = () => {
       id: 2,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
-      image: feature1,
+      image: feature3,
       tag: 'Articles'
     },     
     {
@@ -60,7 +50,7 @@ const ArticleBlogs = () => {
     id: 4,
     date: '19 Apr 2023',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
-    image: feature1,
+    image: feature2,
     tag: 'Articles'
   }, 
   ]
@@ -92,7 +82,7 @@ const ArticleBlogs = () => {
         type: "fraction",
         el:".swiper-pagination"
       }}
-      slidesPerGroup={2}
+      slidesPerGroup={1}
       breakpoints={{
         768: {
           slidesPerView: 2,

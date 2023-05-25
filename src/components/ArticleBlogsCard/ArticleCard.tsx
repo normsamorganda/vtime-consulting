@@ -7,7 +7,7 @@ import cx from "clsx"
 const ArticleCard = ({ key, date, description, image, tag, className }: any) => {
   return (
     <section className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center', 'transition-all duration-500 tablet:opacity-0.5')}>
-      <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem] laptopL:w-[16rem] ml-[160px]')}>
+      <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem] md:ml-[160px] laptopL:w-[16rem]')}>
         <div className='w-full overflow-hidden'>
           <Image
             src={image}
