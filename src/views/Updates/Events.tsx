@@ -24,9 +24,6 @@ import { useEffect, useState } from "react"
 import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from "react-icons/hi"
 const Events = () => {
 
-  const { tablet } = useSize()
-  const swiper = useSwiper();
-
   const FeaturedCards = [
     {
       id: 1,
@@ -76,26 +73,6 @@ const Events = () => {
   const [items, setItems] = useState(FeaturedCards)
   const [index, setIndex] = useState(0)
 
-  // const nextSlide = () => {
-  //   setIndex((oldIndex) => {
-  //     let index = oldIndex + 1
-     
-  //     if (index > items.length - 1) {
-  //       index = 0
-  //     }
-  //     return index
-  //   })
-  // }
-  // const prevSlide = () => {
-  //   setIndex((oldIndex) => {
-  //     let index = oldIndex - 1
-  //     if (index < 0) {
-  //       index = items.length - 1
-  //     }
-  //     return index
-  //   })
-  // }
-
   return (
     <div style={{
       backgroundImage:`url(${bg.src})`,
@@ -144,7 +121,7 @@ const Events = () => {
         {FeaturedCards.map((card) => {
           return (
             <SwiperSlide>
-              <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} />
+              <FeatureCard key={card.id} date={card.date} description={card.description} image={card.image} tag={card.tag} />
             </SwiperSlide>
           )
         })}
