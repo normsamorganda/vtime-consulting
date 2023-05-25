@@ -1,15 +1,12 @@
 'use client'
 import { feature1, feature2, feature3 } from "@/assets/Feature"
 import { FeatureCard } from "@/components/FeatureCard"
-import { SectionContainer } from "@/components/SectionContainer"
 import { TitleText } from "@/components/TitleText"
 import { Text } from "@/components/Text"
 import { bg } from "@/assets/Updates"
-import cx from "clsx"
 
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Scrollbar, A11y } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,11 +14,8 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation, Pagination } from "swiper";
-
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
-import useSize from "@/hooks/useSize"
-import { useEffect, useState } from "react"
 import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from "react-icons/hi"
+
 const Events = () => {
 
   const FeaturedCards = [
@@ -70,13 +64,10 @@ const Events = () => {
     
   ]
 
-  const [items, setItems] = useState(FeaturedCards)
-  const [index, setIndex] = useState(0)
-
   return (
     <div style={{
       backgroundImage:`url(${bg.src})`,
-      backgroundPosition:'0px -266px;'
+      backgroundPosition:'0px -251px;'
     }}
     className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
     <div className="pt-12 w-3/4 mx-auto">
