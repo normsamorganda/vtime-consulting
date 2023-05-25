@@ -24,7 +24,7 @@ const HeroContactUs = () => {
         <section className="flex items-center justify-around mb-5">
           <Text
             className='font-semibold text-base pr-12'>
-            Connect with us today – we're just a form away!
+            Connect with us today – were just a form away!
           </Text>
       
         </section>
