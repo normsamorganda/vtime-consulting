@@ -5,26 +5,28 @@ import { SectionContainer } from "@/components/SectionContainer"
 import { TitleText } from "@/components/TitleText"
 import { Text } from "@/components/Text"
 import { bg } from "@/assets/Updates"
-
 import cx from "clsx"
+
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Scrollbar, A11y } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 // import required modules
-import { Navigation } from "swiper";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import useSize from "@/hooks/useSize"
 import { useEffect, useState } from "react"
-
+import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from "react-icons/hi"
 const Events = () => {
+
   const { tablet } = useSize()
+  const swiper = useSwiper();
+
   const FeaturedCards = [
     {
       id: 1,
@@ -32,43 +34,67 @@ const Events = () => {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature1,
       tag: 'News'
-    }, {
+    }, 
+    {
       id: 2,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature2,
       tag: 'Articles'
-    }, {
+    }, 
+    {
       id: 3,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature3,
       tag: 'Events'
     },
+    {
+      id: 4,
+      date: '19 Apr 2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+      image: feature3,
+      tag: 'Events'
+    },
+    {
+      id: 5,
+      date: '19 Apr 2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+      image: feature1,
+      tag: 'News'
+    }, 
+    {
+      id: 6,
+      date: '19 Apr 2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+      image: feature2,
+      tag: 'Articles'
+    },
+    
   ]
 
   const [items, setItems] = useState(FeaturedCards)
   const [index, setIndex] = useState(0)
 
-  const nextSlide = () => {
-    setIndex((oldIndex) => {
-      let index = oldIndex + 1
+  // const nextSlide = () => {
+  //   setIndex((oldIndex) => {
+  //     let index = oldIndex + 1
      
-      if (index > items.length - 1) {
-        index = 0
-      }
-      return index
-    })
-  }
-  const prevSlide = () => {
-    setIndex((oldIndex) => {
-      let index = oldIndex - 1
-      if (index < 0) {
-        index = items.length - 1
-      }
-      return index
-    })
-  }
+  //     if (index > items.length - 1) {
+  //       index = 0
+  //     }
+  //     return index
+  //   })
+  // }
+  // const prevSlide = () => {
+  //   setIndex((oldIndex) => {
+  //     let index = oldIndex - 1
+  //     if (index < 0) {
+  //       index = items.length - 1
+  //     }
+  //     return index
+  //   })
+  // }
 
   return (
     <div style={{
@@ -85,33 +111,56 @@ const Events = () => {
               Updates
           </TitleText>
       </div>
+
+
       <section className="flex items-center justify-around mb-5">
         <Text
           className='font-semibold text-lg pr-12'>
           Events
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-          <BsArrowLeft className={cx("text-3xl text-gray-500/30", "hover:text-primary", "phone:!text-lg")} onClick={prevSlide} />
-          <BsArrowRight className={cx("text-3xl text-gray-500/30", "hover:text-primary", "phone:!text-lg")} onClick={nextSlide} />
+        <div className="button-prev-slide text-[2rem] text-gray-400 active:text-sky-400">
+         <HiOutlineArrowNarrowLeft/>
+         </div>
+          <div className="button-next-slide text-[2rem] text-gray-400 active:text-sky-400">
+         <HiOutlineArrowNarrowRight/>
+         </div>
         </div>
       </section>
-      <section className={cx('flex justify-center gap-6', 'tablet:justify-center')}>
-        {FeaturedCards.map((card, cardIndex) => {
-          let position = "nextSlide"
-          if (cardIndex === index) {
-            position = "activeSlide"
-          }
-          if (
-            cardIndex === index - 1 ||
-            (index === 0 && cardIndex === items.length - 1)
-          ) {
-            position = "lastSlide"
-          }
-          return <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} className={cx('tablet:absolute', tablet && position)} />
+      <section className="flex justify-center bg-[#fefefe] w-[1000px] items-center mx-auto rounded-3xl">
+      <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation={{
+        nextEl:".button-next-slide",
+        prevEl:".button-prev-slide",
+       }}
+       pagination={{
+        type: "fraction",
+        el:".swiper-pagination"
+      }}
+       modules={[Pagination, Navigation]}
+       >
+        {FeaturedCards.map((card) => {
+          return (
+            <SwiperSlide>
+              <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} />
+            </SwiperSlide>
+          )
         })}
-      </section>
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+ 
+    </section>
+
+   
+      
       </div>
     </div>
+
+  
+
+        
 
     </div>
   )
