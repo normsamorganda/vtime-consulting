@@ -80,7 +80,7 @@ const Events = () => {
     }}
     className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
     <div className="pt-12 w-3/4 mx-auto">
-      <div className="py-12 bg-[#fefefe] rounded-lg">  
+      <div className="pt-12 bg-[#fefefe] rounded-lg">  
         <div className="flex justify-center"> 
         <TitleText
               size='head'

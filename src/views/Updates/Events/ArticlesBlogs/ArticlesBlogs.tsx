@@ -85,10 +85,11 @@ const ArticleBlogs = () => {
       slidesPerGroup={1}
       breakpoints={{
         768: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
         1024: {
-          slidesPerView:2,
+          slidesPerView:1,
+          slidesPerGroup:1
         },
         1280: {
           slidesPerView:2,

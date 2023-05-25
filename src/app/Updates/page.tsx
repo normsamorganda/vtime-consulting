@@ -1,10 +1,12 @@
-import { Text } from "@/components/Text";
 import Header from "@/views/Header/Header";
-import Link from "next/link";
 import Events from "@/views/Updates/Events/Events"
-import { bg } from "@/assets/Updates"
 import ArticleBlogs from "@/views/Updates/Events/ArticlesBlogs/ArticlesBlogs";
-import BlogsCard from "@/components/ArticleBlogsCard/BlogsCard";
+import News from "@/views/Updates/Events/News/News";
+import Reviews from "@/views/Updates/Events/Reviews/Reviews";
+import ContactManagement from "@/views/Contact/ContactManagement"
+import Footer from "@/views/Footer/Footer"
+import FooterExtras from "@/views/FooterExtras/FooterExtras"
+
 
 const Updates = () => {
     return (
@@ -12,7 +14,12 @@ const Updates = () => {
         <Header />
         <Events />
         <ArticleBlogs/>
-      
+        <News/>
+        <Reviews/>
+        <ContactManagement />
+        <Footer/>
+        <FooterExtras/>
+
     </div>
     );
 
