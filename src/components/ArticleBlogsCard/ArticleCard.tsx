@@ -1,14 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import { FeatureCardProps } from "./types"
 import { Text } from "../Text"
 import cx from "clsx"
 
-const FeatureCard = ({ key, date, description, image, tag, className }: any) => {
+const ArticleCard = ({ key, date, description, image, tag, className }: any) => {
   return (
     <section className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center', 'transition-all duration-500 tablet:opacity-0.5')}>
-      <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem] laptopL:w-[16rem] ml-[15px]')}>
+      <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem] laptopL:w-[16rem] ml-[160px]')}>
         <div className='w-full overflow-hidden'>
           <Image
             src={image}
@@ -43,4 +42,4 @@ const FeatureCard = ({ key, date, description, image, tag, className }: any) => 
   )
 }
 
-export default FeatureCard
+export default ArticleCard

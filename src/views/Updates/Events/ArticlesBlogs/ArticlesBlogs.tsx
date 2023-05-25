@@ -1,0 +1,131 @@
+'use client'
+
+import  ArticleCard  from "@/components/ArticleBlogsCard/ArticleCard"
+import { Text } from "@/components/Text"
+import BlogsCard from "@/components/ArticleBlogsCard/BlogsCard";
+
+//assets
+import { blogs } from '@/assets/Updates'
+import { feature1, feature2, feature3 } from "@/assets/Feature"
+
+// Import Swiper React components
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Navigation, Pagination } from "swiper";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
+
+const ArticleBlogs = () => {
+
+
+  interface BlogsAndArticles {
+    id: number;
+    date: string;
+    description: string;
+    image: any;
+    tag: string;
+}
+
+
+/// index even numbers (0,2,4,5) for Blogs
+/// index odd numbers (1,3,5,6) for Articles
+
+  const BlogsAndArticles = [
+    {
+        id: 1,
+        date: '19 Apr 2023',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+        image: blogs,
+        tag: 'Blogs'
+    }, 
+    {
+      id: 2,
+      date: '19 Apr 2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+      image: feature1,
+      tag: 'Articles'
+    },     
+    {
+      id: 3,
+      date: '19 Apr 2023',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+      image: blogs,
+      tag: 'Blogs'
+  }, 
+  {
+    id: 4,
+    date: '19 Apr 2023',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+    image: feature1,
+    tag: 'Articles'
+  }, 
+  ]
+
+  return (
+
+      <div className="pt-12 w-3/4 mx-auto">  
+      <section className="flex justify-around items-center  mb-5">
+        <Text
+          className='font-semibold text-lg'>
+          Article / Blogs
+        </Text>
+        <div className="mb-auto flex gap-2 mt-2">
+        <div className="button-prev-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowLeft/>
+         </div>
+          <div className="button-next-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowRight/>
+         </div>
+        </div>
+      </section>
+      <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[970px]">
+      <Swiper
+      navigation={{
+        nextEl:".button-next-slide-artBlog",
+        prevEl:".button-prev-slide-artBlog",
+       }}
+       pagination={{
+        type: "fraction",
+        el:".swiper-pagination"
+      }}
+      slidesPerGroup={2}
+      breakpoints={{
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView:2,
+        },
+        1280: {
+          slidesPerView:2,
+          slidesPerGroup:2
+        },
+      }}
+       modules={[Pagination, Navigation]}
+       >
+        {BlogsAndArticles.map((blogArt, index) => {
+          return index % 2 ? 
+          <SwiperSlide key={blogArt.id}>
+          <ArticleCard date={blogArt.date} description={blogArt.description} image={blogArt.image} tag={blogArt.tag} />
+          </SwiperSlide>
+          :
+          <SwiperSlide key={blogArt.id}>
+          <BlogsCard  date={blogArt.date} description={blogArt.description} image={blogArt.image} tag={blogArt.tag} />
+          </SwiperSlide>
+        })}
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+
+    </section>
+      </div>
+
+  )
+}
+
+export default ArticleBlogs
+
+

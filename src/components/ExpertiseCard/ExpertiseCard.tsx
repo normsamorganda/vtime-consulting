@@ -27,7 +27,7 @@ const ExpertiseCard = ({ description, image, title, className }: ExpertiseCardPr
         </Text>
         <Text
           size='tiny'
-          className={cx('text-gray-700/70', 'phone:text-[10px]')}>
+          className={cx('text-gray-700/70 text-justify', 'phone:text-[10px]')}>
           {description.slice(0, 150)}
         </Text>
       </div>

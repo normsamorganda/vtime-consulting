@@ -53,8 +53,16 @@ const Header = () => {
   }
   return (
     <section className="relative">
-       <div className= {openDiv ? " absolute bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
-          <span className="text-xl text-black absolute right-12 top-5" onClick={() => {setopenDiv(!openDiv)}}>X</span>
+       <div className= {openDiv ? " relative bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
+          <span className="text-xl font-bold text-black absolute right-12 top-5" onClick={() => {setopenDiv(!openDiv)}}>X</span>
+
+          {/* <Link href={'/'} className="underline mr-auto">Go back Home</Link>
+          <Link href={'/About'} className="underline mr-auto">About</Link>
+          <Link href={'/Corporate'} className="underline mr-auto">Corporate</Link>
+          <Link href={'/Visa&Immigration'} className="underline mr-auto">Visa&Immigration</Link>
+          <Link href={'/Outsourcing'} className="underline mr-auto">Outsourcing</Link>
+          <Link href={'/Updates'} className="underline mr-auto">Updates</Link> */}
+
         </div>
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
         {tablet ? <FaBars className={cx("text-white w-10 h-10", 'phone:w-6')} onClick={handleShow}/> : <Image src={whiteLogo.src} width={500} height={300} alt="logo"/>}

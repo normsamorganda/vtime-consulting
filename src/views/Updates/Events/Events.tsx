@@ -78,7 +78,7 @@ const Events = () => {
       backgroundImage:`url(${bg.src})`,
       backgroundPosition:'0px -266px;'
     }}
-    className="h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center">
+    className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
     <div className="pt-12 w-3/4 mx-auto">
       <div className="py-12 bg-[#fefefe] rounded-lg">  
         <div className="flex justify-center"> 
@@ -88,49 +88,40 @@ const Events = () => {
               Updates
           </TitleText>
       </div>
-
-
       <section className="flex items-center justify-around mb-5">
         <Text
           className='font-semibold text-lg pr-12'>
           Events
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-        <div className="button-prev-slide text-[2rem] text-gray-400 active:text-sky-400">
+        <div className="button-prev-slide-events text-[2rem] text-gray-400 active:text-sky-400">
          <HiOutlineArrowNarrowLeft/>
          </div>
-          <div className="button-next-slide text-[2rem] text-gray-400 active:text-sky-400">
+          <div className="button-next-slide-events text-[2rem] text-gray-400 active:text-sky-400">
          <HiOutlineArrowNarrowRight/>
          </div>
         </div>
       </section>
-      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[970px]">
+      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[1000px]">
       <Swiper
       navigation={{
-        nextEl:".button-next-slide",
-        prevEl:".button-prev-slide",
+        nextEl:".button-next-slide-events",
+        prevEl:".button-prev-slide-events",
        }}
        pagination={{
         type: "fraction",
         el:".swiper-pagination"
       }}
       breakpoints={{
-
-        // 640: {
-        //   slidesPerView: 2,
-        //   spaceBetween: 20,
-        // },
         768: {
           slidesPerView: 2,
-          spaceBetween: 1,
         },
         1024: {
           slidesPerView:2,
-          spaceBetween:1
         },
         1280: {
           slidesPerView:3,
-          spaceBetween:1
+          slidesPerGroup:3
         },
       }}
        modules={[Pagination, Navigation]}
@@ -144,18 +135,9 @@ const Events = () => {
         })}
         <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
- 
     </section>
-
-   
-      
       </div>
     </div>
-
-  
-
-        
-
     </div>
   )
 }
