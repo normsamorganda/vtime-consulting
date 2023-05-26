@@ -10,9 +10,9 @@ const HeroContactUs = () => {
         backgroundImage:`url(${bgMap.src})`,
         backgroundPosition: '0 -53px'
       }}
-      className="w-full h-screen bg-no-repeat bg-clip-content bg-cover">
+      className="w-full bg-no-repeat bg-clip-content bg-cover">
       <div className="pt-12 w-3/4 mx-auto">
-        <div className="pt-12 bg-[#fefefe] rounded-lg mt-[50px] h-[1200px]">  
+        <div className="pt-12 bg-[#fefefe] rounded-lg mt-[50px]">  
           <div className="flex justify-center"> 
           <TitleText
                 size='head'
@@ -20,7 +20,7 @@ const HeroContactUs = () => {
                 Contact
             </TitleText>
         </div>
-        <section className="flex flex-col items-center justify-around mb-5">
+        <section className="flex flex-col items-center justify-around mb-12">
           <Text
             className='font-semibold text-base text-center md:pr-12'>
             Connect with us today were just a form away!
@@ -96,13 +96,7 @@ const HeroContactUs = () => {
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
             </div>
- 
-        
-      
         </section>
-        <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[1000px]">
-    
-      </section>
         </div>
       </div>
       </div>
