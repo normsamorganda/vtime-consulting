@@ -1,9 +1,5 @@
-import { Text } from "@/components/Text";
 import Header from "@/views/Header/Header";
-import Link from "next/link";
-import { workingTeamBg } from "@/assets/Hero";
 import ServiceContainer from "@/views/AboutUsOurService/ServiceContainer/ServiceContainer";
-import Service from "@/views/Service/Service";
 import ServiceOffer from "@/views/AboutUsOurService/ServiceOffer/ServiceOffer"
 import HeroService from "@/views/AboutUsOurService/Hero/HeroService"
 import Footer from "@/views/Footer/Footer"
@@ -19,7 +15,6 @@ const About = () => {
         <ContactManagement />
         <Footer/>
         <FooterExtras/>
-      
     </div>
     );
 }
