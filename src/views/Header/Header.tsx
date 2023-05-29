@@ -9,7 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
-
+import {AiOutlineClose} from "react-icons/ai"
 const navLinks = [
   {
     text: 'About us',
@@ -46,26 +46,35 @@ const navLinks = [
 const Header = () => {
   const { tablet, phone } = useSize()
 
-  const [openDiv, setopenDiv] = useState(false)
+  const [openDiv, setopenDiv] = useState(true)
 
   const handleShow = () => {
     setopenDiv(!openDiv)
   }
+
+
   return (
-    <section className="relative">
-       <div className= {openDiv ? " relative bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
+    <>
+     <section className="relative">
+       {/* <div className= {openDiv ? " relative bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
           <span className="text-xl font-bold text-black absolute right-12 top-5" onClick={() => {setopenDiv(!openDiv)}}>X</span>
 
-          {/* <Link href={'/'} className="underline mr-auto">Go back Home</Link>
+          <Link href={'/'} className="underline mr-auto">Go back Home</Link>
           <Link href={'/About'} className="underline mr-auto">About</Link>
           <Link href={'/Corporate'} className="underline mr-auto">Corporate</Link>
           <Link href={'/Visa&Immigration'} className="underline mr-auto">Visa&Immigration</Link>
           <Link href={'/Outsourcing'} className="underline mr-auto">Outsourcing</Link>
-          <Link href={'/Updates'} className="underline mr-auto">Updates</Link> */}
+          <Link href={'/Updates'} className="underline mr-auto">Updates</Link>
 
-        </div>
+        </div> */}
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
-        {tablet ? <FaBars className={cx("text-white w-10 h-10", 'phone:w-6')} onClick={handleShow}/> : <Image src={whiteLogo.src} width={500} height={300} alt="logo"/>}
+      {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
+     <div className="hidden md:flex md:justify-between">
+      <div className="mr-6">
+      <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
+      </div>
+        <Image src={whiteLogo.src} width={500} height={100} alt="logo" />
+     </div>
       </div>
 
       <section className="flex justify-between pt-2 relative">
@@ -97,7 +106,25 @@ const Header = () => {
       </div>
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
+      <div className={!openDiv ? "absolute bg-primary z-40 w-auto h-screen overflow-hidden" : "hidden" } >
+          <div className="w-[600px]">
+          <Link href={'/'} className="underline mr-auto">Go back Home</Link> <br></br>
+          <Link href={'/About'} className="underline mr-auto">About</Link> <br></br>
+          <Link href={'/Corporate'} className="underline mr-auto">Corporate</Link> <br></br>
+          <Link href={'/Visa&Immigration'} className="underline mr-auto">Visa&Immigration</Link> <br></br>
+          <Link href={'/Outsourcing'} className="underline mr-auto">Outsourcing</Link> <br></br>
+          <Link href={'/Updates'} className="underline mr-auto">Updates</Link> 
+          </div>
+
+      </div> 
+
+     
+      
     </section>
+
+   
+    </>
+   
 
   )
 }

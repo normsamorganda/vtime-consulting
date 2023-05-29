@@ -20,10 +20,21 @@ const opensans = Open_Sans({
 })
 
 export default function Home() {
+
+  
+  const [openDiv, setopenDiv] = useState(false)
+
+  const handleShow = () => {
+    setopenDiv(!openDiv)
+  }
+
+
+
   return (<>
+
     <main className='flex flex-col items-center justify-between overflow-hidden'>
-        <div className='text-black w-full px-[5px]'>
-          <Header />
+        <div className='text-black w-full'>
+        <Header />
           <Hero />
           <Advantages />
           <Service />
