@@ -10,11 +10,9 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import {AiOutlineClose} from "react-icons/ai"
+import {BiChevronRight} from "react-icons/Bi"
+
 const navLinks = [
-  {
-    text: 'About us',
-    link: '/About'
-  },
 
   {
     text: 'Corporate',
@@ -43,15 +41,51 @@ const navLinks = [
 
 ]
 
+const subCat = [
+  {
+    text: 'The Company',
+    link: '/'
+  },
+  {
+    text: 'Our Mission',
+    link: '/'
+  },
+  {
+    text: 'Our Vision',
+    link: '/'
+  },
+  {
+    text: 'Our Leaders',
+    link: '/'
+  },
+  {
+    text: 'Our Services',
+    link: '/'
+  },
+  {
+    text: 'Advantages',
+    link: '/Advantages'
+  },
+]
+
+
+
+
 const Header = () => {
   const { tablet, phone } = useSize()
 
   const [openDiv, setopenDiv] = useState(true)
 
+  const [dropDown, setdropDown] = useState(true)
+
+
   const handleShow = () => {
     setopenDiv(!openDiv)
   }
 
+  const navDropDown = () => {
+    setdropDown(!dropDown)
+  }
 
   return (
     <>
@@ -68,12 +102,12 @@ const Header = () => {
 
         </div> */}
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
-      {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
-     <div className="hidden md:flex md:justify-between">
+      {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
+     <div className="hidden md:flex md:justify-between md:items-center">
       <div className="mr-6">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
       </div>
-        <Image src={whiteLogo.src} width={500} height={100} alt="logo" />
+        <Image src={whiteLogo.src} width={500} height={100} alt="logo" className="h-[30px]" />
      </div>
       </div>
 
@@ -84,6 +118,11 @@ const Header = () => {
         </section>
         {/* links */}
         {tablet ? "" : <div className={cx("flex gap-10 items-center", "laptopL:!gap-5")}>
+
+        <button onClick={navDropDown} className="hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
+        <div className={dropDown ? "absolute z-30 top-[61px] left-[685px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col py-5 border-t-4 border-[#2a9df4]" : "hidden"}>
+          {subCat.map(link => <Link href={link.link} className="pl-8 pt-2">{link.text}</Link> )}
+        </div>
           {navLinks.map((links, i) => {
             return <Link href={links.link} key={i} >
               <Text size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
@@ -106,14 +145,39 @@ const Header = () => {
       </div>
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
-      <div className={!openDiv ? "absolute bg-primary z-40 w-auto h-screen overflow-hidden" : "hidden" } >
-          <div className="w-[600px]">
-          <Link href={'/'} className="underline mr-auto">Go back Home</Link> <br></br>
-          <Link href={'/About'} className="underline mr-auto">About</Link> <br></br>
-          <Link href={'/Corporate'} className="underline mr-auto">Corporate</Link> <br></br>
-          <Link href={'/Visa&Immigration'} className="underline mr-auto">Visa&Immigration</Link> <br></br>
-          <Link href={'/Outsourcing'} className="underline mr-auto">Outsourcing</Link> <br></br>
-          <Link href={'/Updates'} className="underline mr-auto">Updates</Link> 
+      <div className={!openDiv ? "absolute bg-[#2a9df4] z-40 w-auto h-[3500px] overflow-hidden transition-transform" : "hidden" } >
+          <div className="w-[380px]">
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+               <Link href={'/About'} className="text-white text-md font-bold">About Us</Link> 
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <Link href={'/Corporate'}  className="text-white text-md font-bold"> Corporate</Link>
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <Link href={'/Visa&Immigration'}  className="text-white text-md font-bold"> Visa & Immigration</Link>
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <Link href={'/Outsourcing'}  className="text-white text-md font-bold"> Outsourcing</Link>
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <Link href={'/Updates'}  className="text-white text-md font-bold"> Updates</Link> 
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
+            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <Link href={'/Contact'}  className="text-white text-md font-bold">Contact us</Link> 
+              <BiChevronRight className="text-white text-3xl"/>
+            </div>
+
           </div>
 
       </div> 

@@ -7,8 +7,8 @@ import styles from './ListMod.module.css';
 const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, img1, img2} : any) => {
   return (
 <div className="w-full mt-12">
-    <div className="bg-[#fefefe] text-[10px] flex justify-between w-[350px] shadow-lg mx-auto shadow-brown-500/50 mt-2 rounded-lg md:w-[850px] md:text-xl">
-        <div className="mt-5 ml-5">
+    <div className="bg-[#fefefe] text-[10px] flex flex-col justify-between w-[350px] shadow-lg mx-auto shadow-brown-500/50 mt-2 rounded-lg md:w-[850px] md:text-xl md:flex-row">
+        <div className="mt-5 ml-5 order-2 md:order-1">
                 <Image src={img2}
                     alt={""}
                     className="w-[30px] md:w-[100px] md:pl-8">
@@ -23,10 +23,10 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
                 <li className="text-[10px] text-left md:text-[15px]">{offer5}</li>
             </ul>
         </div>
-        <div>
+        <div className="mx-auto order:1 md:order-2">
             <Image src={img1}
                 alt={""}
-                className="w-[280px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover md:h-[auto] md:w-[500px]"></Image>
+                className="w-[380px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover md:h-[auto] md:w-[500px]"></Image>
         </div>
     </div>
 

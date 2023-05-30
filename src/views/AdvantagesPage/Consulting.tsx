@@ -41,11 +41,8 @@ const Consulting = () => {
                     <p className='text-xs pb-12'>From business registration to hiring to visa processing, <span className='text-[#2a9df4]'>Business Asia Consulting </span>has all the services you need under one roof to establish a successful business here in the <span className='text-[#2a9df4]'>PHILIPPINES</span>.</p>
                 </div>
                 <div>
-
                     <Image src={present} alt='presentation'>
-
                     </Image>
-
                 </div>
               
             </div>
