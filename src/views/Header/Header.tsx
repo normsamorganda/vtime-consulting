@@ -82,14 +82,14 @@ const Header = () => {
 
   const [openDiv, setopenDiv] = useState(true)
 
-  const [dropDown, setdropDown] = useState(true)
+  const [dropDown, setdropDown] = useState(false)
 
 
   const handleShow = () => {
     setopenDiv(!openDiv)
   }
 
-  const navDropDown = () => {
+  const navDropDownHandle = () => {
     setdropDown(!dropDown)
   }
 
@@ -125,7 +125,7 @@ const Header = () => {
         {/* links */}
         {tablet ? "" : <div className={cx("flex gap-10 items-center", "laptopL:!gap-5")}>
 
-        <button onClick={navDropDown} className="hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
+        <button onClick={navDropDownHandle} className="hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
         <div className={dropDown ? "absolute z-30 top-[61px] left-[685px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col py-5 border-t-4 border-[#2a9df4]" : "hidden"}>
           {subCat.map(link => <Link href={link.link} className="pl-8 pt-2" key={link.id}>{link.text}</Link> )}
         </div>
