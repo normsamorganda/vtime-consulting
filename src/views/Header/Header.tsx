@@ -10,7 +10,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import {AiOutlineClose} from "react-icons/ai"
-import {BiChevronRight} from "react-icons/Bi"
+import {BiChevronRight} from "react-icons/bi"
 
 const navLinks = [
 
