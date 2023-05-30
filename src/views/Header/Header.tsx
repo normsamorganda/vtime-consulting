@@ -43,26 +43,32 @@ const navLinks = [
 
 const subCat = [
   {
+    id:1,
     text: 'The Company',
     link: '/'
   },
   {
+    id:2,
     text: 'Our Mission',
     link: '/'
   },
   {
+    id:3,
     text: 'Our Vision',
     link: '/'
   },
   {
+    id:4,
     text: 'Our Leaders',
     link: '/'
   },
   {
+    id:5,
     text: 'Our Services',
     link: '/'
   },
   {
+    id:6,
     text: 'Advantages',
     link: '/Advantages'
   },
@@ -121,7 +127,7 @@ const Header = () => {
 
         <button onClick={navDropDown} className="hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
         <div className={dropDown ? "absolute z-30 top-[61px] left-[685px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col py-5 border-t-4 border-[#2a9df4]" : "hidden"}>
-          {subCat.map(link => <Link href={link.link} className="pl-8 pt-2">{link.text}</Link> )}
+          {subCat.map(link => <Link href={link.link} className="pl-8 pt-2" key={link.id}>{link.text}</Link> )}
         </div>
           {navLinks.map((links, i) => {
             return <Link href={links.link} key={i} >
