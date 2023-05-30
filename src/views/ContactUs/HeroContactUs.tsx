@@ -5,6 +5,13 @@ import { Text } from "@/components/Text"
 import { bgMap } from "@/assets/ContactUs"
 
 const HeroContactUs = () => {
+
+
+  const submitHandle = (e : any) => {
+    e.preventDefault();
+  }
+
+
   return (
     <div style={{
         backgroundImage:`url(${bgMap.src})`,
@@ -26,7 +33,7 @@ const HeroContactUs = () => {
             Connect with us today were just a form away!
           </Text>
           <div className='md:w-[800px]'>
-          <form className="bg-white shadow-md rounded px-8 pt-12 pb-8 mb-4">
+          <form className="bg-white shadow-md rounded px-8 pt-12 pb-8 mb-4" onSubmit={submitHandle}>
                 <div className="mb-4 gap-3 md:flex">
                   <div className='mb-2 md:w-2/4'>
                     <label className="block text-gray-700 text-sm mb-2" htmlFor="name">

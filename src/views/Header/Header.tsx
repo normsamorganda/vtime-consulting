@@ -6,12 +6,14 @@ import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
 import cx from "clsx"
 import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import {AiOutlineClose} from "react-icons/ai"
 import {BiChevronRight} from "react-icons/bi"
-
+import React from "react"
+import Link from "next/link"
+import { usePathname } from 'next/navigation';
+import ActiveLink from "@/components/ActiveLink/ActiveLink"
 const navLinks = [
 
   {
@@ -45,22 +47,22 @@ const subCat = [
   {
     id:1,
     text: 'The Company',
-    link: '/'
+    link: '/TheCompany'
   },
   {
     id:2,
     text: 'Our Mission',
-    link: '/'
+    link: '/OurMission'
   },
   {
     id:3,
     text: 'Our Vision',
-    link: '/'
+    link: '/OurVision'
   },
   {
     id:4,
     text: 'Our Leaders',
-    link: '/'
+    link: '/OurLeaders'
   },
   {
     id:5,
@@ -74,16 +76,20 @@ const subCat = [
   },
 ]
 
-
-
-
 const Header = () => {
   const { tablet, phone } = useSize()
 
+  const pathname = usePathname();
+
+//active nav styling
+  const isActive = (path:any) => {
+    return pathname === path.link ? 'text-primary' : 'not-active';
+    
+  };
+
+
   const [openDiv, setopenDiv] = useState(true)
-
   const [dropDown, setdropDown] = useState(false)
-
 
   const handleShow = () => {
     setopenDiv(!openDiv)
@@ -96,17 +102,6 @@ const Header = () => {
   return (
     <>
      <section className="relative">
-       {/* <div className= {openDiv ? " relative bg-primary w-screen h-screen z-40 overflow-hidden" : ""}>
-          <span className="text-xl font-bold text-black absolute right-12 top-5" onClick={() => {setopenDiv(!openDiv)}}>X</span>
-
-          <Link href={'/'} className="underline mr-auto">Go back Home</Link>
-          <Link href={'/About'} className="underline mr-auto">About</Link>
-          <Link href={'/Corporate'} className="underline mr-auto">Corporate</Link>
-          <Link href={'/Visa&Immigration'} className="underline mr-auto">Visa&Immigration</Link>
-          <Link href={'/Outsourcing'} className="underline mr-auto">Outsourcing</Link>
-          <Link href={'/Updates'} className="underline mr-auto">Updates</Link>
-
-        </div> */}
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
      <div className="hidden md:flex md:justify-between md:items-center">
@@ -127,11 +122,19 @@ const Header = () => {
 
        <button onClick={navDropDownHandle} className="text-sm font-medium	 hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
         <div className={dropDown ? "absolute z-30 top-[61px] left-[583px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col py-5 border-t-4 border-[#2a9df4]" : "hidden"}>
-          {subCat.map(link => <Link href={link.link} className="pl-8 pt-2" key={link.id}>{link.text}</Link> )}
+          {subCat.map(({text, link, id}) => (
+        <Link 
+        key={id} 
+        className={`${isActive({link})} pl-8 pt-2`}
+        href={link} 
+        >
+          {text}
+          </Link> 
+      ))}
         </div>
           {navLinks.map((links, i) => {
-            return <Link href={links.link} key={i} >
-              <Text size="description" className={cx("hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full", " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
+            return <Link href={links.link} key={i} className={isActive(links.link)}>
+              <Text size="description" className={cx(`hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
             </Link>
           })}
         </div>}

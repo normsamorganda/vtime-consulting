@@ -7,10 +7,12 @@ import ContactManagement from "@/views/Contact/ContactManagement"
 import HeroCorporate from "@/views/Corporate/HeroCoporate";
 import CorporateContainer from "@/views/Corporate/CorporateContainer";
 import CorporateOffer from "@/views/Corporate/CorporateOffer";
+import { botBuilding } from "@/assets/Hero";
+
 const Corporate = () => {
     return (<div className="px-[5px] text-black">
         <Header />
-        <HeroCorporate/>
+        <HeroCorporate imgHero = {botBuilding}/>
         <CorporateContainer/>
         <CorporateOffer/>
         <ContactManagement />
