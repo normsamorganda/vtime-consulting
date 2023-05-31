@@ -120,18 +120,21 @@ const Header = () => {
         {/* links */}
         {tablet ? "" : <div className={cx("flex gap-10 items-center", "laptopL:!gap-5")}>
 
-       <button onClick={navDropDownHandle} className="text-sm font-medium	 hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">About Us</button>
-        <div className={dropDown ? "absolute z-30 top-[61px] left-[583px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col py-5 border-t-4 border-[#2a9df4]" : "hidden"}>
+       <button onClick={navDropDownHandle} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+        <span className="active:text-primary hover:text-primary">About Us</span>
+        <div className={dropDown ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col justify-start	 py-5 border-t-4 border-[#2a9df4] z-50" : "hidden"}>
           {subCat.map(({text, link, id}) => (
         <Link 
         key={id} 
-        className={`${isActive({link})} pl-8 pt-2`}
+        className={`${isActive({link})} pt-2`}
         href={link} 
         >
           {text}
           </Link> 
       ))}
         </div>
+      </button>
+      
           {navLinks.map((links, i) => {
             return <Link href={links.link} key={i} className={isActive(links.link)}>
               <Text size="description" className={cx(`hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
