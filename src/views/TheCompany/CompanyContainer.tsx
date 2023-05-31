@@ -1,9 +1,64 @@
 'use client'
 import { Text } from "@/components/Text"
 import { TitleText } from "@/components/TitleText"
-import cx from 'clsx'
 import Image from "next/image"
 import {meeting, bgFade} from "@/assets/TheCompany"
+
+// Import Swiper React components
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Navigation, Pagination } from "swiper";
+import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from "react-icons/hi"
+import { ceo, marketing, accounting, attorney } from "@/assets/TheCompany"
+
+const VIPs = [
+    {
+        img:ceo,
+        name:'Alec Noah Rosenman',
+        title:'CEO'
+    },
+    {
+        img:attorney,
+        name:'Atty. Vanessa Joyce Monge',
+        title:'Vice President and Head of Legal'
+    },
+    {
+        img:accounting,
+        name:'Aileenmae Goyal Silverio, CPA',
+        title:'Accounting Manager'
+    },
+    {
+        img:marketing,
+        name:'Kimberly Claire Acas',
+        title:'Marketing Manager'
+    },
+    {
+        img:ceo,
+        name:'Alec Noah Rosenman',
+        title:'CEO'
+    },
+    {
+        img:attorney,
+        name:'Atty. Vanessa Joyce Monge',
+        title:'Vice President and Head of Legal'
+    },
+    {
+        img:accounting,
+        name:'Aileenmae Goyal Silverio, CPA',
+        title:'Accounting Manager'
+    },
+    {
+        img:marketing,
+        name:'Kimberly Claire Acas',
+        title:'Marketing Manager'
+    },
+]
+
 
 const CompanyContainer = () => {
   return (
@@ -50,17 +105,85 @@ const CompanyContainer = () => {
         backgroundImage: `url(${bgFade.src})`,
         clipPath:'polygon(90% 0, 100% 88%, 0 100%, 0 15%)',
         }} 
-        className="hidden md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center relative top-[-176px] z-[-10]">
-            <div className="w-3/4 mx-auto flex justify-center relative top-[150px]">
+        className=" md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center relative top-[-176px]">
+            <div className="w-full mx-auto absolute top-[200px]">
+                <div className="w-3/4 mx-auto flex flex-col justify-center items-center">
                 <TitleText
                     size='head'
                     direction='center'>
                     Our Leaders
                 </TitleText>
+                <p className="pt-8 text-center">
+                Our team comprises experienced professionals with a passion for innovation and a commitment to excellence. With decades of combined experience 
+                    in their respective fields, our leaders bring a wealth of knowledge and expertise to the table, helping to guide our company toward success.
+                </p>
+
+                <p className="pt-8 text-center">
+                By fostering a culture of collaboration, creativity, and accountability, our leadership team sets the tone for our organization and helps to inspire 
+                    our employees to reach their full potential. 
+                </p>
+
+                <p className="pt-8 text-center">
+                Meet our leaders today and discover the driving force behind our company's success.
+                </p>
+                </div>
+
+                {/* slider */}
+
+                <div className="pt-12 w-3/4 mx-auto rounded-lg">  
+                <section className="flex items-center justify-end mb-5 mx-auto w-[70%]">
+                    <div className="button-prev-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
+                    <HiOutlineArrowNarrowLeft/>
+                    </div>
+                    <div className="button-next-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
+                    <HiOutlineArrowNarrowRight/>
+                    </div>
+                </section>
+                <section className="flex justify-center items-center mx-auto rounded-3xl w-3/4">
+                <Swiper
+                navigation={{
+                    nextEl:".button-next-slide-vip",
+                    prevEl:".button-prev-slide-vip",
+                }}
+                pagination={{
+                    type: "fraction",
+                    el:".swiper-pagination"
+                }}
+                breakpoints={{
+                    768: {
+                    slidesPerView: 2,
+                    },
+                    1024: {
+                    slidesPerView:2,
+                    },
+                    1280: {
+                    slidesPerView:4,
+                    slidesPerGroup:4,
+                    },
+                }}
+                modules={[Pagination, Navigation]}
+                >
+                    {VIPs.map((vip, index) => {
+                    return (
+                        <SwiperSlide key={index} className="text-center">
+                                <Image src={vip.img} alt="member" height={250} width={200} className="mx-auto"></Image>
+                                <h1 className="font-semibold">{vip.name}</h1>
+                                <h1>{vip.title}</h1>
+                        </SwiperSlide>
+                    )
+                    })}
+                    <div className="swiper-pagination" style={{color:"gray" }}></div>
+                </Swiper>
+                </section>
+                </div>    
             </div>
-            
 
     </section>  
+
+
+
+
+
 {/* mobile version */}
         <section style={{
         backgroundImage: `url(${bgFade.src})`,
