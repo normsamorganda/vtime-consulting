@@ -72,7 +72,7 @@ const ArticleBlogs = () => {
          </div>
         </div>
       </section>
-      <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[970px]">
+      <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[990px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide-artBlog",

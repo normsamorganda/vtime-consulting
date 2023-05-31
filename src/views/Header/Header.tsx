@@ -157,8 +157,8 @@ const Header = () => {
       </div>
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
-      <div className={!openDiv ? "absolute bg-[#2a9df4] z-40 w-auto h-[3500px] overflow-hidden transition-transform" : "hidden" } >
-          <div className="w-[380px]">
+      <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-[3500px] overflow-hidden transition-transform" : "hidden" } >
+          <div>
 
             <div className="flex w-11/12 mx-auto justify-between pt-12">
                <Link href={'/About'} className="text-white text-md font-bold">About Us</Link> 

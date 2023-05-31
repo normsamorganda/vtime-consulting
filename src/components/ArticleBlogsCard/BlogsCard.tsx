@@ -4,9 +4,8 @@ import { Text } from "../Text"
 
 const BlogsCard = ({key, date, description, image, tag}: any) => {
   return (
-    <div>
-  <section>
-      <div className='relative mx-auto shadow-custom rounded-3xl md:w-[40rem]'>
+  
+      <div className='relative mx-auto shadow-custom rounded-3xl mb-3 w-[289px] lg:w-[40rem] lg:ml-[5px]'>
         <div className='w-full overflow-hidden rounded-xl '>
           <Image
             src={image}
@@ -26,7 +25,7 @@ const BlogsCard = ({key, date, description, image, tag}: any) => {
          {date}
             </Text>
         </div>
-        <div className='flex flex-col justify-center gap-3 w-full p-5 mt-3 md:h-[175px]'>
+        <div className='flex flex-col justify-center gap-3 w-full px-5 pb-[60px] mt-3'>
           <Text
             size='tiny'
             className='!font-light text-justify'>
@@ -39,9 +38,6 @@ const BlogsCard = ({key, date, description, image, tag}: any) => {
           </Text>
         </div>
       </div>
-    </section>
-        
-    </div>
   )
 }
 
