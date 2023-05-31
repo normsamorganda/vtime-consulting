@@ -124,7 +124,7 @@ const CompanyContainer = () => {
                 </p>
 
                 <p className="pt-8 text-center">
-                Meet our leaders today and discover the driving force behind our company's success.
+                Meet our leaders today and discover the driving force behind our company success.
                 </p>
                 </div>
 
