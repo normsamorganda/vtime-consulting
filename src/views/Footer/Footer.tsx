@@ -6,6 +6,7 @@ import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
 import cx from "clsx"
 import Image from "next/image"
+import Link from "next/link"
 import {
   FaFacebookF,
   FaInstagram,
@@ -34,26 +35,35 @@ const Footer = () => {
         <article className={cx('flex items-center row-start-3 mt-5', 'tablet:!row-start-4 tablet:flex-wrap')}>
           <Text
             size='tiny'
-            className='!font-semibold'>
+            className='!font-semibold hover:underline'>
+            <Link href={'/Terms&Condition'}>
             Terms & Conditions
+            </Link>
           </Text>
           <span className="mx-2">/</span>
           <Text
             size='tiny'
-            className='!font-semibold'>
-            Private Policy
+            className='!font-semibold hover:underline'>
+              <Link href={'/PrivacyPolicy'}>
+              Private Policy
+              </Link>
           </Text>
           <span className="mx-2">/</span>
           <Text
             size='tiny'
-            className='!font-semibold'>
-            Faq
+            className='!font-semibold hover:underline'>
+              <Link href={'/Faq'}>
+              Faq
+              </Link>
           </Text>
           <span className="mx-2">/</span>
           <Text
             size='tiny'
-            className='!font-semibold'>
-            Contact Us
+            className='!font-semibold hover:underline'>
+              <Link href={'/Contact'}>
+              Contact Us
+              </Link>
+            
           </Text>
         </article>
 
