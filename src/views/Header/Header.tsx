@@ -10,6 +10,7 @@ import { useEffect, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import {AiOutlineClose} from "react-icons/ai"
 import {BiChevronRight} from "react-icons/bi"
+import {BiChevronDown} from "react-icons/bi"
 import React from "react"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
@@ -86,15 +87,14 @@ const Header = () => {
 
   const pathname = usePathname();
 
-//active nav styling
-
+//active nav function
   const isActive = (path:any) => {
-    console.log(path.link + " were here")
     return pathname === path.link ? `text-primary relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`:'';
   };
 
   const [openDiv, setopenDiv] = useState(true)
   const [dropDown, setdropDown] = useState(false)
+  const [subDropdown, setsubDropdown] = useState(false)
 
   const handleShow = () => {
     setopenDiv(!openDiv)
@@ -102,6 +102,10 @@ const Header = () => {
 
   const navDropDownHandle = () => {
     setdropDown(!dropDown)
+  }
+
+  const handleDropdown  = () => {
+    setsubDropdown(!subDropdown)
   }
 
   return (
@@ -166,10 +170,25 @@ const Header = () => {
       <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-auto overflow-hidden ease-in-out duration-700" : "fixed left-[-1000px]" } >
      
 
-          <div className="flex w-11/12 mx-auto justify-between py-5">
-               <Link href={'/About'} className="text-white text-md font-bold">About Us</Link> 
-              <BiChevronRight className="text-white text-3xl"/>
+          <div className="w-11/12 mx-auto py-5">
+            <div className="flex justify-between" onClick={handleDropdown}>
+                <span className="text-white text-md font-bold">About Us</span>
+              {subDropdown ? <BiChevronDown className="text-white text-3xl"/> : <BiChevronRight className="text-white text-3xl"/> } 
             </div>
+                <div className={subDropdown ? "ease-in-out duration-700" : "fixed left-[-1000px]"}>
+                {subCat.map(({text, link, id}) => (
+                  <div className="pt-3 pl-3 text-base">
+                      <Link 
+                      key={id} 
+                      className="text-white"
+                      href={link} 
+                      >
+                        {text}
+                      </Link> 
+                  </div>
+                  ))}
+                </div>
+          </div>
 
             <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Corporate'}  className="text-white text-md font-bold"> Corporate</Link>
