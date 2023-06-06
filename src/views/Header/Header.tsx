@@ -13,30 +13,35 @@ import {BiChevronRight} from "react-icons/bi"
 import React from "react"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
-import ActiveLink from "@/components/ActiveLink/ActiveLink"
+
 const navLinks = [
 
   {
+    id:1,
     text: 'Corporate',
     link: '/Corporate'
   },
 
   {
+    id:2,
     text: 'Visa & Immigration',
     link: '/Visa&Immigration'
   },
 
   {
+    id:3,
     text: 'Outsourcing',
     link: '/Outsourcing'
   },
 
   {
+    id:4,
     text: 'Updates',
     link: '/Updates'
   },
 
   {
+    id:5,
     text: 'Contact Us',
     link: '/Contact'
   },
@@ -82,11 +87,11 @@ const Header = () => {
   const pathname = usePathname();
 
 //active nav styling
-  const isActive = (path:any) => {
-    return pathname === path.link ? 'text-primary' : 'not-active';
-    
-  };
 
+  const isActive = (path:any) => {
+    console.log(path.link + " were here")
+    return pathname === path.link ? `text-primary relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`:'';
+  };
 
   const [openDiv, setopenDiv] = useState(true)
   const [dropDown, setdropDown] = useState(false)
@@ -104,8 +109,8 @@ const Header = () => {
      <section className="relative">
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
-     <div className="hidden md:flex md:justify-between md:items-center">
-      <div className="mr-6">
+     <div className="flex justify-center items-center tablet:hidden">
+      <div className="md:mr-2 xl:mr-6 ">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
       </div>
         <Image src={whiteLogo.src} width={500} height={100} alt="logo" className="h-[30px]" />
@@ -121,8 +126,8 @@ const Header = () => {
         {tablet ? "" : <div className={cx("flex gap-10 items-center", "laptopL:!gap-5")}>
 
        <button onClick={navDropDownHandle} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-        <span className="active:text-primary hover:text-primary">About Us</span>
-        <div className={dropDown ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[300px] text-[12px] flex flex-col justify-start	 py-5 border-t-4 border-[#2a9df4] z-50" : "hidden"}>
+        <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">About Us</span>
+        <div className={dropDown ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-50" : "hidden"}>
           {subCat.map(({text, link, id}) => (
         <Link 
         key={id} 
@@ -134,11 +139,12 @@ const Header = () => {
       ))}
         </div>
       </button>
-      
-          {navLinks.map((links, i) => {
-            return <Link href={links.link} key={i} className={isActive(links.link)}>
-              <Text size="description" className={cx(`hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{links.text}</Text>
+          {navLinks.map(({text, link, id}) => {
+            return (
+              <Link href={link} key={id}>
+              <Text size="description" className={cx(`${isActive({link})} hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{text}</Text>
             </Link>
+            )
           })}
         </div>}
         {/* CENTER */}
@@ -157,41 +163,40 @@ const Header = () => {
       </div>
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
-      <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-[3500px] overflow-hidden transition-transform" : "hidden" } >
-          <div>
+      <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-auto overflow-hidden ease-in-out duration-700" : "fixed left-[-1000px]" } >
+     
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+          <div className="flex w-11/12 mx-auto justify-between py-5">
                <Link href={'/About'} className="text-white text-md font-bold">About Us</Link> 
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Corporate'}  className="text-white text-md font-bold"> Corporate</Link>
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Visa&Immigration'}  className="text-white text-md font-bold"> Visa & Immigration</Link>
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Outsourcing'}  className="text-white text-md font-bold"> Outsourcing</Link>
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Updates'}  className="text-white text-md font-bold"> Updates</Link> 
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-            <div className="flex w-11/12 mx-auto justify-between pt-12">
+            <div className="flex w-11/12 mx-auto justify-between py-5">
             <Link href={'/Contact'}  className="text-white text-md font-bold">Contact us</Link> 
               <BiChevronRight className="text-white text-3xl"/>
             </div>
 
-          </div>
-
+           
       </div> 
 
      

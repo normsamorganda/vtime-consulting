@@ -24,11 +24,14 @@ module.exports = {
         tablet: { max: "900px" },
         phone: { max: "450px" },
 
+
         laptopL: { max: "1200px" },
         laptop: { max: "1024px" },
         desktop: { max: "1440px" },
         desktop2: { max: "1350px" },
         custom: { max: "1080px" },
+        phoneSe: {max: "360px"},
+        xSmall: {max:"540px"}
       },
     },
   },

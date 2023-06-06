@@ -34,7 +34,7 @@ const Recruitement = () => {
             direction='center'>
             Outsourcing
           </TitleText>
-          <p>
+          <p className="text-xs md:text-sm">
             Regardless of the size of your ompany, our Business Asia Consulting professionals are ready to assist you.
           </p>
         </div>

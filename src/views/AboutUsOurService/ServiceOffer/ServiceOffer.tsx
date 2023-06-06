@@ -34,7 +34,7 @@ const ServiceOffer = () => {
         },
         {   
             id:3,
-            title:'Oursourcing',
+            title:'Outsourcing',
             offer1:'Recruitement',
             offer2:'HR and Payroll',
             offer3:'Bookkeeping & Tax Compliance',

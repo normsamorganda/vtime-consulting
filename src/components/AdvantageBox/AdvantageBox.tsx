@@ -26,7 +26,7 @@ const AdvantageBox = ({ description, image, className, title }: AdvantageBoxProp
       </section>
 
       <section className={cx("back shadow-custom", "flex items-center justify-center")}>
-        <Text size="normal" className="text-slate-800 text-center">{description}</Text>
+        <Text size="normal" className="text-slate-800 text-center text-sm">{description}</Text>
       </section>
     </div>
   )

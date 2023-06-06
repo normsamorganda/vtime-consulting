@@ -6,7 +6,7 @@ const HRContainer = () => {
   return (
     <div className='w-4/5 md:w-3/5 mx-auto '>
             <h1 className='font-bold text-center text-lg md:text-left'>Human Resources</h1>
-            <p className='text-[12px] text-justify pt-3 md:text-base'>Our diverse team of experts all work together to ensure that you company &apos; HR requirements and infrastructure is build constant grwoth and effciency</p>
+            <p className='text-[12px] text-justify pt-3 text-sm'>Our diverse team of experts all work together to ensure that you company &apos; HR requirements and infrastructure is build constant grwoth and effciency</p>
             <div className='flex flex-col justify-around items-start mt-10 lg:flex-row'>
                 <div className='shadow-lg shadow-gray-500/50 rounded-xl order-2 lg:order-1 md:w-[500px]'>
                     <div className='pt-6 pl-12 text-justify'>
