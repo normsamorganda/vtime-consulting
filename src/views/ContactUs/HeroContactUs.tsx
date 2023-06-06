@@ -12,7 +12,9 @@ const HeroContactUs = () => {
     e.preventDefault();
   }
 
- 
+  
+
+ const isTablet = innerWidth > 899;
 
 
   return (
@@ -106,7 +108,7 @@ const HeroContactUs = () => {
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
 
-           {innerWidth > 899 && <PopUpMessage/> } 
+           {isTablet  && <PopUpMessage/> } 
              
             </div>
         </section>
