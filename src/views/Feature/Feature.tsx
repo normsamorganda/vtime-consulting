@@ -93,7 +93,7 @@ const Feature = () => {
           }
 
           return <FeatureCard 
-          id={card.id} 
+          key={card.id} 
           date={card.date} 
           description={card.description} 
           image={card.image} 
