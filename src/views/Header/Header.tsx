@@ -177,9 +177,9 @@ const Header = () => {
             </div>
                 <div className={subDropdown ? "ease-in-out duration-700" : "fixed left-[-1000px]"}>
                 {subCat.map(({text, link, id}) => (
-                  <div className="pt-3 pl-3 text-base">
+                  <div className="pt-3 pl-3 text-base"  key={id} >
                       <Link 
-                      key={id} 
+                     
                       className="text-white"
                       href={link} 
                       >
