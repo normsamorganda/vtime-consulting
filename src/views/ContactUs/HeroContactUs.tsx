@@ -3,6 +3,7 @@ import React from 'react'
 import { TitleText } from "@/components/TitleText"
 import { Text } from "@/components/Text"
 import { bgMap } from "@/assets/ContactUs"
+import PopUpMessage from '../PopUpMessage/PopUpMessage'
 
 const HeroContactUs = () => {
 
@@ -18,7 +19,7 @@ const HeroContactUs = () => {
         backgroundPosition: '0 -53px'
       }}
       className="w-full bg-no-repeat bg-clip-content bg-cover">
-      <div className="pt-12 w-3/4 mx-auto">
+      <div className="pt-12 w-3/4 mx-auto relative">
         <div className="pt-12 bg-[#fefefe] rounded-lg mt-[50px]">  
           <div className="flex justify-center"> 
           <TitleText
@@ -32,7 +33,7 @@ const HeroContactUs = () => {
             className='font-semibold text-base text-center md:pr-12'>
             Connect with us today were just a form away!
           </Text>
-          <div className='md:w-[800px]'>
+          <div className='md:w-[800px] relative'>
           <form className="bg-white shadow-md rounded px-8 pt-12 pb-8 mb-4" onSubmit={submitHandle}>
                 <div className="mb-4 gap-3 md:flex">
                   <div className='mb-2 md:w-2/4'>
@@ -102,6 +103,7 @@ const HeroContactUs = () => {
 
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
+              <PopUpMessage/>
             </div>
         </section>
         </div>
