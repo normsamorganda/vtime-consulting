@@ -5,9 +5,9 @@ import { FeatureCardProps } from "./types"
 import { Text } from "../Text"
 import cx from "clsx"
 
-const FeatureCard = ({ key, date, description, image, tag, className }: any) => {
+const FeatureCard = ({ id, date, description, image, tag, className }: any) => {
   return (
-    <section className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center mb-[5px] md:mb-6', 'transition-all duration-500 tablet:opacity-0.5')}>
+    <div className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center mb-[5px] md:mb-6', 'transition-all duration-500 tablet:opacity-0.5')} key={id} >
       <div className={cx('relative h-[22rem] shadow-custom rounded-3xl w-[20rem]  laptopL:w-[16rem] mx-auto')}>
         <div className='w-full overflow-hidden'>
           <Image
@@ -39,7 +39,7 @@ const FeatureCard = ({ key, date, description, image, tag, className }: any) => 
           </Text>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

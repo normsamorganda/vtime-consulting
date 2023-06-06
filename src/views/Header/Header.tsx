@@ -108,6 +108,19 @@ const Header = () => {
     setsubDropdown(!subDropdown)
   }
 
+
+// the navDrop down will close when reaches above 900 browser width
+  let updateSize = () => {
+      if(window.innerWidth > 899 ){
+        setopenDiv(true)
+        // console.log(`${openDiv} were here`)
+      }
+  }
+  useEffect(() => {
+    window.addEventListener("resize",updateSize)
+  },[])
+
+
   return (
     <>
      <section className="relative">
@@ -117,7 +130,8 @@ const Header = () => {
       <div className="md:mr-2 xl:mr-6 ">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
       </div>
-        <Image src={whiteLogo.src} width={500} height={100} alt="logo" className="h-[30px]" />
+      <Image src={whiteLogo.src} width={500} height={100} alt="logo" className="h-[30px]" />
+    
      </div>
       </div>
 
@@ -153,7 +167,9 @@ const Header = () => {
         </div>}
         {/* CENTER */}
         {tablet && <div className={cx("absolute top-1/2 translate-y-1/4 w-52 z-10 left-1/2 -translate-x-1/2", 'phone:w-40')}>
-          <Image src={whiteLogo.src} width={500} height={300} alt="logo" />
+        <Link href={"/"}>
+        <Image src={whiteLogo.src} width={500} height={300} alt="logo" />
+          </Link>
         </div>}
 
         {/* right */}
@@ -168,19 +184,17 @@ const Header = () => {
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
       <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-auto overflow-hidden ease-in-out duration-700" : "fixed left-[-1000px]" } >
-     
-
+     {/* About Us w/ sub dropdown */}
           <div className="w-11/12 mx-auto py-5">
             <div className="flex justify-between" onClick={handleDropdown}>
                 <span className="text-white text-md font-bold">About Us</span>
               {subDropdown ? <BiChevronDown className="text-white text-3xl"/> : <BiChevronRight className="text-white text-3xl"/> } 
             </div>
-                <div className={subDropdown ? "ease-in-out duration-700" : "fixed left-[-1000px]"}>
+                <div className={subDropdown ? "block" : "hidden"}>
                 {subCat.map(({text, link, id}) => (
                   <div className="pt-3 pl-3 text-base"  key={id} >
                       <Link 
-                     
-                      className="text-white"
+                      className="text-white active:underline"
                       href={link} 
                       >
                         {text}
@@ -190,36 +204,18 @@ const Header = () => {
                 </div>
           </div>
 
-            <div className="flex w-11/12 mx-auto justify-between py-5">
-            <Link href={'/Corporate'}  className="text-white text-md font-bold"> Corporate</Link>
-              <BiChevronRight className="text-white text-3xl"/>
-            </div>
+    {/* Nav Link */}
+          {navLinks.map((link) => {
+            return (
+              <div className="flex w-11/12 mx-auto justify-between py-5" key={link.id}>
+              <Link href={link.link}  className="text-white text-md font-bold"> {link.text}</Link>
+                <BiChevronRight className="text-white text-3xl"/>
+              </div>
+            )
+          })}
 
-            <div className="flex w-11/12 mx-auto justify-between py-5">
-            <Link href={'/Visa&Immigration'}  className="text-white text-md font-bold"> Visa & Immigration</Link>
-              <BiChevronRight className="text-white text-3xl"/>
-            </div>
-
-            <div className="flex w-11/12 mx-auto justify-between py-5">
-            <Link href={'/Outsourcing'}  className="text-white text-md font-bold"> Outsourcing</Link>
-              <BiChevronRight className="text-white text-3xl"/>
-            </div>
-
-            <div className="flex w-11/12 mx-auto justify-between py-5">
-            <Link href={'/Updates'}  className="text-white text-md font-bold"> Updates</Link> 
-              <BiChevronRight className="text-white text-3xl"/>
-            </div>
-
-            <div className="flex w-11/12 mx-auto justify-between py-5">
-            <Link href={'/Contact'}  className="text-white text-md font-bold">Contact us</Link> 
-              <BiChevronRight className="text-white text-3xl"/>
-            </div>
-
-           
       </div> 
 
-     
-      
     </section>
 
    

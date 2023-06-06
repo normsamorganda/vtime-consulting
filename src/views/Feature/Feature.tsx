@@ -92,8 +92,13 @@ const Feature = () => {
             position = "lastSlide"
           }
 
-
-          return <FeatureCard date={card.date} description={card.description} image={card.image} tag={card.tag} key={card.id} className={cx('tablet:absolute', tablet && position)} />
+          return <FeatureCard 
+          id={card.id} 
+          date={card.date} 
+          description={card.description} 
+          image={card.image} 
+          tag={card.tag} 
+          className={cx('tablet:absolute', tablet && position)} />
         })}
 
       </section>

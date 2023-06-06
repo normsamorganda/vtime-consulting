@@ -14,7 +14,6 @@ const useSize = () => {
 
     const checkWindow = () => {
         setSize(window.innerWidth)
-        console.log(isPhone);
     }
     useEffect(() => {
         if (typeof window !== undefined) {
@@ -22,11 +21,9 @@ const useSize = () => {
             window.addEventListener('resize', checkWindow)
             if (set > 900) {
                 setIsPhone({ phone: false, tablet: false })
-                console.log('desktop')
             }
             if (set <= 900) {
                 setIsPhone({ phone: false, tablet: true })
-                console.log('tablet');
             }
 
 
