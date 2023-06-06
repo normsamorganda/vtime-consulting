@@ -125,7 +125,7 @@ const Header = () => {
     <>
      <section className="relative">
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
-      {openDiv ? <FaBars className={cx("text-white w-10 h-10 md:hidden", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl md:hidden", 'phone:w-6')} onClick={handleShow}/>  } 
+      {openDiv ? <FaBars className={cx("text-white w-10 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
      <div className="flex justify-center items-center tablet:hidden">
       <div className="md:mr-2 xl:mr-6 ">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
