@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { TitleText } from "@/components/TitleText"
 import { Text } from "@/components/Text"
 import { bgMap } from "@/assets/ContactUs"
@@ -11,6 +11,8 @@ const HeroContactUs = () => {
   const submitHandle = (e : any) => {
     e.preventDefault();
   }
+
+ 
 
 
   return (
@@ -103,7 +105,9 @@ const HeroContactUs = () => {
 
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
-              <PopUpMessage/>
+
+           {innerWidth > 899 && <PopUpMessage/> } 
+             
             </div>
         </section>
         </div>
