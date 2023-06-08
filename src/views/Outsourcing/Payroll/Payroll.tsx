@@ -27,7 +27,7 @@ const Payroll = () => {
                         <li className='md:py-4 pb-2'>13th month pay and other bonuses and benefits</li>
                         <li className='md:py-4 pb-2'>Monthly, Quarterly, and Annual goverment forms</li>
                     </div>
-                    <li className='md:ml-10'>
+                    <li className='mt-5 md:ml-10'>
                         <span>Other Forms such as:</span>
                             <ul className='list-disc pl-8 md:py-4'>
                                 <li className='md:py-4'>BIR Form 1601-C</li>

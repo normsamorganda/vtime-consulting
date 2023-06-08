@@ -19,7 +19,7 @@ const PopUpMessage = () => {
 
   return (
     <div className={`${close ? 'absolute z-[100] top-[30px] right-[191px]' : 'hidden'}`}>
-        <div className='w-[400px] shadow-custom text-center bg-white rounded-3xl'>
+        <div className='w-[400px] shadow-darkCustom text-center bg-white rounded-3xl'>
             <div className='w-[370px] flex justify-end py-3'>
                   <span className='text-2xl cursor-pointer text-gray-300' onClick={closeMessage}> X</span> 
             </div>
