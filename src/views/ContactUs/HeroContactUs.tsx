@@ -14,7 +14,6 @@ const HeroContactUs = () => {
 
   
 
- const isTablet = innerWidth > 899;
 
 
   return (
@@ -108,7 +107,9 @@ const HeroContactUs = () => {
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
 
-           {isTablet  && <PopUpMessage/> } 
+           <div className='hidden md:block'>
+              <PopUpMessage/>
+           </div>
              
             </div>
         </section>
