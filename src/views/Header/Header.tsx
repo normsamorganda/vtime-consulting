@@ -1,6 +1,5 @@
 'use client'
 import { headerBg3, whiteHeader, whiteLogo } from "@/assets/Header"
-import MobileMenu from "@/components/MobileMenu/MobileMenu"
 import { Search } from "@/components/Search"
 import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
@@ -109,7 +108,6 @@ const Header = () => {
   }
 
 
-// the navDrop down will close when reaches above 900 browser width
   let updateSize = () => {
       if(window.innerWidth > 899 ){
         setopenDiv(true)
@@ -124,13 +122,15 @@ const Header = () => {
   return (
     <>
      <section className="relative">
-      <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[150px] left-[5%] z-10">
+      <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[5%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-10 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
-     <div className="flex justify-center items-center tablet:hidden">
+     <div className="w-[250px] flex justify-center items-center tablet:hidden">
       <div className="md:mr-2 xl:mr-6 ">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
       </div>
-      <Image src={whiteLogo.src} width={500} height={100} alt="logo" className="h-[30px]" />
+      <Link href={"/"}>
+      <Image src={whiteLogo.src} alt="logo" width={800} height={400}/>
+      </Link>
     
      </div>
       </div>
