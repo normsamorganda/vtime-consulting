@@ -19,7 +19,8 @@ module.exports = {
       },
       boxShadow: {
         custom: "0 0 10px 5px rgba(0, 0, 0, 0.05)",
-        darkCustom: "-8px -12px 396px 1000px rgba(0,0,0,0.27)"
+        darkCustom: "-8px -12px 396px 1000px rgba(0,0,0,0.27)",
+        searchCustom: "-1px 4px 400px 1000px rgb(0 0 0 / 50%)"
       },
       screens: {
         tablet: { max: "900px" },

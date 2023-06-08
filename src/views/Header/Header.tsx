@@ -13,7 +13,7 @@ import {BiChevronDown} from "react-icons/bi"
 import React from "react"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
-
+import {AiOutlineSearch, AiOutlineCloseCircle} from "react-icons/ai"
 const navLinks = [
 
   {
@@ -94,6 +94,7 @@ const Header = () => {
   const [openDiv, setopenDiv] = useState(true)
   const [dropDown, setdropDown] = useState(false)
   const [subDropdown, setsubDropdown] = useState(false)
+  const [search, setSearch] = useState(false)
 
   const handleShow = () => {
     setopenDiv(!openDiv)
@@ -105,6 +106,11 @@ const Header = () => {
 
   const handleDropdown  = () => {
     setsubDropdown(!subDropdown)
+  }
+
+  const searchShow = () => {
+    setSearch(!dropDown)
+
   }
 
 
@@ -123,8 +129,8 @@ const Header = () => {
     <>
      <section className="relative">
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[5%] z-10">
-      {openDiv ? <FaBars className={cx("text-white w-10 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-10 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
-     <div className="w-[250px] flex justify-center items-center tablet:hidden">
+      {openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
+     <div className="w-[158px] xl:w-[218px] flex justify-center items-center tablet:hidden">
       <div className="md:mr-2 xl:mr-6 ">
       <FaBars className="text-white w-5 h-10 block cursor-pointer"/>
       </div>
@@ -187,14 +193,14 @@ const Header = () => {
      {/* About Us w/ sub dropdown */}
           <div className="w-11/12 mx-auto py-5">
             <div className="flex justify-between" onClick={handleDropdown}>
-                <span className="text-white text-md font-bold">About Us</span>
+                <span className="text-white text-sm font-bold">About Us</span>
               {subDropdown ? <BiChevronDown className="text-white text-3xl"/> : <BiChevronRight className="text-white text-3xl"/> } 
             </div>
                 <div className={subDropdown ? "block" : "hidden"}>
                 {subCat.map(({text, link, id}) => (
-                  <div className="pt-3 pl-3 text-base"  key={id} >
+                  <div className="pt-3 pl-3 text-sm"  key={id} >
                       <Link 
-                      className="text-white active:underline"
+                      className="text-white text-sm font-bold active:underline"
                       href={link} 
                       >
                         {text}
@@ -208,13 +214,22 @@ const Header = () => {
           {navLinks.map((link) => {
             return (
               <div className="flex w-11/12 mx-auto justify-between py-5" key={link.id}>
-              <Link href={link.link}  className="text-white text-md font-bold"> {link.text}</Link>
+              <Link href={link.link}  className="text-white text-sm font-bold"> {link.text}</Link>
                 <BiChevronRight className="text-white text-3xl"/>
               </div>
             )
           })}
 
       </div> 
+
+      <div className="hidden tablet:block absolute z-[5000] top-[87px] w-full bg-transparent h-[400px]">
+        <div className="relative w-4/5 mx-auto bg-gray-300 h-[300px] rounded-2xl shadow-searchCustom">
+            <input className="absolute pl-12 h-[35px] w-full outline-none mt-6 placeholder:italic placeholder:text-sm" placeholder="Search Information"></input>
+            <AiOutlineSearch className="relative z-[100] top-[30px] left-[15px] text-2xl"/>
+            <AiOutlineCloseCircle className="relative z-[100] top-[6px] right-[-307px] text-2xl"/>
+        </div>
+          
+      </div>
 
     </section>
 
