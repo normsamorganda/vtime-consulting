@@ -94,7 +94,7 @@ const Header = () => {
   const [openDiv, setopenDiv] = useState(true)
   const [dropDown, setdropDown] = useState(false)
   const [subDropdown, setsubDropdown] = useState(false)
-  const [search, setSearch] = useState(false)
+  const [search, setSearch] = useState(true)
 
   const handleShow = () => {
     setopenDiv(!openDiv)
@@ -108,8 +108,8 @@ const Header = () => {
     setsubDropdown(!subDropdown)
   }
 
-  const searchShow = () => {
-    setSearch(!dropDown)
+  const handleSearch = () => {
+    setSearch(!search)
 
   }
 
@@ -185,7 +185,7 @@ const Header = () => {
       </section>
 
       <div className="absolute right-[3%] top-1/2 -translate-y-1/2">
-        <Search />
+        <Search handleSearch={handleSearch}/>
       </div>
       <section className="bg-secondary h-10 mt-0 flex justify-center" />
       {/* <MobileMenu /> */}
@@ -222,14 +222,25 @@ const Header = () => {
 
       </div> 
 
-      <div className="hidden tablet:block absolute z-[5000] top-[87px] w-full bg-transparent h-[400px]">
-        <div className="relative w-4/5 mx-auto bg-gray-300 h-[300px] rounded-2xl shadow-searchCustom">
-            <input className="absolute pl-12 h-[35px] w-full outline-none mt-6 placeholder:italic placeholder:text-sm" placeholder="Search Information"></input>
-            <AiOutlineSearch className="relative z-[100] top-[30px] left-[15px] text-2xl"/>
-            <AiOutlineCloseCircle className="relative z-[100] top-[6px] right-[-307px] text-2xl"/>
-        </div>
-          
-      </div>
+      {/* /mobile view search */}
+
+          <div className={search ? 'hidden' : 'block md:hidden'}>
+            <div className="tablet:block absolute z-[5000] top-[87px] w-full bg-transparent h-[5600px]">
+                <div className="relative w-4/5 pt-8 mx-auto bg-gray-300 h-[300px] rounded-2xl shadow-searchCustom">
+                      <input className="absolute pl-12 h-[38px] w-full outline-none placeholder:italic placeholder:text-sm text-sm" placeholder="Search Information"></input>
+                      <div className="flex justify-between w-full">
+                        <div className="w-[40px] mt-2 ml-3">
+                          <AiOutlineSearch className="absolute text-2xl"/>
+                        </div>
+                        <div className="w-[40px] mt-[7px]">
+                          <AiOutlineCloseCircle className="absolute text-2xl cursor-pointer" onClick={handleSearch}/>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+
+    
 
     </section>
 
