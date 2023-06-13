@@ -68,10 +68,10 @@ const Reviews = () => {
           Reviews
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-        <div className="button-prev-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+        <div className="button-prev-slide-reviews text-[2rem] text-gray-400 active:text-sky-400">
          <BsArrowLeft/>
          </div>
-          <div className="button-next-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+          <div className="button-next-slide-reviews text-[2rem] text-gray-400 active:text-sky-400">
          <BsArrowRight/>
          </div>
         </div>
@@ -79,8 +79,8 @@ const Reviews = () => {
       <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[1062px]">
       <Swiper
       navigation={{
-        nextEl:".button-next-slide-news",
-        prevEl:".button-prev-slide-news",
+        nextEl:".button-next-slide-reviews",
+        prevEl:".button-prev-slide-reviews",
        }}
        pagination={{
         type: "fraction",

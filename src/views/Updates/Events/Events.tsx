@@ -86,10 +86,10 @@ const Events = () => {
           Events
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-        <div className="button-prev-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+        <div className="button-prev-slide-events text-[2rem] text-gray-400 active:text-sky-400">
          <BsArrowLeft/>
          </div>
-          <div className="button-next-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+          <div className="button-next-slide-events text-[2rem] text-gray-400 active:text-sky-400">
          <BsArrowRight/>
          </div>
         </div>
