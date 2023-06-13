@@ -88,7 +88,7 @@ const Header = () => {
 
 //active nav function
   const isActive = (path:any) => {
-    return pathname === path.link ? `text-primary relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`:'';
+    return pathname === path.link ? `text-primary dot`:'';
   };
 
   const [openDiv, setopenDiv] = useState(true)

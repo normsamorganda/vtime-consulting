@@ -131,8 +131,14 @@ body {
     padding: 0px 23px;
     border-radius: 7px;
 }
-
-
+.dot::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  border-radius: 50%;
+}
 
 
 
