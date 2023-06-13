@@ -21,15 +21,6 @@ const opensans = Open_Sans({
 
 export default function Home() {
 
-  
-  const [openDiv, setopenDiv] = useState(false)
-
-  const handleShow = () => {
-    setopenDiv(!openDiv)
-  }
-
-
-
   return (<>
 
     <main className='flex flex-col items-center justify-between overflow-hidden'>
@@ -43,7 +34,6 @@ export default function Home() {
           <Affiliates />
           <Contact />
           <Footer />
-         
           </div>
         <FooterExtras />
   
