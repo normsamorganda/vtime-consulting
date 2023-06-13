@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation, Pagination } from "swiper";
-import {HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight} from "react-icons/hi"
+import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
 
 const Events = () => {
 
@@ -64,6 +64,7 @@ const Events = () => {
     
   ]
 
+
   return (
     <div style={{
       backgroundImage:`url(${bg.src})`,
@@ -85,11 +86,11 @@ const Events = () => {
           Events
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-        <div className="button-prev-slide-events text-[2rem] text-gray-400 active:text-sky-400">
-         <HiOutlineArrowNarrowLeft/>
+        <div className="button-prev-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowLeft/>
          </div>
-          <div className="button-next-slide-events text-[2rem] text-gray-400 active:text-sky-400">
-         <HiOutlineArrowNarrowRight/>
+          <div className="button-next-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowRight/>
          </div>
         </div>
       </section>
@@ -100,8 +101,14 @@ const Events = () => {
         prevEl:".button-prev-slide-events",
        }}
        pagination={{
-        type: "fraction",
-        el:".swiper-pagination"
+        type:"fraction",
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
+       
       }}
       breakpoints={{
         768: {

@@ -68,11 +68,11 @@ const Reviews = () => {
           Reviews
         </Text>
         <div className="mb-auto flex gap-2 mt-2">
-        <div className="button-prev-slide-news text-[2rem] text-gray-400 active:text-sky-400">
-        <BsArrowLeft/>
+        <div className="button-prev-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowLeft/>
          </div>
-          <div className="button-next-slide-news text-[2rem] text-gray-400 active:text-sky-400">
-          <BsArrowRight/>
+          <div className="button-next-slide-artBlog text-[2rem] text-gray-400 active:text-sky-400">
+         <BsArrowRight/>
          </div>
         </div>
       </section>
@@ -84,7 +84,12 @@ const Reviews = () => {
        }}
        pagination={{
         type: "fraction",
-        el:".swiper-pagination"
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
       }}
       breakpoints={{
         768: {

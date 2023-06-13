@@ -87,7 +87,12 @@ const News = () => {
        }}
        pagination={{
         type: "fraction",
-        el:".swiper-pagination"
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
       }}
       breakpoints={{
         768: {

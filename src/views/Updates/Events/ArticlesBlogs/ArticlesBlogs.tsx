@@ -81,8 +81,10 @@ const ArticleBlogs = () => {
        pagination={{
         type: "fraction",
         el:".swiper-pagination",
-        formatFractionCurrent: function (number) {
-          return "Page " + number;
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
       }
       }}
       slidesPerGroup={1}
