@@ -7,7 +7,7 @@ const opensans = Open_Sans({
 })
 
 export const metadata = {
-  title: "VTIME",
+  title: "Business Asia Consulting",
   description: "VTIME",
 }
 
