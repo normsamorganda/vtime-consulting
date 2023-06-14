@@ -25,7 +25,7 @@ const Hero = () => {
       }}
       className={cx('relative bg-no-repeat bg-center bg-cover z-0 px-5 h-[110vh]', 'tablet:h-[95vh]')}>
 <div className="background-container">
-  <div className={snow ? "background-animation": "" }>
+  <div className="background-animation">
   </div>
 </div> 
         
