@@ -47,9 +47,9 @@ const FaqContainer = () => {
   ]
 
   return (
-    <div className='absolute top-12'>
+    <div className='absolute top-12 w-full'>
       <div className='w-4/5 bg-white pt-12 mx-auto'>
-          <div className='lg:w-2/5 lg:ml-[10rem]'>
+          <div className='lg:w-2/5 lg:ml-[10rem] mx-auto'>
           <TitleText
                         size='head'
                         direction='center'>
