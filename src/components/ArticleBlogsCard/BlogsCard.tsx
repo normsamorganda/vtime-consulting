@@ -5,7 +5,7 @@ import { Text } from "../Text"
 const BlogsCard = ({key, date, description, image, tag}: any) => {
   return (
   
-      <div className='relative mx-auto shadow-custom rounded-3xl mb-3 w-[289px] lg:w-[40rem] lg:ml-[5px]'>
+      <div className='relative mx-auto shadow-custom rounded-3xl mb-3 w-[269px] lg:w-[40rem] lg:ml-[5px]'>
         <div className='w-full overflow-hidden rounded-xl '>
           <Image
             src={image}

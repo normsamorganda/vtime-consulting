@@ -9,8 +9,9 @@ import {
   fhiStudioLogo,
   lawLogo,
   lucky365,
-  nAffiliatesBg,
+  square4,
 } from "@/assets/Affiliates"
+
 import { SectionContainer } from "@/components/SectionContainer"
 import { TitleText } from "@/components/TitleText"
 import useSize from "@/hooks/useSize"
@@ -160,6 +161,10 @@ const Affiliates = () => {
           </section>
         </SectionContainer>
       </section>
+
+      <Image src={square4} alt="square1" className="absolute top-[861px] left-[10px] h-[14rem] w-[27rem] transform rotate-1 hidden 2xl:block"></Image>
+
+
     </section>
   )
 }

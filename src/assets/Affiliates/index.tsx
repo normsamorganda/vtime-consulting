@@ -8,7 +8,7 @@ import arrowLeft from "./arrow-left.png"
 import arrowRight from "./arrow-right.png"
 import fhiStudioLogo from "./fhi-studio-logo.png"
 import nAffiliatesBg from './nAffiliatesBg.png'
-
+import square4 from './square4.png'
 export {
   nAffiliatesBg,
   amchamLogo,
@@ -20,4 +20,5 @@ export {
   fhiStudioLogo,
   lawLogo,
   lucky365,
+  square4
 }
