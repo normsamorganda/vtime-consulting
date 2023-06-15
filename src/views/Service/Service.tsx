@@ -9,13 +9,8 @@ import {
   corporate,
   outsourcing,
   busyBusinessPeopleWalking,
-  servicesImage,
-  servicesBg2,
-  layerBg,
-  layerBg2,
-  layerBg3,
-  servicesBg,
-  nServiceBg
+  square1,
+  square2
 } from "@/assets/Service"
 
 import Image from "next/image"
@@ -107,6 +102,9 @@ const Service = () => {
 
 
       </section>
+
+      <Image src={square1} alt="square1" className="absolute top-[31px] left-[38px] h-[16rem] w-[45rem] transform rotate-2 hidden 2xl:block"></Image>
+      <Image src={square2} alt="square2" className="absolute top-[631px] left-[1538px] h-[14rem] w-[22rem] transform rotate-[-3] hidden 2xl:block"></Image>
 
 
     </section>

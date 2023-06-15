@@ -128,21 +128,21 @@ const Expertise = () => {
 
     {
       id: 7,
-      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      description: 'The procurement of goods and services from foreign countries for use or resale in the domestic market.',
       title: 'Importing',
       image: imp
     },
 
     {
       id: 8,
-      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      description: 'Sale and shipment of goods and services to foreign countries.',
       title: 'Exporting',
       image: exp
     },
 
     {
       id: 9,
-      description: 'Involves the provision of funds for businesses and individuals to meet their financial needs.',
+      description: 'Requires a deep understanding of human behavior, organizational culture, and legal and ethical consideration.',
       title: 'Human Resources',
       image: hr
     },

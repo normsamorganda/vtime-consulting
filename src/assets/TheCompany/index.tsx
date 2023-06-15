@@ -6,7 +6,7 @@ import ceo from "./ceo.png"
 import marketing from "./marketing.png"
 import attorney from "./attorney.png"
 import accounting from "./accounting.png"
-
+import square from "./squareInvert.png"
 export {
   bgHoping,
   leaders,
@@ -16,5 +16,5 @@ export {
   marketing,
   attorney,
   accounting,
-
+  square
 }

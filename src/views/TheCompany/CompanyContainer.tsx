@@ -2,7 +2,7 @@
 import { Text } from "@/components/Text"
 import { TitleText } from "@/components/TitleText"
 import Image from "next/image"
-import {meeting, bgFade} from "@/assets/TheCompany"
+import {meeting, bgFade, square} from "@/assets/TheCompany"
 
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
@@ -103,83 +103,91 @@ const CompanyContainer = () => {
         </div>
     </div>
     {/* desktop */}
-    <section style={{
-        backgroundImage: `url(${bgFade.src})`,
-        clipPath: phone ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0px, 100% 93%, 0px 100%, 0px 11%)',
-        }} 
-        className="phoneSe:h-[843px] xSmall:h-[845px] lg:h-[800px] xl:h-[932px] md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center">
-            <div className="w-full mx-auto py-[50px] lg:py-[23px] xl:py-[100px]">
-                <div className="w-3/4 mx-auto flex flex-col justify-center items-center mt-12">
-                <TitleText
-                    size='head'
-                    direction='center'>
-                    Our Leaders
-                </TitleText>
-                <p className="text-center text-xs lg:text-sm pb-2">
-                Our team comprises experienced professionals with a passion for innovation and a commitment to excellence. With decades of combined experience 
-                    in their respective fields, our leaders bring a wealth of knowledge and expertise to the table, helping to guide our company toward success.
-                </p>
-                <p className="lg:pt-2 xl:pt-8 text-center lg:text-sm text-xs pb-2">
-                By fostering a culture of collaboration, creativity, and accountability, our leadership team sets the tone for our organization and helps to inspire 
-                    our employees to reach their full potential. 
-                </p>
+    <div className="relative">
+        <section style={{
+            backgroundImage: `url(${bgFade.src})`,
+            clipPath: phone ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0px, 100% 78%, 0px 100%, 0px 11%)',
+            }} 
+            className="phoneSe:h-[843px] xSmall:h-[845px] lg:h-[800px] xl:h-[932px] md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center mb-[120px]">
+                <div className="w-full mx-auto py-[50px] lg:py-[23px] xl:py-[100px]">
+                    <div className="w-3/4 mx-auto flex flex-col justify-center items-center mt-12">
+                    <TitleText
+                        size='head'
+                        direction='center'>
+                        Our Leaders
+                    </TitleText>
+                    <p className="text-center text-xs lg:text-sm pb-2">
+                    Our team comprises experienced professionals with a passion for innovation and a commitment to excellence. With decades of combined experience 
+                        in their respective fields, our leaders bring a wealth of knowledge and expertise to the table, helping to guide our company toward success.
+                    </p>
+                    <p className="lg:pt-2 xl:pt-8 text-center lg:text-sm text-xs pb-2">
+                    By fostering a culture of collaboration, creativity, and accountability, our leadership team sets the tone for our organization and helps to inspire 
+                        our employees to reach their full potential. 
+                    </p>
 
-                <p className="lg:pt-2 xl:pt-8 text-center lg:text-sm text-xs">
-                Meet our leaders today and discover the driving force behind our company success.
-                </p>
+                    <p className="lg:pt-2 xl:pt-8 text-center lg:text-sm text-xs">
+                    Meet our leaders today and discover the driving force behind our company success.
+                    </p>
+                    </div>
+
+                    {/* slider */}
+
+                    <div className="pt-2 w-3/4 mx-auto rounded-lg">  
+                    <section className="flex items-center justify-center md:justify-end mb-5 mx-auto w-[70%]">
+                        <div className="button-prev-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
+                        <HiOutlineArrowNarrowLeft/>
+                        </div>
+                        <div className="button-next-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
+                        <HiOutlineArrowNarrowRight/>
+                        </div>
+                    </section>
+                    <section className="flex justify-center items-center mx-auto rounded-3xl w-3/4">
+                    <Swiper
+                    navigation={{
+                        nextEl:".button-next-slide-vip",
+                        prevEl:".button-prev-slide-vip",
+                    }}
+                    pagination={{
+                        type: "fraction",
+                        el:".swiper-pagination-leader"
+                    }}
+                    breakpoints={{
+                        768: {
+                        slidesPerView: 2,
+                        },
+                        1024: {
+                        slidesPerView:2,
+                        },
+                        1280: {
+                        slidesPerView:4,
+                        slidesPerGroup:4,
+                        },
+                    }}
+                    modules={[Pagination, Navigation]}
+                    >
+                        {VIPs.map((vip, index) => {
+                        return (
+                            <SwiperSlide key={index} className="text-center">
+                                    <Image src={vip.img} alt="member" height={250} className="mx-auto"></Image>
+                                    <h1 className="font-semibold text-sm mt-6">{vip.name}</h1>
+                                    <h1 className="text-sm mt-1">{vip.title}</h1>
+                            </SwiperSlide>
+                        )
+                        })}
+                    </Swiper>
+                    </section>
+                    </div>    
                 </div>
 
-                {/* slider */}
+        </section>  
 
-                <div className="pt-2 w-3/4 mx-auto rounded-lg">  
-                <section className="flex items-center justify-center md:justify-end mb-5 mx-auto w-[70%]">
-                    <div className="button-prev-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
-                    <HiOutlineArrowNarrowLeft/>
-                    </div>
-                    <div className="button-next-slide-vip text-[2rem] text-gray-400 active:text-sky-400">
-                    <HiOutlineArrowNarrowRight/>
-                    </div>
-                </section>
-                <section className="flex justify-center items-center mx-auto rounded-3xl w-3/4">
-                <Swiper
-                navigation={{
-                    nextEl:".button-next-slide-vip",
-                    prevEl:".button-prev-slide-vip",
-                }}
-                pagination={{
-                    type: "fraction",
-                    el:".swiper-pagination-leader"
-                }}
-                breakpoints={{
-                    768: {
-                    slidesPerView: 2,
-                    },
-                    1024: {
-                    slidesPerView:2,
-                    },
-                    1280: {
-                    slidesPerView:4,
-                    slidesPerGroup:4,
-                    },
-                }}
-                modules={[Pagination, Navigation]}
-                >
-                    {VIPs.map((vip, index) => {
-                    return (
-                        <SwiperSlide key={index} className="text-center">
-                                <Image src={vip.img} alt="member" height={250} className="mx-auto"></Image>
-                                <h1 className="font-semibold text-sm mt-6">{vip.name}</h1>
-                                <h1 className="text-sm mt-1">{vip.title}</h1>
-                        </SwiperSlide>
-                    )
-                    })}
-                    <div className="swiper-pagination-leader text-center" style={{color:"gray" }}></div>
-                </Swiper>
-                </section>
-                </div>    
-            </div>
+        <Image src={square} alt="squareInvent" className="absolute recShape hidden xl:block"></Image>
 
-    </section>  
+
+    </div>
+ 
+
+
 
     </>
   )

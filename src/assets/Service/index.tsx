@@ -28,6 +28,9 @@ import CorpManagement from './CorpManagement.png'
 import CorpDriverlicense from './CorpDriver-license.png'
 import CorpRegistration from './CorpRegistration.png'
 import CorpTeamWork from './CorpTeamWork.png'
+import square1 from './square1.png'
+import square2 from './square2.png'
+
 export {
   corporate,
   outsourcing,
@@ -58,5 +61,7 @@ export {
   CorpManagement,
   CorpDriverlicense,
   CorpRegistration,
-  CorpTeamWork
+  CorpTeamWork,
+  square1,
+  square2
 }
