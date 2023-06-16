@@ -162,7 +162,7 @@ const Affiliates = () => {
         </SectionContainer>
       </section>
 
-      <Image src={square4} alt="square1" className="absolute top-[861px] left-[10px] h-[14rem] w-[27rem] transform rotate-1 hidden 2xl:block"></Image>
+      {/* <Image src={square4} alt="square1" className="absolute top-[861px] left-[10px] h-[14rem] w-[27rem] transform rotate-1 hidden 2xl:block"></Image> */}
 
 
     </section>

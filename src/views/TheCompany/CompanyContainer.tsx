@@ -108,7 +108,7 @@ const CompanyContainer = () => {
             backgroundImage: `url(${bgFade.src})`,
             clipPath: phone ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0px, 100% 78%, 0px 100%, 0px 11%)',
             }} 
-            className="phoneSe:h-[843px] xSmall:h-[845px] lg:h-[800px] xl:h-[932px] md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center mb-[120px]">
+            className="phoneSe:h-[843px] xSmall:h-[930px] lg:h-[800px] xl:h-[932px] md:block h-screen w-full bg-no-repeat bg-clip-content bg-cover bg-center mb-[120px]">
                 <div className="w-full mx-auto py-[50px] lg:py-[23px] xl:py-[100px]">
                     <div className="w-3/4 mx-auto flex flex-col justify-center items-center mt-12">
                     <TitleText
