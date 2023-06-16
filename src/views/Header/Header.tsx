@@ -264,7 +264,7 @@ const Header = () => {
     </section>
 
     {burger && (
-          <div className="w-screen h-[70vh] bg-white absolute z-[99999] flex">
+          <div className="w-screen h-auto bg-[#e6e6e6] absolute z-[99999] flex">
 
           <div className=" w-3/12 text-black">
               <div className="ml-12">
