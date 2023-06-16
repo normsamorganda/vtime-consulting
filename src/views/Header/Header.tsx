@@ -16,7 +16,6 @@ import { usePathname } from 'next/navigation';
 import {AiOutlineSearch, AiOutlineCloseCircle} from "react-icons/ai"
 import {IoCloseSharp} from "react-icons/io5"
 
-IoCloseSharp
 const navLinks = [
 
   {
@@ -132,22 +131,22 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("resize",updateSize)
   },[])
-
-
   return (
     <>
      <section className="relative">
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[5%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
+     
      <div className="w-[158px] xl:w-[218px] flex justify-center items-center tablet:hidden">
-      <div className="md:mr-2">
-        {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
-      </div>
-      <Link href={"/"}>
-      <Image src={whiteLogo.src} alt="logo" width={800} height={400}/>
-      </Link>
-    
+          <div className="md:mr-6">
+            {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
+          </div>
+
+          <Link href={"/"}>
+          <Image src={whiteLogo.src} alt="logo" width={800} height={400}/>
+          </Link>
      </div>
+
       </div>
 
       <section className="flex justify-between pt-2 relative">
