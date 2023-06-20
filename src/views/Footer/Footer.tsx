@@ -62,16 +62,6 @@ const Footer = () => {
               <Link href={'/Contact'}>
               Contact Us
               </Link>
-            
-          </Text>
-          <span className="mx-2">/</span>
-          <Text
-            size='tiny'
-            className='!font-semibold hover:underline'>
-              <Link href={'/Contact'}>
-              CONNECT WITH US
-              </Link>
-            
           </Text>
         </article>
 
@@ -135,7 +125,8 @@ const Footer = () => {
         </div>
         </div>  */}
       
-        <div className={cx('row-start-1 col-start-3 flex justify-center gap-10 items-center ', 'tablet:!row-start-5 tablet:!col-start-1 tablet:!justify-start tablet:col-span-2')} >
+        <div className={cx('row-start-1 col-start-3 flex justify-start gap-10 items-center ', 'tablet:!row-start-5 tablet:!col-start-1 tablet:!justify-start tablet:col-span-2')} >
+          <p className="uppercase">Connect With Us</p>
           <FaFacebookF className='grayscale-1 text-gray-300 h-5 w-5' />
           <FaTwitter className='grayscale-1 text-gray-300 h-5 w-5' />
           <FaLinkedinIn className='grayscale-1 text-gray-300 h-5 w-5' />
