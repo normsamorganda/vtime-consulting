@@ -6,29 +6,32 @@ import { nHeroBg } from "@/assets/Hero"
 import cx from "clsx"
 import useSize from "@/hooks/useSize"
 import { useEffect, useState } from "react"
+import { url } from "inspector"
 const Hero = () => {
-  const { tablet, phone } = useSize()
 
-  const [snow, setSnow] = useState(true)
-
+  const [animationStopped, setAnimationStopped] = useState(false);
 
   useEffect(() => {
-   setTimeout(() => {
-    setSnow(false)
-   },10000)
-  },[])
+    const timer = setTimeout(() => {
+      setAnimationStopped(true);
+    }, 2000);
 
+    return () => clearTimeout(timer); 
+  }, []);
+
+
+  
   return (
     <section
       style={{
         backgroundImage: `url(${nHeroBg.src})`,
       }}
       className={cx('relative bg-no-repeat bg-center bg-cover z-0 px-5 h-[110vh]', 'tablet:h-[95vh]')}>
-{/* <div className="background-container">
-  <div className="background-animation">
-  </div>
-</div>  */}
-        
+
+<div className="ocean">
+  <div className={`wave ${!animationStopped ? 'wave' : 'paused' }`}></div>
+</div>
+
         
       <div className={cx('max-w-xl p-5 rounded-lg bg-slate-800/50 relative top-[7%] left-[15%]', 'tablet:!left-1/2 tablet:-translate-x-1/2 tablet:!max-w-lg')}>
         <Text
