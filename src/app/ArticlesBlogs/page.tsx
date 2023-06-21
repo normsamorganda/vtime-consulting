@@ -8,14 +8,14 @@ import Footer from "@/views/Footer/Footer"
 import FooterExtras from "@/views/FooterExtras/FooterExtras"
 
 
-const Updates = () => {
+const ArticlesBlogs = () => {
     return (
     <div className="px-[5px] text-black">
         <Header />
-        <Events />
         <ArticleBlogs/>
+        {/* <Events />
         <News/>
-        <Reviews/>
+        <Reviews/> */}
         <ContactManagement />
         <Footer/>
         <FooterExtras/>
@@ -25,4 +25,4 @@ const Updates = () => {
 
 }
 
-export default Updates;
+export default ArticlesBlogs;

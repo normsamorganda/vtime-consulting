@@ -4,7 +4,6 @@ import { Text } from "@/components/Text"
 import { FeatureCard } from "@/components/FeatureCard"
 import ReviewsCard from "@/components/Reviews/ReviewsCard"
 import Image from 'next/image';
-
 //assets
 import { avatar } from "@/assets/Updates"
 
@@ -18,10 +17,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination } from "swiper";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
-
-
 import React from 'react'
-
+import { TitleText } from "@/components/TitleText";
+import { bg } from "@/assets/Updates";
 const Reviews = () => {
 
 
@@ -60,7 +58,22 @@ const Reviews = () => {
         }
     ]
   return (
-    <div className="w-3/4 mx-auto">
+
+
+    <div style={{
+      backgroundImage:`url(${bg.src})`,
+      backgroundPosition:'0px -251px;'
+    }}
+    className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
+    <div className="pt-12 w-3/4 mx-auto">
+      <div className="pt-12 bg-[#fefefe] rounded-lg">  
+      <div className="flex justify-center"> 
+        <TitleText
+              size='head'
+              direction='center'>
+              Updates
+          </TitleText>
+      </div>
       <div className="bg-[#fefefe] rounded-lg">  
       <section className="flex items-center justify-around mb-5">
         <Text
@@ -116,7 +129,12 @@ const Reviews = () => {
     </Swiper>
     </section>
       </div>
+      </div>
     </div>
+    </div>   
+
+
+   
   )
 }
 

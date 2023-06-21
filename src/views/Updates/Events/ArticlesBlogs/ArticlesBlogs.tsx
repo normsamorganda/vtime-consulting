@@ -3,7 +3,8 @@
 import  ArticleCard  from "@/components/ArticleBlogsCard/ArticleCard"
 import { Text } from "@/components/Text"
 import BlogsCard from "@/components/ArticleBlogsCard/BlogsCard";
-
+import { bg } from "@/assets/Updates"
+import { TitleText } from "@/components/TitleText";
 //assets
 import { blogs } from '@/assets/Updates'
 import { feature1, feature2, feature3 } from "@/assets/Feature"
@@ -56,8 +57,20 @@ const ArticleBlogs = () => {
   ]
 
   return (
-
-      <div className="pt-12 w-3/4 mx-auto">  
+    <div style={{
+      backgroundImage:`url(${bg.src})`,
+      backgroundPosition:'0px -251px;'
+    }}
+    className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
+    <div className="pt-12 w-3/4 mx-auto">
+      <div className="pt-12 bg-[#fefefe] rounded-lg">  
+      <div className="flex justify-center"> 
+        <TitleText
+              size='head'
+              direction='center'>
+              Updates
+          </TitleText>
+      </div>
       <section className="flex justify-around items-center  mb-5">
         <Text
           className='font-semibold text-lg'>
@@ -117,7 +130,10 @@ const ArticleBlogs = () => {
     </Swiper>
 
     </section>
+      
       </div>
+    </div>
+    </div>   
 
   )
 }

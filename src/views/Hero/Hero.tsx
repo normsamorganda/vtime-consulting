@@ -7,6 +7,7 @@ import cx from "clsx"
 import useSize from "@/hooks/useSize"
 import { useEffect, useState } from "react"
 import { url } from "inspector"
+import Link from "next/link"
 const Hero = () => {
 
   const [animationStopped, setAnimationStopped] = useState(false);
@@ -14,7 +15,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationStopped(true);
-    }, 2000);
+    }, 4000);
 
     return () => clearTimeout(timer); 
   }, []);
@@ -30,8 +31,6 @@ const Hero = () => {
               <div className={`wave ${!animationStopped ? 'wave' : 'paused' }`}></div>
           </div> 
         </div>
-
-
       <div className={cx('max-w-xl p-5 rounded-lg bg-slate-800/50 relative top-[7%] left-[15%]', 'tablet:!left-1/2 tablet:-translate-x-1/2 tablet:!max-w-lg')}>
         <Text
           size='hero'
@@ -59,10 +58,12 @@ const Hero = () => {
           dedicated to helping businesses implement this approach and achieve
           their goals with confidence.
         </Text>
-        <Button
-          content='Read More'
-          className={cx('mt-10', 'tablet:mt-5')}
-        />
+        <Link href='/TheCompany'>
+          <Button
+            content='Read More'
+            className={cx('mt-10', 'tablet:mt-5')}
+          />
+        </Link>
       </div>
     
     </section>

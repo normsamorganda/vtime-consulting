@@ -1,7 +1,8 @@
 'use client'
 import { Text } from "@/components/Text"
 import { FeatureCard } from "@/components/FeatureCard"
-
+import { TitleText } from "@/components/TitleText"
+import { bg } from "@/assets/Updates"
 //assets
 import { feature1, feature2, feature3 } from "@/assets/Feature"
 
@@ -63,7 +64,22 @@ const News = () => {
         },
       ]
   return (
+
+
+    <div style={{
+      backgroundImage:`url(${bg.src})`,
+      backgroundPosition:'0px -251px;'
+    }}
+    className="w-full bg-no-repeat bg-clip-content bg-cover bg-center">
     <div className="pt-12 w-3/4 mx-auto">
+      <div className="pt-12 bg-[#fefefe] rounded-lg">  
+      <div className="flex justify-center"> 
+        <TitleText
+              size='head'
+              direction='center'>
+              Updates
+          </TitleText>
+      </div>
       <div className="bg-[#fefefe] rounded-lg">  
       <section className="flex items-center justify-around mb-5">
         <Text
@@ -119,7 +135,14 @@ const News = () => {
     </Swiper>
     </section>
       </div>
+      </div>
     </div>
+    </div>   
+
+
+
+
+    
   )
 }
 

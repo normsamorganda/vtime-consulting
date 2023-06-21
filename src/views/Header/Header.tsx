@@ -36,51 +36,49 @@ const navLinks = [
     link: '/Outsourcing'
   },
 
-  {
-    id:4,
-    text: 'Updates',
-    link: '/Updates'
-  },
-
-  {
-    id:5,
-    text: 'Contact Us',
-    link: '/Contact'
-  },
+  // {
+  //   id:4,
+  //   text: 'Contact Us',
+  //   link: '/Contact'
+  // },
 
 ]
 
 const subCat = [
   {
     id:1,
-    text: 'The Company',
-    link: '/TheCompany'
-  },
-  {
-    id:2,
-    text: 'Our Mission',
-    link: '/TheCompany'
-  },
-  {
-    id:3,
-    text: 'Our Vision',
-    link: '/TheCompany'
-  },
-  {
-    id:4,
-    text: 'Our Leaders',
-    link: '/TheCompany'
-  },
-  {
-    id:5,
     text: 'Our Services',
     link: '/About'
   },
   {
-    id:6,
+    id:2,
     text: 'Advantages',
     link: '/Advantages'
   },
+]
+
+const subCatUpdates = [
+  {
+    id:1,
+    text: 'Articles / Blogs',
+    link: '/ArticlesBlogs'
+  },
+  {
+    id:2,
+    text: 'Events',
+    link: '/Event'
+  },
+  {
+    id:3,
+    text: 'News',
+    link: '/News'
+  },
+  {
+    id:4,
+    text: 'Reviews',
+    link: '/Reviews'
+  },
+
 ]
 
 const Header = () => {
@@ -90,11 +88,14 @@ const Header = () => {
 
 //active nav function
   const isActive = (path:any) => {
-    return pathname === path.link ? `text-primary dot`:'';
+    console.log(path)
+    return pathname === path.link ? `text-primary`:'';
+    
   };
 
   const [openDiv, setopenDiv] = useState(true)
   const [dropDown, setdropDown] = useState(false)
+  const [dropDownUpdates, setdropDownUpdates] = useState(false)
   const [subDropdown, setsubDropdown] = useState(false)
   const [search, setSearch] = useState(true)
   const [burger, setBurger] = useState(false)
@@ -102,32 +103,29 @@ const Header = () => {
   const handleShow = () => {
     setopenDiv(!openDiv)
   }
-
-  const navDropDownHandle = () => {
+  const navDropDownHandleAboutUs = () => {
     setdropDown(!dropDown)
   }
-
+  const navDropDownHandleUpdates = () => {
+    setdropDownUpdates(!dropDownUpdates)
+  }
   const handleDropdown  = () => {
     setsubDropdown(!subDropdown)
   }
-
   const handleSearch = () => {
     setSearch(!search)
-
   }
-
   const subBurger = () => {
     setBurger(!burger)
   }
-
 
   let updateSize = () => {
       if(window.innerWidth > 899 ){
         setopenDiv(true)
         setBurger(false)
-        // console.log(`${openDiv} were here`)
       }
   }
+
   useEffect(() => {
     window.addEventListener("resize",updateSize)
   },[])
@@ -158,10 +156,33 @@ const Header = () => {
 
         {!burger ? (
           <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
-
-          <button onClick={navDropDownHandle} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+          <button onClick={navDropDownHandleAboutUs} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
            <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">About Us</span>
            <div className={dropDown ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom" : "hidden"}>
+           <Link 
+           className={`${isActive('/TheCompany')} pt-2`}
+           href='/TheCompany'
+           >
+             The Company
+             </Link> 
+             <Link 
+           className={`pt-2`}
+           href='/TheCompany'
+           >
+             Our Mission
+             </Link> 
+             <Link 
+           className={`pt-2`}
+           href='/TheCompany'
+           >
+             Our Vision
+             </Link> 
+             <Link 
+           className={`pt-2`}
+           href='/TheCompany'
+           >
+             Our Leaders
+             </Link> 
              {subCat.map(({text, link, id}) => (
            <Link 
            key={id} 
@@ -180,14 +201,30 @@ const Header = () => {
                </Link>
                )
              })}
+             <button onClick={navDropDownHandleUpdates} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+           <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Updates</span>
+           <div className={dropDownUpdates ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom" : "hidden"}>
+             {subCatUpdates.map(({text, link, id}) => (
+           <Link 
+           key={id} 
+           className={`${isActive({link})} pt-2`}
+           href={link} 
+           >
+             {text}
+             </Link> 
+         ))}
            </div>
+         </button>
+         <Link href='Contact'>
+          <button className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+            <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Contact Us</span>
+          </button> 
+         </Link>  
+         </div>
         ) : <div className="w-2/4">
         <Search handleSearch={handleSearch}/>
       </div> }
 
-
-
-        
         {/* CENTER */}
         {tablet && <div className={cx("absolute top-1/2 translate-y-1/4 w-52 z-10 left-1/2 -translate-x-1/2", 'phone:w-40')}>
         <Link href={"/"}>
@@ -273,16 +310,40 @@ const Header = () => {
                   {subDropdown ? <BiChevronDown className="text-3xl"/> : <BiChevronRight className="text-3xl"/> } 
                 </div>
                     <div className={subDropdown ? "block" : "hidden"}>
-                    {subCat.map(({text, link, id}) => (
-                      <div className="pt-3 pl-3 text-sm "  key={id} >
+                    <div className="pt-3 pl-3 text-sm flex flex-col">
                           <Link 
-                          className=" text-sm font-bold active:underline "
-                          href={link} 
+                          className=" text-sm font-bold pt-4 active:underline "
+                          href='/TheCompany'
                           >
-                            {text}
+                            The Company
+                          </Link>
+                          <Link 
+                          className=" text-sm font-bold pt-4 active:underline "
+                          href='/TheCompany'
+                          >
+                            Our Mission
                           </Link> 
+                          <Link 
+                          className=" text-sm font-bold pt-4 active:underline "
+                          href='/TheCompany'
+                          >
+                            Our Vision
+                          </Link> 
+                          <Link 
+                          className=" text-sm font-bold pt-4 active:underline "
+                          href='/TheCompany'
+                          >
+                            Our Leaders
+                          </Link> 
+                          {subCat.map(({text, link, id}) => (
+                                <Link 
+                                className=" text-sm font-bold pt-4 active:underline "
+                                href={link} 
+                                >
+                                  {text}
+                                </Link> 
+                            ))}
                       </div>
-                      ))}
                     </div>
               </div>
               {navLinks.map((link) => {
