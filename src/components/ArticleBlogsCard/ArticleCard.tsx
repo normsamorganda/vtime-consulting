@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Text } from "../Text"
-
+import Link from "next/link"
 const ArticleCard = ({ key, date, description, image, tag, className }: any) => {
   return (
       <div className='max-w-[317px] h-[336px] mx-5 mb-[10px] lg:mx-0 relative shadow-custom rounded-3xl lg:w-[20rem] lg:m-0 lg:right-[-165px]'>
@@ -32,7 +32,9 @@ const ArticleCard = ({ key, date, description, image, tag, className }: any) => 
             <Text
               size='tiny'
               className='!font-light text-primary text-end'>
-              Read More
+                <Link href='/TheCompany'>
+                   Read More
+                </Link>
             </Text>
           </div>
         </div>

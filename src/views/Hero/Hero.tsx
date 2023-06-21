@@ -25,12 +25,13 @@ const Hero = () => {
         backgroundImage: `url(${nHeroBg.src})`,
       }}
       className={cx('relative bg-no-repeat bg-center bg-cover z-0 px-5 h-[110vh]', 'tablet:h-[95vh]')}>
+        <div className="tablet:hidden !tablet:block">
+          <div className="ocean">
+              <div className={`wave ${!animationStopped ? 'wave' : 'paused' }`}></div>
+          </div> 
+        </div>
 
-<div className="ocean">
-  <div className={`wave ${!animationStopped ? 'wave' : 'paused' }`}></div>
-</div>
 
-        
       <div className={cx('max-w-xl p-5 rounded-lg bg-slate-800/50 relative top-[7%] left-[15%]', 'tablet:!left-1/2 tablet:-translate-x-1/2 tablet:!max-w-lg')}>
         <Text
           size='hero'

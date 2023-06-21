@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image"
 import { Text } from "../Text"
-
+import Link from 'next/link'
 const BlogsCard = ({key, date, description, image, tag}: any) => {
   return (
   
@@ -34,7 +34,9 @@ const BlogsCard = ({key, date, description, image, tag}: any) => {
           <Text
             size='tiny'
             className='!font-light text-primary text-end'>
-            Read More
+              <Link href='/TheCompany'>
+                    Read More
+              </Link>
           </Text>
         </div>
       </div>

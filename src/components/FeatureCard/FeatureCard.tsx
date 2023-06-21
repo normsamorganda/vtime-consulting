@@ -4,7 +4,7 @@ import Image from "next/image"
 import { FeatureCardProps } from "./types"
 import { Text } from "../Text"
 import cx from "clsx"
-
+import Link from "next/link"
 const FeatureCard = ({ key, date, description, image, tag, className }: any) => {
   return (
     <div className={cx(className, 'tablet:w-full tablet:flex tablet:justify-center mb-[5px] md:mb-6', 'transition-all duration-500 tablet:opacity-0.5')} key={key} >
@@ -35,7 +35,10 @@ const FeatureCard = ({ key, date, description, image, tag, className }: any) => 
           <Text
             size='tiny'
             className='!font-light text-primary text-end'>
-            Read More
+              <Link href='/TheCompany'>
+                  Read More
+              </Link>
+
           </Text>
         </div>
       </div>
