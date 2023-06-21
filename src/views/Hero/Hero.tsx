@@ -19,8 +19,6 @@ const Hero = () => {
     return () => clearTimeout(timer); 
   }, []);
 
-
-  
   return (
     <section
       style={{
