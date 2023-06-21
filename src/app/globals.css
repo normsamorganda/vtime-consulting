@@ -126,7 +126,6 @@ body {
 
 }
 
-
 .recShape {
   top: 802px;
   transform: rotate(0deg);
@@ -145,8 +144,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  top: 533px;
+  top: 390px;
   transform: rotate(-9.7deg);
+  z-index: -99999;
 }
 
 .wave {
