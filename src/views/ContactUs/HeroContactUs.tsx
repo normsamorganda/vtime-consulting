@@ -103,11 +103,11 @@ const HeroContactUs = () => {
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
 
-           {/* <div className='hidden md:block'>
+           <div className='hidden'>
               <PopUpMessage/>
            </div>
-              */}
-              
+             
+
             </div>
         </section>
         </div>
