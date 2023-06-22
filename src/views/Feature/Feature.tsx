@@ -27,19 +27,23 @@ const Feature = () => {
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature1,
-      tag: 'News'
+      tag: 'News',
+      link:'/News'
     }, {
       id: 2,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature2,
-      tag: 'Articles'
+      tag: 'Articles',
+      link:'/ArticlesBlogs'
     }, {
       id: 3,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature3,
-      tag: 'Events'
+      tag: 'Events',
+      link:'/Event'
+
     }
   ]
 
@@ -98,6 +102,7 @@ const Feature = () => {
           description={card.description} 
           image={card.image} 
           tag={card.tag} 
+          link={card.link}
           className={cx('tablet:absolute', tablet && position)} />
         })}
 
