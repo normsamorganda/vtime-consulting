@@ -339,6 +339,7 @@ const Header = () => {
                                 <Link 
                                 className=" text-sm font-bold pt-4 active:underline "
                                 href={link} 
+                                key={id}
                                 >
                                   {text}
                                 </Link> 
