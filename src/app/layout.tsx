@@ -7,8 +7,8 @@ const opensans = Open_Sans({
 })
 
 export const metadata = {
-  title: "Business Asia Consulting",
-  description: "VTIME",
+  title: "FH INTERNATIONAL Consulting Co. Inc",
+  description: "FH INTERNATIONAL Consulting Co. Inc",
 }
 
 export default function RootLayout({

@@ -103,9 +103,10 @@ const Header = () => {
   const handleShow = () => {
     setopenDiv(!openDiv)
   }
-  const navDropDownHandleAboutUs = () => {
+  const handleAboutUs = () => {
     setdropDown(!dropDown)
   }
+
   const navDropDownHandleUpdates = () => {
     setdropDownUpdates(!dropDownUpdates)
   }
@@ -156,44 +157,47 @@ const Header = () => {
 
         {!burger ? (
           <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
-          <button onClick={navDropDownHandleAboutUs} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-           <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">About Us</span>
-           <div className={dropDown ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom" : "hidden"}>
-           <Link 
-           className={`${isActive('/TheCompany')} pt-2`}
-           href='/TheCompany'
-           >
-             The Company
-             </Link> 
+          <button onMouseEnter={handleAboutUs} onMouseLeave={handleAboutUs} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+           <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs" >About Us</span>
+           {dropDown && (
+             <div className="absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom">
              <Link 
-           className={`pt-2`}
-           href='/TheCompany'
-           >
-             Our Mission
-             </Link> 
+             className={`${isActive('/TheCompany')} pt-2`}
+             href='/TheCompany'
+             >
+               The Company
+               </Link> 
+               <Link 
+             className={`pt-2`}
+             href='/TheCompany'
+             >
+               Our Mission
+               </Link> 
+               <Link 
+             className={`pt-2`}
+             href='/TheCompany'
+             >
+               Our Vision
+               </Link> 
+               <Link 
+             className={`pt-2`}
+             href='/TheCompany'
+             >
+               Our Leaders
+               </Link> 
+               {subCat.map(({text, link, id}) => (
              <Link 
-           className={`pt-2`}
-           href='/TheCompany'
-           >
-             Our Vision
-             </Link> 
-             <Link 
-           className={`pt-2`}
-           href='/TheCompany'
-           >
-             Our Leaders
-             </Link> 
-             {subCat.map(({text, link, id}) => (
-           <Link 
-           key={id} 
-           className={`${isActive({link})} pt-2`}
-           href={link} 
-           >
-             {text}
-             </Link> 
-         ))}
-           </div>
+             key={id} 
+             className={`${isActive({link})} pt-2`}
+             href={link} 
+             >
+               {text}
+               </Link> 
+           ))}
+             </div>
+           )}
          </button>
+         
              {navLinks.map(({text, link, id}) => {
                return (
                  <Link href={link} key={id}>
@@ -252,6 +256,26 @@ const Header = () => {
               {subDropdown ? <BiChevronDown className="text-white text-3xl"/> : <BiChevronRight className="text-white text-3xl"/> } 
             </div>
                 <div className={subDropdown ? "block" : "hidden"}>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/TheCompany'>
+                        The Company
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/TheCompany'>
+                        Our Mission
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/TheCompany'>
+                        Our Vision
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/TheCompany'>
+                        Our Leaders
+                      </Link> 
+                </div>
                 {subCat.map(({text, link, id}) => (
                   <div className="pt-3 pl-3 text-sm"  key={id} >
                       <Link 
@@ -305,7 +329,7 @@ const Header = () => {
           <div className=" w-3/12 text-black">
               <div className="ml-12">
               <div className="w-11/12 mx-auto py-5">
-                <div className="flex justify-between border-b-2 divide-y divide-slate-200" onClick={handleDropdown}>
+                <div className="flex justify-between border-b-2 divide-y divide-slate-200" onMouseOver={handleDropdown}>
                     <span className=" text-sm font-bold">About Us</span>
                   {subDropdown ? <BiChevronDown className="text-3xl"/> : <BiChevronRight className="text-3xl"/> } 
                 </div>

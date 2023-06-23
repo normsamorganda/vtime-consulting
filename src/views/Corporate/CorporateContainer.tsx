@@ -20,7 +20,7 @@ const CorporateContainer = () => {
         <Text
           size='normal'
           className={cx('text-black mt-5 leading-6 text-justify', 'tablet:!text-sm', 'phone:!text-[12px]')}>
-            At <span className="text-[#2a9df4]">Business Asia Consulting</span>, we provide you with everything you need to enter the <span className="text-[#2a9df4]">PHILIPPINE</span> Market.
+            At <span className="text-[#2a9df4]">FHI International Consulting Co. Inc.</span>, we provide you with everything you need to enter the <span className="text-[#2a9df4]">PHILIPPINE</span> Market.
             Regardless of if you are a foreign company or an individual, our trusted consultants and legal team can equip you with the practical solutions that you need to target your business started.
         </Text>
     </div>

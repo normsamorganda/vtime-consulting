@@ -10,7 +10,7 @@ const Recruitement = () => {
   let recruitements = [
     { id:1,
       title:"Manpower Service",
-      description:"BAC sought to distinguish itself as a reliable partner of foreign and loca employers in providing a labor force; a solid believer in quality servicesl and a result-oriented enterprice that derives satisfaction from meeting the needs of its customers without compromising its highest ervice and ethical standards" , 
+      description:"FHI sought to distinguish itself as a reliable partner of foreign and loca employers in providing a labor force; a solid believer in quality servicesl and a result-oriented enterprice that derives satisfaction from meeting the needs of its customers without compromising its highest ervice and ethical standards" , 
       image: manPower,
     },
     { id:2,
@@ -35,7 +35,7 @@ const Recruitement = () => {
             Outsourcing
           </TitleText>
           <p className="text-xs md:text-sm">
-            Regardless of the size of your ompany, our Business Asia Consulting professionals are ready to assist you.
+            Regardless of the size of your ompany, our FHI International Consulting Co. Inc. professionals are ready to assist you.
           </p>
         </div>
         <div className={cx('flex justify-between gap-0 items-center', 'tablet:flex-col gap-16', 'phone:gap-5')}>

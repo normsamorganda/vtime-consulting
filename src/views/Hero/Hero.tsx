@@ -34,18 +34,18 @@ const Hero = () => {
         </Text>
         <Text
           size='title'
-          className={cx('text-white font-bold mt-3 !text-6xl', 'tablet:!text-[3rem]', 'phone:!text-[2rem]')}>
-          Business Asia
+          className={cx('text-white font-bold mt-3 !text-5xl', 'tablet:!text-[3rem]', 'phone:!text-[2rem]')}>
+        FH International
         </Text>
         <Text
           size='title'
-          className={cx('text-white font-bold mt-3 !text-6xl', 'tablet:!text-[3rem]', 'phone:!text-[2rem]')}>
-          Consulting
+          className={cx('text-white font-bold mt-3 !text-5xl', 'tablet:!text-[3rem]', 'phone:!text-[2rem]')}>
+          Consulting Co. Inc?
         </Text>
         <Text
           size='description'
           className={cx('text-white mt-5 font-thin leading-6', 'tablet:!text-sm', 'phone:!text-[12px]')}>
-          At BAC, We understand the importance of making well-informed decisions
+          At FHI, We understand the importance of making well-informed decisions
           in business, That’s why we advocate for the “Stop, Look, and Listen”
           approach to decision-making. By talking a moment to pause, observe,
           and listen to all the relevant factors, our clients can make more

@@ -98,16 +98,18 @@ const HeroContactUs = () => {
                     <textarea className="shadow appearance-none border w-full rounded-lg py-2 px-3 text-gray-700  leading-tight placeholder:italic placeholder:text-sm focus:outline-none focus:shadow-outline" id="subject" rows={5} placeholder='How Can We Help You?'></textarea>
                   </div>
                 </div>
-                <p className='pt-6 text-center text-sm md:text-md'>At Business Asia Consulting, We are dedicated to safeguarding your information. We assure you that your information will be utilized in adherence to the relevant data privacy regulations, our internal protocols, and our <span className='text-[#2a9df4]'>privacy policy</span>. Given that BAC operates as a global entity, your information may be retained and handled by BAC and its subsidiaries in countries other than your place of residence. Nevertheless, regardless of where your information is processed, We will exercise the same level of caution and respect for your privacy.</p>
-
+                <div className='hidden tablet:block my-4 mx-4 text-sm'>
+                <p className='mb-5'>Service Inquiries: 400-100-6053</p>
+                <p>Expedited processing: 0731-85168499</p>
+                </div>
+                <p className='pt-6 text-center text-sm md:text-md'>At FH International Consulting Co. Inc., We are dedicated to safeguarding your information. We assure you that your information will be utilized in adherence to the relevant data privacy regulations, our internal protocols, and our <span className='text-[#2a9df4]'>privacy policy</span>. Given that FHI operates as a global entity, your information may be retained and handled by BAC and its subsidiaries in countries other than your place of residence. Nevertheless, regardless of where your information is processed, We will exercise the same level of caution and respect for your privacy.</p>
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
 
            <div className='hidden'>
               <PopUpMessage/>
            </div>
-             
-
+            
             </div>
         </section>
         </div>
