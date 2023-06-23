@@ -96,7 +96,7 @@ const CompanyContainer = () => {
                 </div>
 
             </div>
-            <div className="order-1 lg:order-2 bg-cover relative z-[99999] sm:w-[30rem] lg:w-[40rem]">
+            <div className="order-1 lg:order-2 bg-cover relative z-[1000] sm:w-[30rem] lg:w-[40rem]">
                 <Image src={meeting} alt="huddle">
                 </Image>
             </div>

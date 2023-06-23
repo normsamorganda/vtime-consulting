@@ -25,8 +25,7 @@ export default function Home() {
 
     <main className='flex flex-col items-center justify-between overflow-hidden'>
 
-        <div className='text-black w-full'> 
-    
+        <div className='text-black w-full px-2'> 
           <Header />
           <Hero />
           <Advantages />
