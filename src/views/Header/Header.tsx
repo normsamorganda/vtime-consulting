@@ -134,7 +134,7 @@ const Header = () => {
   return (
     <>
      <section className="relative">
-      <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[5%] z-10">
+      <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[3%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
      
      <div className="w-[158px] xl:w-[272px] flex justify-center items-center tablet:hidden desktop2:justify-start">
@@ -143,7 +143,7 @@ const Header = () => {
           </div>
           <Link href={"/"} className="flex items-center">
           <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[34px] w-[92%] desktop2:hidden"/>
+          <Image src={fhiText.src} alt="logo" width={800} height={400} className="w-[100%] desktop:w-[90%]"/>
           </Link>
      </div>
 
@@ -231,10 +231,10 @@ const Header = () => {
       </div> }
 
         {/* CENTER */}
-        {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-1/2 -translate-x-1/2", 'phone:w-64')}>
+        {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-[47%] -translate-x-1/2", 'phone:w-60')}>
         <Link href={"/"} className="flex items-center">
           <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[34px] w-[92%]"/>
+          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[50px] w-[92%]"/>
         </Link>
         </div>}
 

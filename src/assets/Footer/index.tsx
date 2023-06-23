@@ -1,3 +1,3 @@
 import blackLogo from "./blackLogo.png"
-
-export { blackLogo }
+import fhiDark from "./fhiDark.png"
+export { blackLogo, fhiDark }
