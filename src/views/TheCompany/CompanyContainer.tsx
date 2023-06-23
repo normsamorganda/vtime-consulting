@@ -67,7 +67,7 @@ const CompanyContainer = () => {
 
   return (
     <>
-    <div className="w-3/4 mx-auto text-justify">
+    <div className="w-3/4 mx-auto text-justify my-12">
         <div className="flex justify-center">
             <TitleText
                 size='head'

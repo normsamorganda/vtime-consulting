@@ -12,7 +12,7 @@ import { botBuilding } from "@/assets/Hero";
 const Corporate = () => {
     return (<div className="px-[5px] text-black">
         <Header />
-        <HeroCorporate imgHero = {botBuilding}/>
+        {/* <HeroCorporate imgHero = {botBuilding}/> */}
         <CorporateContainer/>
         <CorporateOffer/>
         <ContactManagement />

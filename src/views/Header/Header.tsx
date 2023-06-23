@@ -1,5 +1,5 @@
 'use client'
-import { headerBg3, whiteHeader, whiteLogo } from "@/assets/Header"
+import { whiteLogo, FHIwhite, fhi, fhiText } from "@/assets/Header"
 import { Search } from "@/components/Search"
 import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
@@ -15,6 +15,7 @@ import Link from "next/link"
 import { usePathname } from 'next/navigation';
 import {AiOutlineSearch, AiOutlineCloseCircle} from "react-icons/ai"
 import {IoCloseSharp} from "react-icons/io5"
+import { fhiLogo } from "@/assets/Affiliates"
 
 const navLinks = [
 
@@ -136,13 +137,13 @@ const Header = () => {
       <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] left-[5%] z-10">
       {openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
      
-     <div className="w-[158px] xl:w-[218px] flex justify-center items-center tablet:hidden">
+     <div className="w-[158px] xl:w-[272px] flex justify-center items-center tablet:hidden desktop2:justify-start">
           <div className="md:mr-6">
             {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
           </div>
-
-          <Link href={"/"}>
-          <Image src={whiteLogo.src} alt="logo" width={800} height={400}/>
+          <Link href={"/"} className="flex items-center">
+          <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
+          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[34px] w-[92%] desktop2:hidden"/>
           </Link>
      </div>
 
@@ -157,7 +158,7 @@ const Header = () => {
 
         {!burger ? (
           <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
-          <button onMouseEnter={handleAboutUs} onMouseLeave={handleAboutUs} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+          <button onClick={handleAboutUs}  className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
            <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs" >About Us</span>
            {dropDown && (
              <div className="absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom">
@@ -230,10 +231,11 @@ const Header = () => {
       </div> }
 
         {/* CENTER */}
-        {tablet && <div className={cx("absolute top-1/2 translate-y-1/4 w-52 z-10 left-1/2 -translate-x-1/2", 'phone:w-40')}>
-        <Link href={"/"}>
-        <Image src={whiteLogo.src} width={500} height={300} alt="logo" />
-          </Link>
+        {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-1/2 -translate-x-1/2", 'phone:w-64')}>
+        <Link href={"/"} className="flex items-center">
+          <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
+          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[34px] w-[92%]"/>
+        </Link>
         </div>}
 
         {/* right */}

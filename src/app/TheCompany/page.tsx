@@ -9,7 +9,7 @@ import FooterExtras from "@/views/FooterExtras/FooterExtras"
 const TheCompany = () => {
     return (<div className="px-[5px] text-black">
         <Header />
-        <HeroCorporate imgHero = {bgHoping}/>
+        {/* <HeroCorporate imgHero = {bgHoping}/> */}
         <CompanyContainer/>
         <ContactManagement />
         <Footer/>

@@ -9,7 +9,7 @@ const About = () => {
     return (
     <div className="px-[5px] text-black">
         <Header />
-        <HeroService/>
+        {/* <HeroService/> */}
         <ServiceContainer/>
         <ServiceOffer /> 
         <ContactManagement />

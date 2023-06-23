@@ -13,7 +13,7 @@ import FooterExtras from "@/views/FooterExtras/FooterExtras"
 const Outsourcing = () => {
     return (<div className="px-[5px] text-black">
         <Header />
-        <HeroOutsourcing/>
+        {/* <HeroOutsourcing/> */}
         <Recruitement/>
         <HRContainer/>
         <Payroll/>

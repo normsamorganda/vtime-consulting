@@ -4,7 +4,7 @@ import { TitleText } from "@/components/TitleText"
 import cx from 'clsx'
 const CorporateContainer = () => {
   return (
-    <div className="flex flex-col justify-center text-left w-3/5 mx-auto">
+    <div className="flex flex-col justify-center text-left w-3/5 mx-auto my-12">
         <div className="text-center mx-auto">
         <TitleText
             size='head'

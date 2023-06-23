@@ -11,7 +11,7 @@ const VisaImmigration = () => {
 
     return (<div className="px-[5px] text-black">
         <Header />
-        <HeroVisa/>
+        {/* <HeroVisa/> */}
         <ContainerVisa/>
         <ContactManagement />
         <Footer/>

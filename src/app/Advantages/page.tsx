@@ -9,7 +9,7 @@ const Advantages = () => {
     return (
     <div className="px-[5px] text-black">
         <Header />
-        <HeroAdvantage/>
+        {/* <HeroAdvantage/> */}
         <Advantage />
         <Consulting/>
         <Affiliates />
