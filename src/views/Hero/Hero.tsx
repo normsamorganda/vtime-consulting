@@ -53,11 +53,11 @@ const Hero = () => {
        
         
       </div>
-      <div className="tablet:hidden !tablet:block">
+      {/* <div className="tablet:hidden !tablet:block">
           <div className="ocean">
               <div className={`wave ${!animationStopped ? 'wave' : 'paused' }`}></div>
           </div> 
-        </div>
+        </div> */}
     
     </section>
   )
