@@ -45,7 +45,7 @@ const Hero = () => {
         <div className="w-full mx-auto">
         <Link href='/TheCompany'>
           <Button
-            content='Read More'
+            content='Read'
             className={cx('mt-10', 'tablet:mt-5')}
           />
         </Link>

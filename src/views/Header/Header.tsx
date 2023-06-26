@@ -100,7 +100,7 @@ const Header = () => {
   const [subDropdown, setsubDropdown] = useState(false)
   const [search, setSearch] = useState(true)
   const [burger, setBurger] = useState(false)
-
+  const [updates, setUpdates] = useState(false)
   const handleShow = () => {
     setopenDiv(!openDiv)
     console.log(`burger status: ${openDiv}`)
@@ -119,10 +119,12 @@ const Header = () => {
     if (window.matchMedia("(max-width: 900px)").matches) {
       setSearch(!search)
     }
-  
   }
   const subBurger = () => {
     setBurger(!burger)
+  }
+  const mobileUpdate = () => {
+    setUpdates(!updates)
   }
 
   let updateSize = () => {
@@ -137,6 +139,8 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("resize",updateSize)
   },[])
+
+  
   return (
     <>
   
@@ -309,7 +313,6 @@ const Header = () => {
                   ))}
                 </div>
           </div>
-
       {/* Nav Link */}
           {navLinks.map((link) => {
             return (
@@ -319,6 +322,38 @@ const Header = () => {
               </div>
             )
           })}
+          <div className="w-11/12 mx-auto py-5">
+            <div className="flex justify-between" onClick={mobileUpdate}>
+                <span className="text-white text-sm font-bold">Updates</span>
+              {updates ? <BiChevronDown className="text-white text-3xl"/> : <BiChevronRight className="text-white text-3xl"/> } 
+            </div>
+                <div className={updates ? "block" : "hidden"}>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/ArticlesBlogs'>
+                        Articles / Blogs
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/Event'>
+                        Events
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/News'>
+                        News
+                      </Link> 
+                </div>
+                <div className="pt-3 pl-3 text-sm">
+                      <Link className="text-white text-sm font-bold active:underline" href='/Reviews'>
+                        Reviews
+                      </Link> 
+                </div>
+                </div>
+          </div>
+          <div className="flex w-11/12 mx-auto justify-between py-5">
+              <Link href='Contact'  className="text-white text-sm font-bold">Contact Us</Link>
+              <BiChevronRight className="text-white text-3xl"/>
+          </div>
       </div> 
     </div>
  
