@@ -13,7 +13,6 @@ import {BiChevronDown} from "react-icons/bi"
 import React from "react"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
-import {AiOutlineSearch, AiOutlineCloseCircle} from "react-icons/ai"
 import {IoCloseSharp} from "react-icons/io5"
 import { fhiLogo } from "@/assets/Affiliates"
 import { FaSearch } from "react-icons/fa";
@@ -356,71 +355,74 @@ const Header = () => {
       </div> 
     </div>
  
-
     {burger && (
-          <div className="w-screen h-auto bg-[#e6e6e6] absolute z-[99999] flex">
 
+      <div className="relative w-full"> 
+          <div className="w-full h-auto bg-white absolute z-[99999] flex">
           <div className=" w-3/12 text-black">
-              <div className="ml-12">
-              <div className="w-11/12 mx-auto py-5">
-                <div className="flex justify-between border-b-2 divide-y divide-slate-200" onClick={handleDropdown}>
-                    <span className=" text-sm font-bold">About Us</span>
-                  {subDropdown ? <BiChevronDown className="text-3xl"/> : <BiChevronRight className="text-3xl"/> } 
-                </div>
-                    <div className={subDropdown ? "block" : "hidden"}>
-                    <div className="pt-3 pl-3 text-sm flex flex-col">
-                          <Link 
-                          className=" text-sm font-bold pt-4 active:underline "
-                          href='/TheCompany'
-                          >
-                            The Company
-                          </Link>
-                          <Link 
-                          className=" text-sm font-bold pt-4 active:underline "
-                          href='/TheCompany'
-                          >
-                            Our Mission
-                          </Link> 
-                          <Link 
-                          className=" text-sm font-bold pt-4 active:underline "
-                          href='/TheCompany'
-                          >
-                            Our Vision
-                          </Link> 
-                          <Link 
-                          className=" text-sm font-bold pt-4 active:underline "
-                          href='/TheCompany'
-                          >
-                            Our Leaders
-                          </Link> 
-                          {subCat.map(({text, link, id}) => (
-                                <Link 
-                                className=" text-sm font-bold pt-4 active:underline "
-                                href={link} 
-                                key={id}
-                                >
-                                  {text}
-                                </Link> 
-                            ))}
-                      </div>
-                    </div>
-              </div>
-              {navLinks.map((link) => {
-                    return (
-                      <div className="flex w-11/12 mx-auto justify-between py-5 border-b-2 divide-y divide-slate-200" key={link.id}>
-                      <Link href={link.link}  className="text-sm font-bold"> {link.text}</Link>
-                        <BiChevronRight className="text-3xl"/>
-                      </div>
-                    )
-                  })}
-                
-              </div>
-          </div>
-          <div className=" w-9/12">
-            
+          <div className="ml-12">
+          <div className="w-11/12 mx-auto py-5">
+            <div className="flex justify-between border-b-2 divide-y divide-slate-200" onClick={handleDropdown}>
+                <span className=" text-sm font-bold">About Us</span>
+              {subDropdown ? <BiChevronDown className="text-3xl"/> : <BiChevronRight className="text-3xl"/> } 
             </div>
-
+                <div className={subDropdown ? "block" : "hidden"}>
+                <div className="pt-3 pl-3 text-sm flex flex-col">
+                      <Link 
+                      className=" text-sm font-bold pt-4 active:underline "
+                      href='/TheCompany'
+                      >
+                        The Company
+                      </Link>
+                      <Link 
+                      className=" text-sm font-bold pt-4 active:underline "
+                      href='/TheCompany'
+                      >
+                        Our Mission
+                      </Link> 
+                      <Link 
+                      className=" text-sm font-bold pt-4 active:underline "
+                      href='/TheCompany'
+                      >
+                        Our Vision
+                      </Link> 
+                      <Link 
+                      className=" text-sm font-bold pt-4 active:underline "
+                      href='/TheCompany'
+                      >
+                        Our Leaders
+                      </Link> 
+                      {subCat.map(({text, link, id}) => (
+                            <Link 
+                            className=" text-sm font-bold pt-4 active:underline "
+                            href={link} 
+                            key={id}
+                            >
+                              {text}
+                            </Link> 
+                        ))}
+                  </div>
+                </div>
           </div>
+          {navLinks.map((link) => {
+                return (
+                  <div className="flex w-11/12 mx-auto justify-between py-5 border-b-2 divide-y divide-slate-200" key={link.id}>
+                  <Link href={link.link}  className="text-sm font-bold"> {link.text}</Link>
+                    <BiChevronRight className="text-3xl"/>
+                  </div>
+                )
+              })}
+            
+          </div>
+      </div>
+              <div className=" w-9/12">
+                
+                </div>
+
+              </div>
+      </div>
+        
+         
     ) }
     
     </>
