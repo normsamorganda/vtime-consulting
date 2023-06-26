@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 import {AiOutlineSearch, AiOutlineCloseCircle} from "react-icons/ai"
 import {IoCloseSharp} from "react-icons/io5"
 import { fhiLogo } from "@/assets/Affiliates"
+import { FaSearch } from "react-icons/fa";
 
 const navLinks = [
 
@@ -89,7 +90,6 @@ const Header = () => {
 
 //active nav function
   const isActive = (path:any) => {
-    console.log(path)
     return pathname === path.link ? `text-primary`:'';
     
   };
@@ -103,6 +103,7 @@ const Header = () => {
 
   const handleShow = () => {
     setopenDiv(!openDiv)
+    console.log(`burger status: ${openDiv}`)
   }
   const handleAboutUs = () => {
     setdropDown(!dropDown)
@@ -115,7 +116,10 @@ const Header = () => {
     setsubDropdown(!subDropdown)
   }
   const handleSearch = () => {
-    setSearch(!search)
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      setSearch(!search)
+    }
+  
   }
   const subBurger = () => {
     setBurger(!burger)
@@ -125,6 +129,8 @@ const Header = () => {
       if(window.innerWidth > 899 ){
         setopenDiv(true)
         setBurger(false)
+        setSearch(true)
+
       }
   }
 
@@ -133,125 +139,138 @@ const Header = () => {
   },[])
   return (
     <>
-     <section className="relative">
-      <div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] z-10 left-[3%] tablet:left-[6%] ">
-      {openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
-     
-     <div className="xl:w-[230px] 2xl:w-[17rem] flex justify-center items-center tablet:hidden desktop2:justify-around">
-          <div className="md:mr-6">
-            {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
-          </div>
-          <Link href={"/"} className="flex items-center">
-          <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-          <Image src={fhiText.src} alt="logo" width={800} height={400} className="w-[100%] desktop:w-[90%] desktop2:hidden"/>
-          </Link>
+  
+<section className={search ? "block relative" : "hidden"}>
+<div className="absolute top-1/2 -translate-y-1/2 w-[180px] laptop:w-[200px] z-10 left-[3%] tablet:left-[6%] ">
+{openDiv ? <FaBars className={cx("text-white w-5 h-10 hidden tablet:block", 'phone:w-6')} onClick={handleShow}/> : <AiOutlineClose className={cx("text-white w-6 h-10 font-bold md:text-3xl hidden tablet:block", 'phone:w-6')} onClick={handleShow}/>  } 
+
+<div className="xl:w-[230px] 2xl:w-[17rem] flex justify-center items-center tablet:hidden desktop2:justify-around">
+    <div className="md:mr-6">
+      {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
+    </div>
+    <Link href={"/"} className="flex items-center">
+    <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
+    <Image src={fhiText.src} alt="logo" width={800} height={400} className="w-[100%] desktop:w-[90%] desktop2:hidden"/>
+    </Link>
+</div>
+
+</div>
+
+<section className="flex justify-between pt-2 relative">
+  {/* left */}
+  <section className={cx("bg-secondary h-10 flex justify-center rounded-tl-3xl relative w-[20%]", 'tablet:w-full')}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="80" height="40" className="absolute z-0 -right-[58px]"><path className="fill-secondary" d="M 0 50 L 80 50 C 30 50 30 0 0 0 L 0 0 Z"></path></svg>
+  </section>
+  {/* links */}
+
+  {!burger ? (
+    <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
+    <button onClick={handleAboutUs}  className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+     <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs" >About Us</span>
+     {dropDown && (
+       <div className="absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom">
+       <Link 
+       className={`${isActive('/TheCompany')} pt-2`}
+       href='/TheCompany'
+       >
+         The Company
+         </Link> 
+         <Link 
+       className={`pt-2`}
+       href='/TheCompany'
+       >
+         Our Mission
+         </Link> 
+         <Link 
+       className={`pt-2`}
+       href='/TheCompany'
+       >
+         Our Vision
+         </Link> 
+         <Link 
+       className={`pt-2`}
+       href='/TheCompany'
+       >
+         Our Leaders
+         </Link> 
+         {subCat.map(({text, link, id}) => (
+       <Link 
+       key={id} 
+       className={`${isActive({link})} pt-2`}
+       href={link} 
+       >
+         {text}
+         </Link> 
+     ))}
+       </div>
+     )}
+   </button>
+   
+       {navLinks.map(({text, link, id}) => {
+         return (
+           <Link href={link} key={id}>
+           <Text size="description" className={cx(`${isActive({link})} hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{text}</Text>
+         </Link>
+         )
+       })}
+       <button onClick={navDropDownHandleUpdates} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+     <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Updates</span>
+     <div className={dropDownUpdates ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom" : "hidden"}>
+       {subCatUpdates.map(({text, link, id}) => (
+     <Link 
+     key={id} 
+     className={`${isActive({link})} pt-2`}
+     href={link} 
+     >
+       {text}
+       </Link> 
+   ))}
      </div>
+   </button>
+   <Link href='Contact'>
+    <button className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
+      <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Contact Us</span>
+    </button> 
+   </Link>  
+   </div>
+  ) : <div className="w-2/4">
+  <Search handleSearch={handleSearch}/>
+</div> }
 
-      </div>
+  {/* CENTER */}
+  {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-[51%] -translate-x-1/2", 'phone:w-48')}>
+  <Link href={"/"} className="flex items-center">
+    <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
+    <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[35px] w-[92%]"/>
+  </Link>
+  </div>}
 
-      <section className="flex justify-between pt-2 relative">
-        {/* left */}
-        <section className={cx("bg-secondary h-10 flex justify-center rounded-tl-3xl relative w-[20%]", 'tablet:w-full')}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="80" height="40" className="absolute z-0 -right-[58px]"><path className="fill-secondary" d="M 0 50 L 80 50 C 30 50 30 0 0 0 L 0 0 Z"></path></svg>
-        </section>
-        {/* links */}
-
-        {!burger ? (
-          <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
-          <button onClick={handleAboutUs}  className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-           <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs" >About Us</span>
-           {dropDown && (
-             <div className="absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom">
-             <Link 
-             className={`${isActive('/TheCompany')} pt-2`}
-             href='/TheCompany'
-             >
-               The Company
-               </Link> 
-               <Link 
-             className={`pt-2`}
-             href='/TheCompany'
-             >
-               Our Mission
-               </Link> 
-               <Link 
-             className={`pt-2`}
-             href='/TheCompany'
-             >
-               Our Vision
-               </Link> 
-               <Link 
-             className={`pt-2`}
-             href='/TheCompany'
-             >
-               Our Leaders
-               </Link> 
-               {subCat.map(({text, link, id}) => (
-             <Link 
-             key={id} 
-             className={`${isActive({link})} pt-2`}
-             href={link} 
-             >
-               {text}
-               </Link> 
-           ))}
-             </div>
-           )}
-         </button>
-         
-             {navLinks.map(({text, link, id}) => {
-               return (
-                 <Link href={link} key={id}>
-                 <Text size="description" className={cx(`${isActive({link})} hover:text-primary hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full`, " text-black !font-medium transition-all", "laptop:!text-xs")}>{text}</Text>
-               </Link>
-               )
-             })}
-             <button onClick={navDropDownHandleUpdates} className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-           <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Updates</span>
-           <div className={dropDownUpdates ? "absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom" : "hidden"}>
-             {subCatUpdates.map(({text, link, id}) => (
-           <Link 
-           key={id} 
-           className={`${isActive({link})} pt-2`}
-           href={link} 
-           >
-             {text}
-             </Link> 
-         ))}
-           </div>
-         </button>
-         <Link href='Contact'>
-          <button className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-            <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs">Contact Us</span>
-          </button> 
-         </Link>  
-         </div>
-        ) : <div className="w-2/4">
+  {/* right */}
+  <section className={cx("bg-secondary h-10  w-[20%] flex justify-center rounded-tr-3xl relative", 'tablet:w-full')}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="80" height="40" className="absolute z-0 -left-[58px] scale-x-[-1]"><path className="fill-secondary" d="M 0 50 L 80 50 C 30 50 30 0 0 0 L 0 0 Z"></path></svg>
+  </section>
+</section>
+{!burger && 
+      <div className="absolute right-[3%] top-1/2 -translate-y-1/2 w-[17%]">
         <Search handleSearch={handleSearch}/>
-      </div> }
+      </div>
+}
+<section className="bg-secondary h-10 mt-0 flex justify-center" />
+{/* <MobileMenu /> */}
 
-        {/* CENTER */}
-        {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-[47%] -translate-x-1/2", 'phone:w-48')}>
-        <Link href={"/"} className="flex items-center">
-          <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[35px] w-[92%]"/>
-        </Link>
-        </div>}
-
-        {/* right */}
-        <section className={cx("bg-secondary h-10  w-[20%] flex justify-center rounded-tr-3xl relative", 'tablet:w-full')}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="80" height="40" className="absolute z-0 -left-[58px] scale-x-[-1]"><path className="fill-secondary" d="M 0 50 L 80 50 C 30 50 30 0 0 0 L 0 0 Z"></path></svg>
-        </section>
-      </section>
-      {!burger && 
-            <div className="absolute right-[3%] top-1/2 -translate-y-1/2 w-[17%]">
-              <Search handleSearch={handleSearch}/>
-            </div>
-      }
-      <section className="bg-secondary h-10 mt-0 flex justify-center" />
-      {/* <MobileMenu /> */}
-      <div className={!openDiv ? "absolute bg-[#2a9df4] w-full z-40 h-auto overflow-hidden ease-in-out duration-700" : "fixed left-[-1000px]" } >
-     {/* About Us w/ sub dropdown */}
+</section >
+    <section className={search ? "hidden"  : "block w-full pt-2" }>
+      <div className="bg-white rounded-t-3xl h-20 flex items-center justify-around">
+        <input type="text" className="focus:outline-none h-10 placeholder:text-sm w-64" placeholder="Type to search"/>
+        <div className="flex items-center">       
+          <AiOutlineClose className={cx("text-black w-6 h-10 font-bold md:text-3xl hidden mr-3 tablet:block", 'phone:w-6')} onClick={handleSearch}/>
+          <FaSearch className={cx("text-black ml-3 mr-2", tablet && 'black text-xl')}/>
+        </div>
+      </div>
+    </section>
+    <div className="relative w-full">
+          <div className={!openDiv || !search ? "absolute bg-[#2a9df4] z-40 h-auto overflow-hidden ease-in-out duration-700 w-full" : "fixed left-[-1000px]" } >
+      {/* About Us w/ sub dropdown */}
           <div className="w-11/12 mx-auto py-5">
             <div className="flex justify-between" onClick={handleDropdown}>
                 <span className="text-white text-sm font-bold">About Us</span>
@@ -291,7 +310,7 @@ const Header = () => {
                 </div>
           </div>
 
-    {/* Nav Link */}
+      {/* Nav Link */}
           {navLinks.map((link) => {
             return (
               <div className="flex w-11/12 mx-auto justify-between py-5" key={link.id}>
@@ -300,27 +319,9 @@ const Header = () => {
               </div>
             )
           })}
-
       </div> 
-
-      {/* /mobile view search */}
-
-          <div className={search ? 'hidden' : 'block md:hidden'}>
-            <div className="tablet:block absolute z-[5000] top-[87px] w-full bg-transparent h-[5600px]">
-                <div className="relative w-4/5 pt-8 mx-auto bg-gray-300 h-[300px] rounded-2xl shadow-searchCustom">
-                      <input className="absolute pl-12 h-[38px] w-full outline-none placeholder:italic placeholder:text-sm text-sm" placeholder="Search Information"></input>
-                      <div className="flex justify-between w-full">
-                        <div className="w-[40px] mt-2 ml-3">
-                          <AiOutlineSearch className="absolute text-2xl"/>
-                        </div>
-                        <div className="w-[40px] mt-[7px]">
-                          <AiOutlineCloseCircle className="absolute text-2xl cursor-pointer" onClick={handleSearch}/>
-                        </div>
-                      </div>
-                </div>
-            </div>
-          </div>
-    </section>
+    </div>
+ 
 
     {burger && (
           <div className="w-screen h-auto bg-[#e6e6e6] absolute z-[99999] flex">
@@ -389,8 +390,6 @@ const Header = () => {
     ) }
 
     
-
-   
     </>
    
 
