@@ -234,7 +234,7 @@ const Header = () => {
         {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-[47%] -translate-x-1/2", 'phone:w-48')}>
         <Link href={"/"} className="flex items-center">
           <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[50px] w-[92%]"/>
+          <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[35px] w-[92%]"/>
         </Link>
         </div>}
 
@@ -320,9 +320,6 @@ const Header = () => {
                 </div>
             </div>
           </div>
-
-    
-
     </section>
 
     {burger && (
