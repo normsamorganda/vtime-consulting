@@ -331,7 +331,7 @@ const Header = () => {
           <div className=" w-3/12 text-black">
               <div className="ml-12">
               <div className="w-11/12 mx-auto py-5">
-                <div className="flex justify-between border-b-2 divide-y divide-slate-200" onMouseOver={handleDropdown}>
+                <div className="flex justify-between border-b-2 divide-y divide-slate-200" onClick={handleDropdown}>
                     <span className=" text-sm font-bold">About Us</span>
                   {subDropdown ? <BiChevronDown className="text-3xl"/> : <BiChevronRight className="text-3xl"/> } 
                 </div>
