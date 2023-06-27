@@ -18,11 +18,15 @@ const HRContainer = () => {
                         </ul>
                         <ul className='pb-6'>
                             <li className='font-bold list-disc text-lg'>Record Management</li>
+                            <ul className='px-5 pt-3 list-disc text-sm'>
                             <li className='px-5 pt-3 text-sm'>Supervise and administer your company&apos; digital or paper records in any format</li>
+                            </ul>
                         </ul>
                         <ul className='pb-6'>
                             <li className='font-bold list-disc text-lg  '>Employee Benefits</li>
+                            <ul className='px-5 pt-3 list-disc text-sm'>
                             <li className='px-5 pt-3 text-sm '>Assists you in processing the ff: HMO, Group Insurance, Retirement Benefits, Loan, and Others</li>
+                            </ul>
                         </ul >
                         <ul className='pb-6 list-disc'>
                             <li className='font-bold pb-3 text-lg md:pb-6'>Talent Acquisitions</li>

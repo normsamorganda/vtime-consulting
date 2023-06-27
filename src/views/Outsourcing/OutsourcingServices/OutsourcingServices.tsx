@@ -10,7 +10,7 @@ const OutsourcingServices = () => {
       <h1 className="text-lg font-semibold pb-6">Bookkeeping And <br></br> Tax Compliance</h1>
       <p className="text-justify text-sm">Let us take care of your books and taxes, so you can focus on growing your business</p>
       <div className="flex flex-col justify-between shadow-lg rounded-xl shadow-gray-500/50 mt-6 md:flex-row">
-          <ul className="list-disc order-2 pl-12 pb-4 font-semibold text-sm md:order-1 md:px-[80px] ">
+          <ul className="list-disc order-2 pl-12 pb-4 text-sm md:order-1 md:px-[80px] ">
             <li className="pt-3 md:pt-6">Trial Balance</li> 
             <li className="pt-3 md:pt-6">Comparative Balance Sheets (Yearly)</li> 
             <li className="pt-3 md:pt-6">Comparative Income Statements (Montly and Yearly)</li> 
@@ -69,7 +69,7 @@ const OutsourcingServices = () => {
     <p className="text-justify pb-3">We can help you deliver your strategic objectives, improve efficiency and navigate the increasingly complex regulatory and compliance challenges that you may face.</p>
     <p className="text-justify pb-3">With our relationship and connections with different local goverment units, the processing of your documents will be prioritized.</p>
     <div className="flex flex-col justify-between shadow-lg rounded-xl shadow-gray-500/50 mt-6 text-sm md:flex-row">
-        <ul className="list-disc order-2 pl-12 pb-4 font-semibold md:order-1 md:px-[80px] md:pt-6">
+        <ul className="list-disc order-2 pl-12 pb-4 md:order-1 md:px-[80px] md:pt-6">
           <li className="pt-3 md:pt-6">Corporate Structuring</li> 
           <li className="pt-3 md:pt-6">Mergers and Acquisitions</li> 
           <li className="pt-3 md:pt-6">Private Equity</li> 
