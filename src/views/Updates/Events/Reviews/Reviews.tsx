@@ -4,6 +4,10 @@ import { Text } from "@/components/Text"
 import { FeatureCard } from "@/components/FeatureCard"
 import ReviewsCard from "@/components/Reviews/ReviewsCard"
 import Image from 'next/image';
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
 //assets
 import { avatar } from "@/assets/Updates"
 
@@ -15,13 +19,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Grid } from "swiper";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import React from 'react'
 import { TitleText } from "@/components/TitleText";
 import { bg } from "@/assets/Updates";
 const Reviews = () => {
-
 
     let reviews = [
         {   
@@ -44,7 +47,7 @@ const Reviews = () => {
             id:3,
             intro:"Hi Martin scelerisque, vestibulum elit augue mauris maecenas au",
             subIntro:"Forem ipsum dolor sit amet, vel at lorem tortor, tellus vestibu",
-            name:"John Doe",
+            name:"John Poe",
             title:"Business Analyst",
             img:avatar
         },
@@ -57,9 +60,8 @@ const Reviews = () => {
             img:avatar
         }
     ]
+
   return (
-
-
     <div style={{
       backgroundImage:`url(${bg.src})`,
       backgroundPosition:'0px -251px;'
@@ -89,12 +91,50 @@ const Reviews = () => {
          </div>
         </div>
       </section>
-      <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[1062px]">
+          {/* VERTICAL SWIPER */}
+
+      <section className="mx-auto rounded-3xl md:hidden md:w-[530px] xl:w-[1062px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide-reviews",
         prevEl:".button-prev-slide-reviews",
        }}
+       grid={{
+        rows: 2,
+        fill: "row",
+      }}
+       pagination={{
+        type: "fraction",
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
+      }}
+       modules={[Pagination, Navigation, Grid]}
+       >
+        {reviews.map((review) => {
+          return (
+            <SwiperSlide key={review.id}>
+              <ReviewsCard  intro={review.intro} subIntro={review.subIntro} name={review.name} title={review.title} img={avatar} />
+            </SwiperSlide>
+          )
+        })}
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+    </section>
+
+
+    {/* HORIZONTAL SWIPER */}
+
+    <section className="mx-auto rounded-3xl hidden md:block md:w-[530px] xl:w-[1062px]">
+    <Swiper
+      navigation={{
+        nextEl:".button-next-slide-reviews",
+        prevEl:".button-prev-slide-reviews",
+       }}
+       
        pagination={{
         type: "fraction",
         el:".swiper-pagination",
@@ -116,7 +156,7 @@ const Reviews = () => {
           slidesPerGroup:2
         },
       }}
-       modules={[Pagination, Navigation]}
+       modules={[Pagination, Navigation, Grid]}
        >
         {reviews.map((review) => {
           return (

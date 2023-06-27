@@ -11,9 +11,10 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/grid";
 
 // import required modules
-import { Navigation, Pagination } from "swiper";
+import { Grid, Navigation, Pagination } from "swiper";
 import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
 
 const Events = () => {
@@ -24,14 +25,14 @@ const Events = () => {
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature1,
-      tag: 'News'
+      tag: 'Events'
     }, 
     {
       id: 2,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature2,
-      tag: 'Articles'
+      tag: 'Events'
     }, 
     {
       id: 3,
@@ -52,14 +53,14 @@ const Events = () => {
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature1,
-      tag: 'News'
+      tag: 'Events'
     }, 
     {
       id: 6,
       date: '19 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature2,
-      tag: 'Articles'
+      tag: 'Events'
     },
     
   ]
@@ -94,7 +95,43 @@ const Events = () => {
          </div>
         </div>
       </section>
-      <section className="flex justify-center items-center mx-auto rounded-3xl md:w-[530px] xl:w-[1000px]">
+      {/* mobile swiper */}
+      <section className="mx-auto md:hidden rounded-3xl md:w-[530px] xl:w-[1000px]">
+      <Swiper
+      navigation={{
+        nextEl:".button-next-slide-events",
+        prevEl:".button-prev-slide-events",
+       }}
+       grid={{
+        rows: 2,
+        fill: "row",
+      }}
+       pagination={{
+        type:"fraction",
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
+       
+      }}
+       modules={[Pagination, Navigation, Grid]}
+       >
+        {FeaturedCards.map((card) => {
+          return (
+            <SwiperSlide key={card.id}>
+              <FeatureCard  date={card.date} description={card.description} image={card.image} tag={card.tag} />
+            </SwiperSlide>
+          )
+        })}
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+    </section>
+
+
+      {/* desktop swiper */}
+      <section className="mx-auto hidden md:block rounded-3xl md:w-[530px] xl:w-[1000px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide-events",
@@ -108,7 +145,6 @@ const Events = () => {
                   ' of ' +
                   '<span class="' + totalClass + '"></span>';
       }
-       
       }}
       breakpoints={{
         768: {
@@ -131,8 +167,9 @@ const Events = () => {
             </SwiperSlide>
           )
         })}
-        <div className="swiper-pagination" style={{color:"gray" }}></div>
+            <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
+
     </section>
       </div>
     </div>

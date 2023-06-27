@@ -15,9 +15,10 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/grid";
 
 // import required modules
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Grid } from "swiper";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 
 const ArticleBlogs = () => {
@@ -28,28 +29,28 @@ const ArticleBlogs = () => {
   const BlogsAndArticles = [
     {
         id: 1,
-        date: '19 Apr 2023',
+        date: '1 Apr 2023',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
         image: blogs,
         tag: 'Blogs'
     }, 
     {
       id: 2,
-      date: '19 Apr 2023',
+      date: '2 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: feature3,
-      tag: 'Articles'
+      tag: 'Blogs'
     },     
     {
       id: 3,
-      date: '19 Apr 2023',
+      date: '3 Apr 2023',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
       image: blogs,
-      tag: 'Blogs'
-  }, 
+      tag: 'Articles'
+     }, 
   {
     id: 4,
-    date: '19 Apr 2023',
+    date: '4 Apr 2023',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
     image: feature2,
     tag: 'Articles'
@@ -85,7 +86,7 @@ const ArticleBlogs = () => {
          </div>
         </div>
       </section>
-      <section className="mx-auto rounded-3xl md:w-[530px] xl:w-[990px]">
+      <section className="mx-auto rounded-3xl hidden md:block xl:w-[990px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide-artBlog",
@@ -125,6 +126,43 @@ const ArticleBlogs = () => {
           <SwiperSlide key={blogArt.id}>
           <BlogsCard  date={blogArt.date} description={blogArt.description} image={blogArt.image} tag={blogArt.tag} />
           </SwiperSlide>
+        })}
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+
+    </section>
+
+
+    {/* mobile swiper */}
+
+
+    <section className="mx-auto rounded-3xl md:hidden md:w-[530px] xl:w-[990px]">
+      <Swiper
+      navigation={{
+        nextEl:".button-next-slide-artBlog",
+        prevEl:".button-prev-slide-artBlog",
+       }}
+       grid={{
+        rows: 2,
+        fill: "row",
+      }}
+       pagination={{
+        type: "fraction",
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
+      }}
+      modules={[Pagination, Navigation, Grid]}
+      >
+        {BlogsAndArticles.map((blogArt, index) => {
+          return <>
+           <SwiperSlide key={blogArt.id}>
+           <BlogsCard  date={blogArt.date} description={blogArt.description} image={blogArt.image} tag={blogArt.tag} />
+          </SwiperSlide>
+          </>
         })}
         <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
