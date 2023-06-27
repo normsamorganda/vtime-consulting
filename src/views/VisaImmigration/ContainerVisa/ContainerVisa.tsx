@@ -71,7 +71,7 @@ const ContainerVisa = () => {
         ]
   return (
     <>
-    <div className="w-full text-center flex justify-center my-12">
+    <div className="w-full text-center flex justify-center mt-12">
             <TitleText
             size='head'
             direction='center'>
