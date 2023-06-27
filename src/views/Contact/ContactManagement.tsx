@@ -19,9 +19,7 @@ const ContactManagement = () => {
               <span>
                   <Image src={message} alt='message' className='w-[60px] cursor-pointer mx-auto mt-5 hover:-translate-y-2 animate-bounce md:mt-0 md:ml-3'></Image>
               </span>
-          </div>
-    
-       
+          </div>   
     </div>
     </div>
   )

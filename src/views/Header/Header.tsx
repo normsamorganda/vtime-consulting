@@ -100,6 +100,7 @@ const Header = () => {
   const [search, setSearch] = useState(true)
   const [burger, setBurger] = useState(false)
   const [updates, setUpdates] = useState(false)
+  
   const handleShow = () => {
     setopenDiv(!openDiv)
     console.log(`burger status: ${openDiv}`)
@@ -259,17 +260,21 @@ const Header = () => {
 }
 <section className="bg-secondary h-10 mt-0 flex justify-center" />
 {/* <MobileMenu /> */}
-
 </section >
-    <section className={search ? "hidden"  : "block w-full pt-2" }>
-      <div className="bg-white rounded-t-3xl h-20 flex items-center justify-around">
-        <input type="text" className="focus:outline-none h-10 placeholder:text-sm w-64" placeholder="Type to search"/>
-        <div className="flex items-center">       
-          <AiOutlineClose className={cx("text-black w-6 h-10 font-bold md:text-3xl hidden mr-3 tablet:block", 'phone:w-6')} onClick={handleSearch}/>
-          <FaSearch className={cx("text-black ml-3 mr-2", tablet && 'black text-xl')}/>
-        </div>
-      </div>
-    </section>
+
+  {!search && (
+
+<section className="block w-full pt-2" >
+<div className="bg-white rounded-t-3xl h-20 flex items-center justify-between">
+  <input type="text" className="focus:outline-none h-10 placeholder:text-sm ml-6" placeholder="Type to search"/>
+  <div className="flex items-center mr-[20px]">       
+    <AiOutlineClose className={cx("text-black w-6 h-10 font-bold md:text-3xl hidden mr-3 tablet:block", 'phone:w-6')} onClick={handleSearch}/>
+    <FaSearch className={cx("text-black ml-3 mr-2", tablet && 'black text-xl')}/>
+  </div>
+</div>
+</section>
+  )}
+   
     <div className="relative w-full">
           <div className={!openDiv || !search ? "absolute bg-[#2a9df4] z-40 h-auto overflow-hidden ease-in-out duration-700 w-full" : "fixed left-[-1000px]" } >
       {/* About Us w/ sub dropdown */}

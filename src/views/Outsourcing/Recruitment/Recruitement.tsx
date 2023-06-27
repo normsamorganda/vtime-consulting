@@ -34,10 +34,11 @@ const Recruitement = () => {
             direction='center'>
             Outsourcing
           </TitleText>
-          <p className="text-xs md:text-sm">
+          <p className="text-sm text-center">
             Regardless of the size of your ompany, our FHI International Consulting Co. Inc. professionals are ready to assist you.
           </p>
         </div>
+        <h1 className='font-bold text-lg ml-6'>Recruitment</h1>
         <div className={cx('flex justify-between gap-0 items-center', 'tablet:flex-col gap-16', 'phone:gap-5')}>
     {recruitements.map((recruite) => (<AdvantageBox key={recruite.id} title={recruite.title} description={recruite.description} image={recruite.image}/>)
     )}

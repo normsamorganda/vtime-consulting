@@ -78,19 +78,18 @@ const ContainerVisa = () => {
             Visa & Immigration
           </TitleText>
     </div>
-     <div className="flex flex-col justify-center text-left w-3/5 mx-auto">
+     <div className="flex flex-col justify-center text-left w-3/5 mx-auto tablet:w-[90%]">
         
         <div className="text-center">
-         
         <Text
           size='normal'
-          className={cx('text-black mt-5 leading-6', 'tablet:!text-sm', 'phone:!text-[12px]')}>
+          className={cx('text-black mt-5 leading-6', 'tablet:!text-sm', 'phone:!text-sm')}>
         FHI International Consulting Co. Inc.  express service allows you to attain appropriate visas and permits faster and easier.
         </Text>
         </div>
         <Text
           size='normal'
-          className={cx('text-black mt-5 leading-6 text-justify', 'tablet:!text-sm', 'phone:!text-[12px]')}>
+          className={cx('text-black mt-5 leading-6 text-justify', 'tablet:!text-sm', 'phone:!text-sm')}>
             <span className="text-[#2a9df4] font-bold">FHI International Consulting Co. Inc. </span> team of professionals is equipped to assist you with all your immigration concerns. Depending on your requirements
             as a local or foreign individual or company, we assist with the process of obtaining the appropriate visas and permits with different goverment agencies.
         </Text>

@@ -14,7 +14,7 @@ const Payroll = () => {
         backgroundSize: 'auto',
         backgroundPosition: 'right',
         clipPath: phone ? 'polygon(100% 0, 100% 85%, 0 100%, 0 15%)' : 'polygon(100% 0px, 100% 93%, 0px 100%, 0px 11%)',
-      }} className='w-full h-[588px] phoneSe:h-[672px] sm:h-[790px] lg:h-[653px]'>
+      }} className='w-full h-[700px] phoneSe:h-[672px] sm:h-[790px] lg:h-[653px]'>
          <div className='w-4/5 mx-auto pt-[108px] md:w-3/5'>
                 <h1 className='font-bold pb-3 text-lg'>Payroll</h1>
                 <p className='text-sm pb-3'>Steamline your business operations and ensure accurately and timely payments for your employees with our reliable and efficient payroll assistance</p>

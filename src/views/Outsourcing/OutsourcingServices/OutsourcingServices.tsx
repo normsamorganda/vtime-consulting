@@ -6,9 +6,8 @@ import {legal, center, tax} from "@/assets/Outsourcing";
 const OutsourcingServices = () => {
   return (
 <>
-     <div className="mx-auto w-4/5 mb-12 text-xs md:w-3/5 ">
-
-      <h1 className="text-lg font-semibold pb-6">Bookkeeping And Tax Compliance</h1>
+     <div className="mx-auto w-[90%] mb-12 text-xs md:w-3/5">
+      <h1 className="text-lg font-semibold pb-6">Bookkeeping And <br></br> Tax Compliance</h1>
       <p className="text-justify text-sm">Let us take care of your books and taxes, so you can focus on growing your business</p>
       <div className="flex flex-col justify-between shadow-lg rounded-xl shadow-gray-500/50 mt-6 md:flex-row">
           <ul className="list-disc order-2 pl-12 pb-4 font-semibold text-sm md:order-1 md:px-[80px] ">
@@ -29,7 +28,7 @@ const OutsourcingServices = () => {
           </div>
       </div>
     </div>
-  <div className="mx-auto w-4/5 mb-12 text-[12px] md:w-3/5 ">
+  <div className="mx-auto w-[90%] mb-12 text-[12px] md:w-3/5 ">
 
       <h1 className="text-lg font-semibold pb-6">Business Center</h1>
       <p className="text-justify text-sm pb-3">Our services include basic adminitrative and corporate seretarial support, as well as dedicated guidance and assistance with desk and meeting room rental.</p>
@@ -63,7 +62,7 @@ const OutsourcingServices = () => {
         </div>
     </div>
   </div>
-  <div className="mx-auto w-4/5 mb-12 text-sm md:w-3/5 ">
+  <div className="mx-auto w-[90%] mb-12 text-sm md:w-3/5 ">
 
     <h1 className="text-xl font-semibold pb-6">Legal</h1>
     <p className="text-justify pb-3">Our legal team is a blend of seasoned consultants, lawyers, and audit and risk professionals.</p>
