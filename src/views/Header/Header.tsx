@@ -414,12 +414,11 @@ const Header = () => {
               })}
             
           </div>
-      </div>
+        </div>
               <div className=" w-9/12">
-                
-                </div>
-
+                  {/* CONTENT HERE */}
               </div>
+        </div>
       </div>
         
          

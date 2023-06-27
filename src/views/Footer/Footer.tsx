@@ -27,9 +27,9 @@ const Footer = () => {
           />
         </article>
         {/* <article className='flex items-center justify-center row-start-2 row-span-3 col-start-2 mt-5 tablet:row-start-4 tablet:flex-wrap'> */}
-        <article className="flex justify-between items-center tablet:my-2 tablet:col-span-2">
+        <article className="flex justify-between items-center text-sm tablet:my-2 tablet:col-span-2">
           <Text
-            size='tiny'
+            size='description'
             className='!font-semibold hover:underline'>
             <Link href={'/Terms&Condition'}>
             Terms & Conditions
@@ -37,7 +37,7 @@ const Footer = () => {
           </Text>
           <span className="mx-2">/</span>
           <Text
-            size='tiny'
+            size='description'
             className='!font-semibold hover:underline'>
               <Link href={'/PrivacyPolicy'}>
               Private Policy
@@ -45,7 +45,7 @@ const Footer = () => {
           </Text>
           <span className="mx-2">/</span>
           <Text
-            size='tiny'
+            size='description'
             className='!font-semibold hover:underline'>
               <Link href={'/Faq'}>
               FAQ
@@ -53,7 +53,7 @@ const Footer = () => {
           </Text>
           <span className="mx-2">/</span>
           <Text
-            size='tiny'
+            size='description'
             className='!font-semibold hover:underline'>
               <Link href={'/Contact'}>
               Contact Us
@@ -61,7 +61,7 @@ const Footer = () => {
           </Text>
         </article>
 
-    <div className="grid grid-cols-2 text-xs row-start-2 tablet:col-span-2 tablet:my-2 tablet:gap-y-3">
+    <div className="grid grid-cols-[80px_1fr] text-sm row-start-2 tablet:col-span-2 tablet:my-2 tablet:gap-y-3">
           <h1 className="col-span-2 font-bold text-left"><span>Contact</span></h1>
           <div>
           Mobile:
