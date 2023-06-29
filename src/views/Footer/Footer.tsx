@@ -87,7 +87,6 @@ const Footer = () => {
                 <FaTwitter className='grayscale-1 text-gray-300 h-5 w-5 mx-3' />
                 <FaLinkedinIn className='grayscale-1 text-gray-300 h-5 w-5 mx-3' />
               </div>
-             
           </div>
         </div >
       </div >

@@ -12,9 +12,10 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/grid";
 
 // import required modules
-import { Navigation, Pagination } from "swiper";
+import { Grid, Navigation, Pagination } from "swiper";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 
 const News = () => {
@@ -65,7 +66,6 @@ const News = () => {
       ]
   return (
 
-
     <div style={{
       backgroundImage:`url(${bg.src})`,
       backgroundPosition:'0px -251px;'
@@ -95,7 +95,8 @@ const News = () => {
          </div>
         </div>
       </section>
-      <section className="flex justify-center items-center mx-auto rounded-3xl mb-12 md:w-[530px] xl:w-[1000px]">
+         {/* desktop */}
+      <section className="mx-auto rounded-3xl mb-12 hidden md:block md:w-[530px] xl:w-[1000px]">
       <Swiper
       navigation={{
         nextEl:".button-next-slide-events",
@@ -134,6 +135,44 @@ const News = () => {
         <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
     </section>
+
+    {/* mobile */}
+
+    <section className="flex justify-center items-center mx-auto rounded-3xl mb-12 md:hidden">
+      <Swiper
+      navigation={{
+        nextEl:".button-next-slide-events",
+        prevEl:".button-prev-slide-events",
+       }}
+       grid={{
+        rows: 2,
+        fill: "row",
+      }}
+       pagination={{
+        type: "fraction",
+        el:".swiper-pagination",
+        renderFraction: function (currentClass, totalClass) {
+          return 'Page <span class="' + currentClass + '"></span>' +
+                  ' of ' +
+                  '<span class="' + totalClass + '"></span>';
+      }
+      }}
+       modules={[Pagination, Navigation, Grid]}
+       >
+        {News.map((news) => {
+          return (
+            <SwiperSlide key={news.id}>
+              <FeatureCard  date={news.date} description={news.description} image={news.image} tag={news.tag} />
+            </SwiperSlide>
+          )
+        })}
+        <div className="swiper-pagination" style={{color:"gray" }}></div>
+    </Swiper>
+    </section>
+
+
+
+
       </div>
       </div>
     </div>
