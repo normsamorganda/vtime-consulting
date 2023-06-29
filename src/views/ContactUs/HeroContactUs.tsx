@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TitleText } from "@/components/TitleText"
 import { Text } from "@/components/Text"
 import { bgMap } from "@/assets/ContactUs"
@@ -7,13 +7,20 @@ import PopUpMessage from '../PopUpMessage/PopUpMessage'
 
 const HeroContactUs = () => {
 
+  const [isShowModal, setshowModal] = useState(false)
 
   const submitHandle = (e : any) => {
     e.preventDefault();
+    setshowModal(!isShowModal)
+
   }
 
+  // const handleModal = () => {
+  // }
+
   return (
-    <div style={{
+    <>
+<div style={{
         backgroundImage:`url(${bgMap.src})`,
         backgroundPosition: '0 -53px'
       }}
@@ -105,16 +112,14 @@ const HeroContactUs = () => {
                 <p className='pt-6 text-center text-sm md:text-md'>At FH International Consulting Co. Inc., We are dedicated to safeguarding your information. We assure you that your information will be utilized in adherence to the relevant data privacy regulations, our internal protocols, and our <span className='text-[#2a9df4]'>privacy policy</span>. Given that FHI operates as a global entity, your information may be retained and handled by BAC and its subsidiaries in countries other than your place of residence. Nevertheless, regardless of where your information is processed, We will exercise the same level of caution and respect for your privacy.</p>
               <button type='submit' className='text-[#fefefe] bg-[#2a9df4] w-full py-3 rounded-xl mt-12'>Submit</button>
             </form>
-
-           <div className='hidden'>
-              <PopUpMessage/>
-           </div>
-            
             </div>
         </section>
         </div>
       </div>
+      {isShowModal ? <PopUpMessage submitHandle={submitHandle}/> : ''}
       </div>
+    </>
+   
   )
 }
 

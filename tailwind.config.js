@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        opacityFade: "rgba(0,0,0,0.4);"
+      },
       backgroundImage: {
         overlay: "url('/src/assets/Service/service-bg-overlay.png')",
       },

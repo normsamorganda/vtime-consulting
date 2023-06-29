@@ -135,9 +135,7 @@ const News = () => {
         <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
     </section>
-
     {/* mobile */}
-
     <section className="flex justify-center items-center mx-auto rounded-3xl mb-12 md:hidden">
       <Swiper
       navigation={{
@@ -169,10 +167,6 @@ const News = () => {
         <div className="swiper-pagination" style={{color:"gray" }}></div>
     </Swiper>
     </section>
-
-
-
-
       </div>
       </div>
     </div>
