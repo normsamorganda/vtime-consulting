@@ -82,6 +82,27 @@ const subCatUpdates = [
 
 ]
 
+const companyLink = [
+  {
+    id:1,
+    link:'/TheCompany'
+  },
+  {
+    id:2,
+    link:'/Advantages'
+  },
+  {
+    id:3,
+    link:'/Advantages'
+  },
+  {
+    id:4,
+    link:'/About'
+  },
+
+
+]
+
 const Header = () => {
   const { tablet, phone } = useSize()
 
@@ -169,11 +190,11 @@ const Header = () => {
   {!burger ? (
     <div className={cx("flex gap-10 items-center tablet:hidden", "laptopL:!gap-5")}>
     <button onClick={handleAboutUs}  className="text-sm font-medium hover:cursor-pointer relative after:content-[' '] after:w-1 after:h-1 after:bg-primary after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:hidden hover:after:block after:rounded-full">
-     <span className="active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs" >About Us</span>
+     <span className={`${isActive(companyLink.map(link => link.link))} active:text-primary hover:text-primary text-black !font-medium transition-all laptop:!text-xs`} >About Us</span>
      {dropDown && (
        <div className="absolute top-[40px] left-[-71px] bg-[#fefefe] w-[200px] text-[12px] pb-3 flex flex-col border-t-4 border-[#2a9df4] z-[99999999] shadow-custom">
        <Link 
-       className={`${isActive('/TheCompany')} pt-2`}
+       className={`${isActive(companyLink.map(link => link.link))} pt-2`}
        href='/TheCompany'
        >
          The Company

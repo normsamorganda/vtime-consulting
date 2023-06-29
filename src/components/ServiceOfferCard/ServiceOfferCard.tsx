@@ -1,8 +1,6 @@
 'use client'
 import { ServiceOfferCardProps } from "./types"
 import Image from "next/image"
-import cx from 'clsx'
-import styles from './ListMod.module.css';
 
 const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, img1, img2} : any) => {
   return (
@@ -26,18 +24,10 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
         <div className="mx-auto order:1 md:order-2">
             <Image src={img1}
                 alt={""}
-                className="w-[380px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 cursor-pointer object-cover md:h-[auto] md:w-[500px]"></Image>
+                className="w-[380px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 object-contain md:h-[auto] md:w-[500px]"></Image>
         </div>
     </div>
-
 </div>
-
-
-    
-    
-
-     
-   
 
   )
 }

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { notification } from '@/assets/ContactUs'
 import Image from 'next/image'
+import ActiveLink from '@/components/ActiveLink/ActiveLink'
 const PopUpMessage = ({submitHandle}:any) => {
 
   return (
@@ -19,7 +20,9 @@ const PopUpMessage = ({submitHandle}:any) => {
                 <button className='text-white bg-primary py-3 rounded-xl my-4' onClick={submitHandle}>Close</button>
             </div>
         </div>
+        <ActiveLink/>
         </div>
+        
   )
 }
 

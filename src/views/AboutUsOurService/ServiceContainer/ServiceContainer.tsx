@@ -4,7 +4,7 @@ import { TitleText } from "@/components/TitleText";
 import cx from 'clsx'
 const ServiceContainer = () => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center my-12">
          <TitleText
             size='head'
             direction='center'>
