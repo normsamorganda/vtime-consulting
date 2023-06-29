@@ -15,7 +15,7 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
                 </Image>
                 {key}
                 <span className="font-bold mt-12 md:pl-8">{title}</span>
-            <ul className="list-disc ml-6 py-4 md:ml-12 pt-2">
+            <ul className="list-disc marker:text-primary ml-6 py-4 md:ml-12 pt-2">
                 <li className="text-sm text-left">{offer1}</li>
                 <li className="text-sm text-left">{offer2}</li>
                 <li className="text-sm text-left">{offer3}</li>

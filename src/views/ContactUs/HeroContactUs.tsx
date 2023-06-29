@@ -116,7 +116,7 @@ const HeroContactUs = () => {
         </section>
         </div>
       </div>
-      {isShowModal ? <PopUpMessage submitHandle={submitHandle}/> : ''}
+      {isShowModal && <PopUpMessage submitHandle={submitHandle}/>}
       </div>
     </>
    

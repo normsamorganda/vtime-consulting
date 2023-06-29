@@ -11,24 +11,24 @@ const HRContainer = () => {
                 <div className='shadow-lg shadow-gray-500/50 rounded-xl order-2 lg:order-1 md:w-[500px]'>
                     <div className='pt-6 pl-12 text-justify'>
                         <ul className='pb-6'>
-                            <li className='font-bold list-disc text-lg'>Organizational Development</li>
-                            <ul className='px-5 pt-3 list-disc text-sm'>
+                            <li className='font-bold list-disc marker:text-primary text-lg'>Organizational Development</li>
+                            <ul className='px-5 pt-3 list-disc marker:text-primary text-sm'>
                                 <li>Helps you apply processes, techniques, and systems to bring positive changes to your company</li>
                             </ul>
                         </ul>
                         <ul className='pb-6'>
-                            <li className='font-bold list-disc text-lg'>Record Management</li>
-                            <ul className='px-5 pt-3 list-disc text-sm'>
+                            <li className='font-bold list-disc marker:text-primary text-lg'>Record Management</li>
+                            <ul className='px-5 pt-3 list-disc marker:text-primary text-sm'>
                             <li className='px-5 pt-3 text-sm'>Supervise and administer your company&apos; digital or paper records in any format</li>
                             </ul>
                         </ul>
                         <ul className='pb-6'>
-                            <li className='font-bold list-disc text-lg  '>Employee Benefits</li>
-                            <ul className='px-5 pt-3 list-disc text-sm'>
+                            <li className='font-bold list-disc marker:text-primary text-lg  '>Employee Benefits</li>
+                            <ul className='px-5 pt-3 list-disc marker:text-primary text-sm'>
                             <li className='px-5 pt-3 text-sm '>Assists you in processing the ff: HMO, Group Insurance, Retirement Benefits, Loan, and Others</li>
                             </ul>
                         </ul >
-                        <ul className='pb-6 list-disc'>
+                        <ul className='pb-6 list-disc marker:text-primary'>
                             <li className='font-bold pb-3 text-lg md:pb-6'>Talent Acquisitions</li>
                             <li className='font-bold text-lg md:py-3'>Executive Coaching</li>
                         </ul>

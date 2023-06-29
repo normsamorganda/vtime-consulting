@@ -18,7 +18,7 @@ const Payroll = () => {
          <div className='w-4/5 mx-auto pt-[108px] md:w-3/5'>
                 <h1 className='font-bold pb-3 text-lg'>Payroll</h1>
                 <p className='text-sm pb-3'>Steamline your business operations and ensure accurately and timely payments for your employees with our reliable and efficient payroll assistance</p>
-                <ul className='list-disc text-sm md:flex md:my-6'>
+                <ul className='list-disc marker:text-primary text-sm md:flex md:my-6'>
                     <div>
                         <li className='md:py-4 pb-2'>Basic salaries, overtime pay, night dffertial, rest day and holiday pay</li>
                         <li className='md:py-4 pb-2'>Employee leaves as well as track available leave balances</li>
@@ -29,7 +29,7 @@ const Payroll = () => {
                     </div>
                     <li className='mt-5 md:ml-10'>
                         <span>Other Forms such as:</span>
-                            <ul className='list-disc pl-8 md:py-4'>
+                            <ul className='list-disc marker:text-primary pl-8 md:py-4'>
                                 <li className='md:py-4'>BIR Form 1601-C</li>
                                 <li className='md:py-4'>BIR Form 2316</li>
                                 <li className='md:py-4'>BIR Form 1404-CF with Alpha list and data file</li>
