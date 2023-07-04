@@ -9,7 +9,7 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
         <div className="mt-5 ml-5 order-2 md:order-1">
                 <Image src={img2}
                     alt={""}
-                    className="hidden md:block w-[30px] md:w-[100px] md:pl-8">
+                    className="hidden md:block md:w-[100px] md:pl-8">
                 </Image>
                 {key}
                 <span className="font-bold mt-12 md:pl-8">{title}</span>
@@ -24,7 +24,7 @@ const ServiceOfferCard = ({key, title, offer1, offer2, offer3, offer4, offer5, i
         <div className="mx-auto order:1 md:order-2">
             <Image src={img1}
                 alt={""}
-                className="w-[380px] h-[160px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 object-contain md:h-[auto] md:w-[500px]"></Image>
+                className="w-[380px] rounded-tr-3xl rounded-tl-3xl hover:scale-110 transition-all duration-200 md:h-[auto] md:w-[500px]"></Image>
         </div>
     </div>
 </div>

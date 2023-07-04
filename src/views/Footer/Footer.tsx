@@ -18,12 +18,13 @@ const Footer = () => {
   return (
     <div className="max-w-[57rem] mx-auto tablet:mx-3">
       {/* left section */}
-      <div className='grid grid-cols-2 grid-rows-2 gap-y-6 mb-5 tablet:gap-3'>
+      <div className='grid grid-cols-2 grid-rows-[80px_1fr] gap-y-6 mb-5 tablet:gap-3'>
         <article className={cx("row-start-1", 'tablet:!items-center tablet:col-span-2')}>
           <Image
             src={fhiDark}
             alt='logo'
             className="max-w-[90%] tablet:mx-auto"
+            height={80}
           />
         </article>
         {/* <article className='flex items-center justify-center row-start-2 row-span-3 col-start-2 mt-5 tablet:row-start-4 tablet:flex-wrap'> */}
