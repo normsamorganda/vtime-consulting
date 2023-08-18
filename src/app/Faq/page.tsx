@@ -10,17 +10,13 @@ import Footer from "@/views/Footer/Footer"
 import FooterExtras from "@/views/FooterExtras/FooterExtras"
 const Faq = () => {
     return (<div className="px-[5px] text-black">
-    <Header />
+        <Header />
         <div className='relative h-[1950px] md:h-[1600px] lg:h-[1900px] xl:h-[1600px] 2xl:h-[1400px]'>
             <HeroCorporate imgHero = {businessman}/>
             <FaqContainer/>
         </div>
         <Footer/>
         <FooterExtras/>
-
-        
-
-  
 </div>);
 }
 

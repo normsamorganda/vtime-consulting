@@ -5,4 +5,5 @@ import whiteHeader from './whiteHeader.png'
 import FHIwhite from './FHIwhite.png'
 import fhi  from "./fhiLogo.png"
 import fhiText from "./fhi-text.png"
-export { headerBg, whiteLogo, headerBg3, whiteHeader, FHIwhite, fhi,fhiText }
+import FHIupdated from './FHINew.png'
+export { headerBg, whiteLogo, headerBg3, whiteHeader, FHIwhite, fhi,fhiText, FHIupdated  }

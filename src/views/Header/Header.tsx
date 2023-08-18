@@ -1,5 +1,5 @@
 'use client'
-import { whiteLogo, FHIwhite, fhi, fhiText } from "@/assets/Header"
+import { whiteLogo, FHIwhite, fhi, fhiText, FHIupdated } from "@/assets/Header"
 import { Search } from "@/components/Search"
 import { Text } from "@/components/Text"
 import useSize from "@/hooks/useSize"
@@ -144,11 +144,10 @@ const Header = () => {
 
 <div className="xl:w-[230px] 2xl:w-[17rem] flex justify-center items-center tablet:hidden desktop2:justify-around">
     <div className="md:mr-6">
-      {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>}
+      {/* {!burger ? <FaBars className="text-white w-5 h-10 block cursor-pointer" onClick={subBurger}/> : <IoCloseSharp className="text-white w-8 h-10" onClick={subBurger}/>} */}
     </div>
-    <Link href={"/"} className="flex items-center">
-    <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-    <Image src={fhiText.src} alt="logo" width={800} height={400} className="w-[100%] desktop:w-[90%] desktop2:hidden"/>
+    <Link href={"/"}>
+    <Image src={FHIupdated} alt="logo" className="w-[100%] desktop:w-[90%] h-[40px]"/>
     </Link>
 </div>
 
@@ -236,10 +235,10 @@ const Header = () => {
 </div> }
 
   {/* CENTER */}
-  {tablet && <div className={cx("absolute top-[11%] translate-y-1/4 w-[19rem] z-10 left-[48%] -translate-x-1/2", 'phone:w-48')}>
+  {tablet && <div className={cx("absolute top-[33%] translate-y-1/4 w-[19rem] z-10 left-[52%] -translate-x-1/2", 'phone:w-52')}>
   <Link href={"/"} className="flex items-center">
-    <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/>
-    <Image src={fhiText.src} alt="logo" width={800} height={400} className="h-[35px] w-[92%]"/>
+    {/* <Image src={fhi.src} alt="logo" width={800} height={400} className="w-[50px]"/> */}
+    <Image src={FHIupdated} alt="logo" className="h-[42px] w-[85%]"/>
   </Link>
   </div>}
 
